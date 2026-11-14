@@ -306,6 +306,18 @@ main{max-width:720px;margin:0 auto;padding-block:16px calc(100px + env(safe-area
 .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.76rem;color:var(--muted)}
 .legend i{display:inline-block;width:4px;height:12px;vertical-align:-1px;margin-right:6px;background:var(--blue)}
 .legend i.g{background:var(--green)}
+.legend i.r{background:var(--red)}
+.sr.z3 .z{background:var(--red)}
+.subrow{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:4px}
+.brand .subrow small{margin:0}
+.lgsw{display:inline-flex;gap:3px;padding:2px;border-radius:9px;background:var(--card);border:1px solid var(--line);flex:none}
+.lgsw button{border:0;background:none;padding:3px 4px;border-radius:7px;cursor:pointer;line-height:0;opacity:.5;transition:opacity .2s,box-shadow .2s;min-width:36px;min-height:26px}
+.lgsw button svg{width:28px;height:19px;border-radius:3px;display:block}
+.lgsw button[aria-pressed=true]{opacity:1;box-shadow:0 0 0 2px var(--gold)}
+.sr.bb{grid-template-columns:4px 24px 44px 1fr 56px 34px 46px}
+@media (max-width:420px){.sr.bb{grid-template-columns:4px 20px 40px 1fr 50px 30px 44px}}
+html[data-skin="jam"] .sr.bb{grid-template-columns:4px 26px 40px minmax(0,1fr) 52px 34px 54px}
+html[data-skin="jam"] .lgsw{background:#06093f;border:2px solid #000}
 
 .seg{display:flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
 .seg button{flex:1;border:0;background:none;border-radius:999px;padding:8px;font:600 .9rem var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
@@ -587,7 +599,7 @@ html[data-skin="jam"] .sec h2,html[data-skin="jam"] .brand h1{text-shadow:2px 2p
 <div class="top">
   <div class="bar">
     <button class="skin-btn" id="skinBtn" type="button" aria-pressed="false" aria-label="Jam-Modus ein- oder ausschalten" title="Jam-Modus"><span class="sb-n" id="sbN"></span><span class="sb-j" id="sbJ"></span></button>
-    <div class="brand"><h1><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#e8642c"/><g fill="none" stroke="#3a1606" stroke-width="2"><circle cx="20" cy="20" r="18"/><path d="M2 20h36M20 2v36M7 7c6 5 6 21 0 26M33 7c-6 5-6 21 0 26"/></g></svg>NBA Aktuell</h1><small id="stamp">Daten werden geladen…</small></div>
+    <div class="brand"><h1><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#e8642c"/><g fill="none" stroke="#3a1606" stroke-width="2"><circle cx="20" cy="20" r="18"/><path d="M2 20h36M20 2v36M7 7c6 5 6 21 0 26M33 7c-6 5-6 21 0 26"/></g></svg><span id="ttl">NBA Aktuell</span></h1><div class="subrow"><span class="lgsw" role="group" aria-label="Liga wählen"><button type="button" data-lg="nba" aria-pressed="true" aria-label="NBA (USA)" title="NBA"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><g fill="#c8102e"><rect y="0.0" width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="13" height="10.8" fill="#1b3a7a"/><g fill="#fff"><circle cx="2.2" cy="2.1" r=".6"/><circle cx="5.1" cy="2.1" r=".6"/><circle cx="8.0" cy="2.1" r=".6"/><circle cx="10.899999999999999" cy="2.1" r=".6"/><circle cx="2.2" cy="4.800000000000001" r=".6"/><circle cx="5.1" cy="4.800000000000001" r=".6"/><circle cx="8.0" cy="4.800000000000001" r=".6"/><circle cx="10.899999999999999" cy="4.800000000000001" r=".6"/><circle cx="2.2" cy="7.5" r=".6"/><circle cx="5.1" cy="7.5" r=".6"/><circle cx="8.0" cy="7.5" r=".6"/><circle cx="10.899999999999999" cy="7.5" r=".6"/></g></svg></button><button type="button" data-lg="bbl" aria-pressed="false" aria-label="Basketball Bundesliga (Deutschland)" title="Bundesliga"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="6.67" fill="#111"/><rect y="6.67" width="30" height="6.67" fill="#dd0000"/><rect y="13.33" width="30" height="6.67" fill="#ffce00"/></svg></button></span><small id="stamp">Daten werden geladen…</small></div></div>
     <button class="icon-btn" id="openSettings" aria-label="Einstellungen und Lieblingsteams"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
   </div>
   <div class="ticker" id="ticker" aria-label="Newsband">
@@ -649,7 +661,7 @@ const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 
-const TEAMS={
+const TEAMS_N={
 "Atlanta Hawks":["ATL","#E03A3E","#C1D32F"],"Boston Celtics":["BOS","#007A33","#BA9653"],"Brooklyn Nets":["BKN","#111111","#FFFFFF"],
 "Charlotte Hornets":["CHA","#1D1160","#00788C"],"Chicago Bulls":["CHI","#CE1141","#111111"],"Cleveland Cavaliers":["CLE","#860038","#FDBB30"],
 "Dallas Mavericks":["DAL","#00538C","#B8C4CA"],"Denver Nuggets":["DEN","#0E2240","#FEC524"],"Detroit Pistons":["DET","#C8102E","#1D42BA"],
@@ -660,21 +672,38 @@ const TEAMS={
 "Orlando Magic":["ORL","#0077C0","#C4CED4"],"Philadelphia 76ers":["PHI","#006BB6","#ED174C"],"Phoenix Suns":["PHX","#1D1160","#E56020"],
 "Portland Trail Blazers":["POR","#E03A3E","#111111"],"Sacramento Kings":["SAC","#5A2D81","#63727A"],"San Antonio Spurs":["SAS","#C4CED4","#111111"],
 "Toronto Raptors":["TOR","#CE1141","#111111"],"Utah Jazz":["UTA","#002B5C","#F9A01B"],"Washington Wizards":["WAS","#002B5C","#E31837"]};
+/* Bundesliga: eigene Abzeichen in Vereinsfarben (Kürzel, Farbe 1, Farbe 2, Kurzname, Schriftzug) */
+const TEAMS_B={
+"FC Bayern München":["BAY","#DC052D","#0B3C8A","Bayern","BAYERN"],"Gladiators Trier":["TRI","#9E1B32","#F2C75C","Trier","TRIER"],
+"Mitteldeutscher BC":["MBC","#0B3C8A","#FFD100","MBC","MBC"],"Rostock Seawolves":["ROS","#0B3A6B","#6EC1E4","Rostock","SEAWOLVES"],
+"Telekom Baskets Bonn":["BON","#E20074","#4A4A4A","Bonn","BONN"],"MHP Riesen Ludwigsburg":["LUD","#0A2E6C","#E4002B","Ludwigsburg","RIESEN"],
+"Skyliners Frankfurt":["FRA","#1D4F91","#FDB913","Frankfurt","SKYLINERS"],"Würzburg Baskets":["WÜR","#F26B1D","#111111","Würzburg","WÜRZBURG"],
+"Bamberg Baskets":["BAM","#C8102E","#0B2A5B","Bamberg","BAMBERG"],"ALBA Berlin":["ALB","#FFD100","#0A2A5C","Alba","ALBA"],
+"EWE Baskets Oldenburg":["OLD","#0E5AA7","#E30613","Oldenburg","OLDENBURG"],"ratiopharm Ulm":["ULM","#F57C00","#1A1A1A","Ulm","ULM"],
+"Rasta Vechta":["VEC","#0F7B3F","#F2E205","Vechta","RASTA"],"Löwen Braunschweig":["BRA","#F5C400","#111111","Braunschweig","LÖWEN"],
+"Chemnitz 99ers":["CHE","#17479E","#E6E6E6","Chemnitz","99ERS"],"Veolia Towers Hamburg":["HAM","#C4161C","#111827","Hamburg","TOWERS"],
+"Science City Jena":["JEN","#0B5CAB","#FFC20E","Jena","JENA"],"Phoenix Hagen":["HAG","#D9480F","#1B2A49","Hagen","HAGEN"]};
+let league=store.get("nba-league")==="bbl"?"bbl":"nba";
+const LB=()=>league==="bbl";
+let TEAMS=LB()?TEAMS_B:TEAMS_N;
+const TO=()=>LB()?0:6*36e5; /* NBA: Spiele nach Mitternacht zählen zum US-Abend davor */
 const team=n=>TEAMS[n]||[(n||"?").split(" ").map(w=>w[0]).join("").slice(0,3).toUpperCase(),"#3a4a6b","#98a6c8"];
 const ab=n=>team(n)[0];
 const ink=h=>{const v=parseInt(h.slice(1),16);return (.299*(v>>16&255)+.587*(v>>8&255)+.114*(v&255))>165?"#0b1530":"#ffffff"};
-const short=n=>/Blazers/.test(n||"")?"Trail Blazers":String(n||"").split(" ").pop();
-const nick=n=>/Blazers/.test(n||"")?"BLAZERS":String(n||"").split(" ").pop().toUpperCase();
+const short=n=>(TEAMS[n]&&TEAMS[n][3])||(/Blazers/.test(n||"")?"Trail Blazers":String(n||"").split(" ").pop());
+const nick=n=>(TEAMS[n]&&TEAMS[n][4])||(/Blazers/.test(n||"")?"BLAZERS":String(n||"").split(" ").pop().toUpperCase());
 const SHAPES=["shield","hex","circle","oct","square","crest","penta"];
 function badge(n,cls=""){const [a,c1,c2]=team(n),k=Math.max(0,Object.keys(TEAMS).indexOf(n)),sh=SHAPES[k%SHAPES.length],L=nick(n).length;
   return `<span class="bdg ${cls}" style="--c1:${c1};--c2:${c2};--ink:${ink(c1)};--nf:${L>9?.075:L>7?.09:.105}" title="${esc(n)}"><i><b>${a}</b><em>${esc(nick(n))}</em></i></span>`}
 /* Spielfeldfarbe: dunkle Vereinsfarbe für Seitenflächen */
 const sideColor=n=>{const [,c1,c2]=team(n);return ink(c1)==="#ffffff"?c1:c2};
 
-let favs=(()=>{try{const a=JSON.parse(store.get("nba-favs")||"null");if(Array.isArray(a))return a.filter(n=>TEAMS[n])}catch(e){}const o=store.get("nba-fav");return o&&TEAMS[o]?[o]:[]})();
-const saveFavs=()=>store.set("nba-favs",JSON.stringify(favs));
+const FK=()=>LB()?"bbl-favs":"nba-favs";
+const loadFavs=()=>{try{const a=JSON.parse(store.get(FK())||"null");if(Array.isArray(a))return a.filter(n=>TEAMS[n])}catch(e){}if(LB())return [];const o=store.get("nba-fav");return o&&TEAMS[o]?[o]:[]};
+let favs=loadFavs();
+const saveFavs=()=>store.set(FK(),JSON.stringify(favs));
 const isFav=n=>favs.includes(n), isFavG=g=>isFav(g.away)||isFav(g.home);
-let D=null, playedFor=null, day="heute";
+let D=null, RAW=null, playedFor=null, day="heute";
 const PANES=["spiele","prime","tabelle","spieler","news"];
 let pane=(()=>{const h=(location.hash||"").slice(1),s=store.get("nba-pane");return PANES.includes(h)?h:(PANES.includes(s)?s:"spiele")})();
 
@@ -686,8 +715,8 @@ const ytSearch=g=>"https://www.youtube.com/results?search_query="+encodeURICompo
 const vid=g=>safe(g.video)||ytSearch(g);
 const gTime=g=>g.iso?fTime(g.iso):(g.time||"");
 const status=g=>g.status==="live"?"live":(g.status==="final"||(g.as!=null&&g.hs!=null&&g.status!=="scheduled"))?"final":"pre";
-function gcal(g){const s=new Date(g.iso),e=new Date(s.getTime()+150*6e4),f=d=>d.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,""),pn=PROV[g.tv?(g.tv.includes("prime")?"prime":g.tv.includes("sky")?"sky":"lp"):mainTV(g)].n;
-  return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(`${g.away} @ ${g.home} – ${pn}`)+"&dates="+f(s)+"/"+f(e)+"&details="+encodeURIComponent("NBA live bei "+pn)}
+function gcal(g){const s=new Date(g.iso),e=new Date(s.getTime()+150*6e4),f=d=>d.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,""),pn=PROV[LB()?"dyn":g.tv?(g.tv.includes("prime")?"prime":g.tv.includes("sky")?"sky":"lp"):mainTV(g)].n;
+  return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(`${g.away} @ ${g.home} – ${pn}`)+"&dates="+f(s)+"/"+f(e)+"&details="+encodeURIComponent((LB()?"BBL":"NBA")+" live bei "+pn)}
 function primeList(){
   const out=[],seen=new Set();
   (D.days||[]).forEach(d=>(d.games||[]).forEach(g=>{if(g.prime) out.push({...g,date:g.date||d.label.split("–")[0].trim()})}));
@@ -746,8 +775,9 @@ function renderTicker(){
   const items=[];
   (D.news||[]).forEach(n=>items.push(`<span class="item"><b>${esc(n.tag||"News")}</b>${esc(n.text)}</span>`));
   (D.results||[]).forEach(g=>items.push(`<span class="item sc"><b>Final</b>${ab(g.away)} ${g.as} : ${g.hs} ${ab(g.home)}</span>`));
-  const p=primeList()[0]; if(p) items.push(`<span class="item"><b>Prime</b>${esc(p.away)} @ ${esc(p.home)} · ${p.iso?fDay(p.iso)+" "+fTime(p.iso):esc(p.date+" "+p.time)} Uhr</span>`);
-  if(!items.length) return;
+  const p=LB()?null:primeList()[0]; if(p) items.push(`<span class="item"><b>Prime</b>${esc(p.away)} @ ${esc(p.home)} · ${p.iso?fDay(p.iso)+" "+fTime(p.iso):esc(p.date+" "+p.time)} Uhr</span>`);
+  const nxg=LB()?liveList()[0]:null; if(nxg) items.push(`<span class="item"><b>Dyn</b>${esc(short(nxg.away))} @ ${esc(short(nxg.home))} · ${fDay(nxg.iso)} ${fTime(nxg.iso)} Uhr</span>`);
+  if(!items.length){$("#track").innerHTML='<span class="item">Keine Meldungen</span>';return}
   const html=items.join(""), tr=$("#track"); tr.innerHTML=html+html;
   tr.style.setProperty("--dur",Math.max(30,tr.textContent.length/2*.16)+"s");
 }
@@ -796,27 +826,30 @@ function gameRow(g,i){
     <div class="c">${c}${wp}</div>
     <div class="sq" style="--sc:${sideColor(g.home)}">${badge(g.home,"mid")}</div></div>`;
 }
-const PROV={prime:{n:"Prime Video",c:"p",info:"im Prime-Abo enthalten"},sky:{n:"Sky",c:"s",info:"Sky-Abo, Sky Go oder WOW"},lp:{n:"League Pass",c:"l",info:"alle Spiele, eigenes NBA-Abo"}};
+const PROV_N={prime:{n:"Prime Video",c:"p",info:"im Prime-Abo enthalten"},sky:{n:"Sky",c:"s",info:"Sky-Abo, Sky Go oder WOW"},lp:{n:"League Pass",c:"l",info:"alle Spiele, eigenes NBA-Abo"}};
+const PROV_B={dyn:{n:"Dyn",c:"p",info:"alle Spiele live im Dyn-Abo"}};
+let PROV=LB()?PROV_B:PROV_N;
+const pvc=p=>p==="dyn"?"prime":p;
 let TVMAP=new Map();
-const gkey=(g)=>g.away+"|"+g.home+"|"+(g.iso?new Date(Date.parse(g.iso)-6*36e5).toISOString().slice(0,10):(g.date||""));
+const gkey=(g)=>g.away+"|"+g.home+"|"+(g.iso?new Date(Date.parse(g.iso)-TO()).toISOString().slice(0,10):(g.date||""));
 function buildTV(){
   const m=new Map();
   const add=(g,tv)=>{if(!g||!g.iso)return;const k=gkey(g);const o=m.get(k)||{...g,tv:new Set()};(tv||[]).forEach(t=>PROV[t]&&o.tv.add(t));if(g.prime)o.tv.add("prime");m.set(k,o)};
   (D.days||[]).forEach(d=>(d.games||[]).forEach(g=>add(g,g.tv)));
   (D.prime||[]).forEach(g=>add(g,["prime"]));
   (D.broadcasts||[]).forEach(g=>add(g,g.tv));
-  m.forEach(o=>o.tv.add("lp"));
+  m.forEach(o=>o.tv.add(LB()?"dyn":"lp"));
   TVMAP=m;
 }
-const tvOf=g=>{const o=TVMAP.get(gkey(g));return o?[...o.tv]:(g.prime?["prime","lp"]:["lp"])};
-const mainTV=g=>{const t=tvOf(g);return t.includes("prime")?"prime":t.includes("sky")?"sky":"lp"};
+const tvOf=g=>{const o=TVMAP.get(gkey(g));return o?[...o.tv]:(LB()?["dyn"]:g.prime?["prime","lp"]:["lp"])};
+const mainTV=g=>{if(LB())return "dyn";const t=tvOf(g);return t.includes("prime")?"prime":t.includes("sky")?"sky":"lp"};
 function liveList(){return [...TVMAP.values()].map(o=>({...o,tv:[...o.tv]})).filter(g=>Date.parse(g.iso)+150*6e4>Date.now()).sort((a,b)=>Date.parse(a.iso)-Date.parse(b.iso))}
 let lfilter=["all","prime","sky","lp"].includes(store.get("nba-lf"))?store.get("nba-lf"):"all";
 function primeCard(g,i){
   const when=g.iso?`${fDay(g.iso)} | <b>${fTime(g.iso)} MEZ</b>`:`${esc(g.date||"")} | <b>${esc(g.time||"")} MEZ</b>`;
-  const pv=g.tv?(g.tv.includes("prime")?"prime":g.tv.includes("sky")?"sky":"lp"):mainTV(g);
+  const pv=LB()?"dyn":g.tv?(g.tv.includes("prime")?"prime":g.tv.includes("sky")?"sky":"lp"):mainTV(g);
   const r=`<span>Live auf</span><strong>${PROV[pv].n}</strong><small>${g.iso?"+ Kalender":"Termin offen"}</small>`;
-  return `<div class="card pc rise pv-${pv}" style="--i:${i}"><div class="l"><div class="bs">${badge(g.away,"mid")}${badge(g.home,"mid")}</div><div style="min-width:0"><div class="tt">${esc(short(g.away))} @ ${esc(short(g.home))}</div><div class="ss">${when}</div>${g.tag?`<span class="pill c" style="margin-top:6px">${esc(g.tag)}</span>`:""}</div></div>
+  return `<div class="card pc rise pv-${pvc(pv)}" style="--i:${i}"><div class="l"><div class="bs">${badge(g.away,"mid")}${badge(g.home,"mid")}</div><div style="min-width:0"><div class="tt">${esc(short(g.away))} @ ${esc(short(g.home))}</div><div class="ss">${when}</div>${g.tag?`<span class="pill c" style="margin-top:6px">${esc(g.tag)}</span>`:""}</div></div>
     ${g.iso?`<a class="r" href="${gcal(g)}" target="_blank" rel="noopener" aria-label="${esc(g.away)} bei ${esc(g.home)} in Google Kalender eintragen">${r}</a>`:`<div class="r">${r}</div>`}</div>`;
 }
 function featuredIdx(){const r=D.results||[];if(!r.length)return -1;if(Number.isInteger(D.featured)&&r[D.featured])return D.featured;let b=0;r.forEach((g,i)=>{if(Math.abs(g.as-g.hs)<Math.abs(r[b].as-r[b].hs))b=i});return b}
@@ -837,21 +870,22 @@ function resCard(g,i){
 }
 function favBlock(){
   if(!favs.length) return `<div class="sec"><h2>Deine Teams</h2></div><div class="card addfav"><div><strong>Lieblingsteams festlegen</strong><div class="muted" style="font-size:.85rem">Wähle beliebig viele Teams für Bilanz, letztes Ergebnis und nächstes Spiel.</div></div><button class="btn" type="button" data-open-set>Teams wählen</button></div>`;
-  const all=[...(D.east||[]),...(D.west||[])];
+  const all=LB()?(D.table||[]):[...(D.east||[]),...(D.west||[])];
   const cards=favs.map(f=>{
     const E=(D.east||[]).findIndex(t=>t[0]===f), W=(D.west||[]).findIndex(t=>t[0]===f), rec=all.find(t=>t[0]===f);
-    const rank=E>=0?`${E+1}. Osten`:W>=0?`${W+1}. Westen`:"–";
+    const T=LB()?(D.table||[]).findIndex(t=>t[0]===f):-1, rank=LB()?(T>=0?`${T+1}. Platz`:"–"):(E>=0?`${E+1}. Osten`:W>=0?`${W+1}. Westen`:"–");
     const last=(D.results||[]).find(g=>g.away===f||g.home===f);
     let next=null,nd="";(D.days||[]).some(d=>(d.games||[]).some(g=>{if(g.away===f||g.home===f){next=g;nd=d.label.split("–")[0].trim();return true}}));
-    let lt="Letzte Nacht spielfrei";
+    if(!next){const o=liveList().find(g=>g.away===f||g.home===f);if(o){next=o;nd=fDay(o.iso)}}
+    let lt=LB()?"Kein Ergebnis":"Letzte Nacht spielfrei";
     if(last){const me=last.away===f,my=me?last.as:last.hs,op=me?last.hs:last.as;lt=`${my>op?"Sieg":"Niederlage"} ${my}:${op} ${me?"@":"vs"} ${ab(me?last.home:last.away)}`}
     const nt=next?`${esc(nd)} ${esc(gTime(next))} ${next.away===f?"@":"vs"} ${ab(next.away===f?next.home:next.away)}${next.prime?' <span class="pill p">Prime</span>':""}`:"Kein Spiel in den nächsten Tagen";
     return `<div class="card fv">${badge(f,"mid")}<div><h3>${esc(nick(f))}</h3><div class="st"><b>${rec?rec[1]+"-"+rec[2]:"–"}</b> · ${rank}</div></div><div class="ln"><span><span class="muted">Zuletzt:</span> ${lt}</span><span><span class="muted">Nächstes:</span> ${nt}</span></div></div>`;
   }).join("");
   return `<div class="sec"><h2>Deine Teams</h2><button class="btn" type="button" data-open-set style="padding:4px 12px;font-size:.78rem">Ändern</button></div><div class="favs">${cards}</div>`;
 }
-function posterBand(gs){const iso=(gs.find(g=>g.iso)||{}).iso;if(!iso)return "";const d=new Date(iso),t=new Date(d.getTime()-6*36e5);
-  return `<div class="poster"><span>Kompletter Spielplan</span><b>${t.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",timeZone:TZ})}</b><small>Anwurfzeiten in deutscher Zeit · Spiele nach Mitternacht zählen zum Abend davor</small></div>`}
+function posterBand(gs){const iso=(gs.find(g=>g.iso)||{}).iso;if(!iso)return "";const d=new Date(iso),t=new Date(d.getTime()-TO());
+  return `<div class="poster"><span>Kompletter Spielplan</span><b>${t.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",timeZone:TZ})}</b><small>Anwurfzeiten in deutscher Zeit${LB()?"":" · Spiele nach Mitternacht zählen zum Abend davor"}</small></div>`}
 function pickFeatured(gs){
   return gs.find(g=>status(g)==="live")||gs.find(g=>g.prime&&status(g)==="pre")||gs.find(g=>isFavG(g))||gs[0];
 }
@@ -878,7 +912,7 @@ function renderSpiele(){
   const fi=featuredIdx(), r=D.results||[]; let h="";
   if(day==="heute"){
     h+=gamesDay((D.days||[])[0],"Heutige Spiele");
-    const P=liveList().filter(g=>g.tv.includes("prime")||g.tv.includes("sky")).slice(0,2);
+    const P=LB()?[]:liveList().filter(g=>g.tv.includes("prime")||g.tv.includes("sky")).slice(0,2);
     if(P.length) h+=`<div class="sec"><h2>Nächste Spiele im TV</h2><button class="btn" type="button" data-go="prime" style="padding:4px 12px;font-size:.78rem">Alle</button></div>`+P.map(primeCard).join("");
     h+=favBlock();
     if(r.length) h+=`<div class="sec"><h2>Frühere Spiele</h2><span class="aux">Karte = Animation · Video = Highlights</span></div><div class="tiles">${[fi,...r.map((_,i)=>i).filter(i=>i!==fi)].filter(i=>i>=0).map(i=>tile(r[i],i,fi)).join("")}</div>`;
@@ -893,19 +927,19 @@ function renderSpiele(){
   const dr=$("#p-spiele .duel"); if(dr) wireDuel(dr,r[fi]);
 }
 function renderPrime(){
-  const all=liveList(), L=all.filter(g=>lfilter==="all"||g.tv.includes(lfilter)), p=L[0];
+  const lf=LB()?"all":lfilter, all=liveList(), L=all.filter(g=>lf==="all"||g.tv.includes(lf)), p=L[0];
   const cnt=k=>k==="all"?all.length:all.filter(g=>g.tv.includes(k)).length;
-  let h=`<div class="sec"><h2>Live im TV</h2><span class="aux">Alle Spiele in Deutschland</span></div>
-    <div class="seg lf" role="group" aria-label="Anbieter filtern">${[["all","Alle"],["prime","Prime"],["sky","Sky"],["lp","League Pass"]].map(([k,l])=>`<button type="button" data-lf="${k}" aria-pressed="${k===lfilter}">${l}<small>${cnt(k)}</small></button>`).join("")}</div>`;
-  if(p){const pv=lfilter==="all"?(p.tv.includes("prime")?"prime":p.tv.includes("sky")?"sky":"lp"):lfilter;
-    h+=`<div class="card cd rise pv-${pv}"><div class="k">Nächstes Spiel${lfilter==="all"?"":" bei "+PROV[lfilter].n}</div><div class="m">${badge(p.away,"mid")}<span class="at">@</span>${badge(p.home,"mid")}<span style="font-size:1.1rem">${esc(short(p.away))} bei ${esc(short(p.home))}</span></div>
+  let h=`<div class="sec"><h2>${LB()?"Live bei Dyn":"Live im TV"}</h2><span class="aux">${LB()?"Alle Spiele der BBL":"Alle Spiele in Deutschland"}</span></div>
+    ${LB()?"":`<div class="seg lf" role="group" aria-label="Anbieter filtern">${[["all","Alle"],["prime","Prime"],["sky","Sky"],["lp","League Pass"]].map(([k,l])=>`<button type="button" data-lf="${k}" aria-pressed="${k===lf}">${l}<small>${cnt(k)}</small></button>`).join("")}</div>`}`;
+  if(p){const pv=lf==="all"?(p.tv.includes("prime")?"prime":p.tv.includes("sky")?"sky":"lp"):lf;
+    h+=`<div class="card cd rise pv-${pvc(pv)}"><div class="k">Nächstes Spiel${lf==="all"?"":" bei "+PROV[lf].n}</div><div class="m">${badge(p.away,"mid")}<span class="at">@</span>${badge(p.home,"mid")}<span style="font-size:1.1rem">${esc(short(p.away))} bei ${esc(short(p.home))}</span></div>
     <div data-cd="${esc(p.iso)}"></div>
     <div class="foot"><span>${fDay(p.iso)}, ${fTime(p.iso)} Uhr · ${p.tv.filter(t=>t!=="lp"||p.tv.length===1).map(t=>PROV[t].n).join(", ")}</span><a class="btn" href="${gcal(p)}" target="_blank" rel="noopener">+ In Kalender</a></div></div>`}
   let last="";
-  h+=L.length?L.map((g,i)=>{const d=fDay(new Date(Date.parse(g.iso)-6*36e5).toISOString().replace(/T.*/,"T12:00:00Z"));let hd="";if(d!==last){last=d;const dd=new Date(Date.parse(g.iso)-6*36e5),nx=new Date(dd.getTime()+864e5).toLocaleDateString("de-DE",{weekday:"short",timeZone:TZ}).replace(".","");hd=`<div class="ldate">${esc(dd.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",timeZone:TZ}))}<span> · Abend & Nacht auf ${esc(nx)}</span></div>`}
-      return hd+`<div class="card lv rise${isFavG(g)?" fav":""}" style="--i:${Math.min(i,8)}"><time>${fTime(g.iso)}</time><div class="mu"><span class="tm">${badge(g.away,"sm")}${esc(short(g.away))} <span class="muted">@</span> ${badge(g.home,"sm")}${esc(short(g.home))}</span><span class="pv">${["prime","sky","lp"].filter(t=>g.tv.includes(t)).map(t=>`<span class="pill ${PROV[t].c}">${PROV[t].n}</span>`).join("")}${g.tag?`<span class="pill c">${esc(g.tag)}</span>`:""}</span></div><a class="cal" href="${gcal({...g,tv:lfilter!=="all"?[lfilter]:g.tv})}" target="_blank" rel="noopener" aria-label="In Kalender eintragen">+</a></div>`}).join("")
+  h+=L.length?L.map((g,i)=>{const d=fDay(new Date(Date.parse(g.iso)-TO()).toISOString().replace(/T.*/,"T12:00:00Z"));let hd="";if(d!==last){last=d;const dd=new Date(Date.parse(g.iso)-TO()),nx=new Date(dd.getTime()+864e5).toLocaleDateString("de-DE",{weekday:"short",timeZone:TZ}).replace(".","");hd=`<div class="ldate">${esc(dd.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",timeZone:TZ}))}${LB()?"":`<span> · Abend & Nacht auf ${esc(nx)}</span>`}</div>`}
+      return hd+`<div class="card lv rise${isFavG(g)?" fav":""}" style="--i:${Math.min(i,8)}"><time>${fTime(g.iso)}</time><div class="mu"><span class="tm">${badge(g.away,"sm")}${esc(short(g.away))} <span class="muted">@</span> ${badge(g.home,"sm")}${esc(short(g.home))}</span><span class="pv">${Object.keys(PROV).filter(t=>g.tv.includes(t)).map(t=>`<span class="pill ${PROV[t].c}">${PROV[t].n}</span>`).join("")}${g.tag?`<span class="pill c">${esc(g.tag)}</span>`:""}</span></div><a class="cal" href="${gcal({...g,tv:lf!=="all"?[lf]:g.tv})}" target="_blank" rel="noopener" aria-label="In Kalender eintragen">+</a></div>`}).join("")
     :`<div class="card empty">Für diesen Filter sind gerade keine Spiele hinterlegt.</div>`;
-  h+=`<div class="card prov">${["prime","sky","lp"].map(t=>`<div><span class="pill ${PROV[t].c}">${PROV[t].n}</span><span class="muted">${PROV[t].info}</span></div>`).join("")}<p class="note">League Pass zeigt alle Spiele. Hier sind alle Spiele der nächsten Tage aufgeführt, dazu alle angekündigten Übertragungen bei Prime Video und Sky. DAZN und Free-TV zeigen in dieser Saison keine NBA. Kurzfristige Änderungen sind möglich.</p></div>`;
+  h+=LB()?`<div class="card prov"><div><span class="pill p">Dyn</span><span class="muted">${PROV.dyn.info}</span></div><p class="note">Dyn zeigt jedes Spiel der easyCredit BBL live. Hier stehen alle Spiele der nächsten Spieltage, Anwurfzeiten in deutscher Zeit. Kurzfristige Änderungen sind möglich.</p></div>`:`<div class="card prov">${["prime","sky","lp"].map(t=>`<div><span class="pill ${PROV[t].c}">${PROV[t].n}</span><span class="muted">${PROV[t].info}</span></div>`).join("")}<p class="note">League Pass zeigt alle Spiele. Hier sind alle Spiele der nächsten Tage aufgeführt, dazu alle angekündigten Übertragungen bei Prime Video und Sky. DAZN und Free-TV zeigen in dieser Saison keine NBA. Kurzfristige Änderungen sind möglich.</p></div>`;
   $("#p-prime").innerHTML=h;
 }
 function confBlock(name,arr,color,i){
@@ -928,7 +962,15 @@ function divBlock(confKey,arr){
     return `<div class="dv rise"><h3>${dn} Division</h3><div class="tiles5">${sorted.map((n,k)=>teamTile(n,rec(n),k,pos(n)>=0?pos(n)+1:0)).join("")}</div></div>`;
   }).join("");
 }
+function bblTable(){
+  const T=D.table||[], n=T.length;
+  const rows=T.map((t,k)=>`<div class="sr bb ${k<6?"z1":k<10?"z2":k>=n-2?"z3":""}${isFav(t[0])?" fav":""}"><span class="z"></span><span class="rk">${k+1}.</span>${badge(t[0],"sm")}<span class="nm"${short(t[0]).length>9?' style="font-size:.86rem;letter-spacing:.02em"':""}>${esc(short(t[0]))}</span><span class="v">${t[1]}-${t[2]}</span><span class="v m">${t[1]+t[2]}</span><span class="v m">${t[3]>0?"+":""}${t[3]}</span></div>`).join("");
+  return `<div class="sec"><h2>Tabelle</h2><span class="aux">${esc(dayLabels().gestern?"Stand "+dayLabels().gestern:"")}</span></div>`
+   +(n?`<div class="card conf rise" data-c="e" style="--cc:#4aa3ff"><div class="hd"><h2>easyCredit BBL</h2></div><div class="sr bb hdr"><span class="z"></span><span class="rk">#</span><span></span><span>Team</span><span class="v">S-N</span><span class="v">Sp</span><span class="v">Diff</span></div>${rows}</div>
+   <div class="legend"><span><i></i>Play-offs (1–6)</span><span><i class="g"></i>Play-in (7–10)</span><span><i class="r"></i>Abstieg (17–18)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>`:`<div class="card empty"><strong>Noch keine Tabelle</strong>Die Daten kommen mit dem nächsten Update.</div>`);
+}
 function renderTabelle(){
+  if(LB()){$("#p-tabelle").innerHTML=bblTable();return}
   const seg=`<div class="seg" role="group" aria-label="Ansicht"><button type="button" data-tview="conf" aria-pressed="${tview==="conf"}">Conferences</button><button type="button" data-tview="div" aria-pressed="${tview==="div"}">Divisionen</button></div>`;
   let h=`<div class="sec"><h2>Standings</h2><span class="aux">${esc(dayLabels().gestern?"Stand "+dayLabels().gestern:"")}</span></div>`+seg;
   if(tview==="div"){
@@ -965,21 +1007,21 @@ function renderSpieler(){
     <p class="note">${esc(D.playersAsOf||"")}. Auswahl: die 20 besten Werfer nach Punkten pro Spiel.</p>`;
 }
 function renderRosters(sw){
-  const RS=(D.rosters&&Object.keys(D.rosters).length)?D.rosters:(FILE_R.rosters||{});
+  const RS=(D.rosters&&Object.keys(D.rosters).length)?D.rosters:(LB()?{}:(FILE_R.rosters||{}));
   if(!Object.keys(RS).length){$("#p-spieler").innerHTML=`<div class="sec"><h2>Alle Teams</h2></div>${sw}<div class="card empty"><strong>Noch keine Kaderdaten</strong>Die Statistiken kommen mit dem nächsten Update.</div>`;return}
   const block=(name,arr,color)=>`<div class="sec"><h2 style="color:${color}">${name}</h2></div>`+arr.map((t,k)=>{
     const ps=RS[t[0]]||[];
     const rows=ps.map(p=>`<tr><th scope="row">${esc(p.n)}</th><td>${p.gp}</td><td>${f1(p.min)}</td><td class="hi">${f1(p.pts)}</td><td>${f1(p.reb)}</td><td>${f1(p.ast)}</td><td>${f1(p.stl)}</td><td>${f1(p.blk)}</td><td>${p.fg!=null?f1(p.fg):"–"}</td><td>${p.tp!=null?f1(p.tp):"–"}</td></tr>`).join("");
     return `<details class="card rs rise${isFav(t[0])?" fav":""}" style="--tc:${sideColor(t[0])};--i:${Math.min(k,8)}"${isFav(t[0])?" open":""}><summary>${badge(t[0],"md")}<span class="who"><b>${esc(t[0])}</b><small>${k+1}. Platz · ${t[1]}-${t[2]}</small></span><span class="chev" aria-hidden="true"></span></summary>
       ${ps.length?`<div class="tw"><table><thead><tr><th scope="col">Spieler</th><th scope="col">Sp</th><th scope="col">MIN</th><th scope="col">PTS</th><th scope="col">REB</th><th scope="col">AST</th><th scope="col">STL</th><th scope="col">BLK</th><th scope="col">FG%</th><th scope="col">3P%</th></tr></thead><tbody>${rows}</tbody></table></div>`:'<p class="note" style="padding:0 14px 12px">Keine Daten.</p>'}</details>`}).join("");
-  $("#p-spieler").innerHTML=`<div class="sec"><h2>Alle Teams</h2><span class="aux">je 12 Spieler mit der meisten Spielzeit</span></div>${sw}
+  $("#p-spieler").innerHTML=`<div class="sec"><h2>Alle Teams</h2><span class="aux">${LB()?"bis zu 12 Spieler":"je 12 Spieler"} mit der meisten Spielzeit</span></div>${sw}
     <p class="note" style="margin:0">Team antippen zum Aufklappen. Werte pro Spiel, sortiert nach Gesamtspielzeit. Deine Teams sind schon geöffnet.</p>`
-    +block("Eastern Conference",D.east||[],"#4aa3ff")+block("Western Conference",D.west||[],"#ff4d63")
-    +`<p class="note">${esc(D.rostersAsOf||FILE_R.rostersAsOf||"")}. Sp = Spiele, MIN = Minuten pro Spiel.</p>`;
+    +(LB()?block("easyCredit BBL",D.table||[],"#ffc72c"):block("Eastern Conference",D.east||[],"#4aa3ff")+block("Western Conference",D.west||[],"#ff4d63"))
+    +`<p class="note">${esc(D.rostersAsOf||(LB()?"":FILE_R.rostersAsOf)||"")}. Sp = Spiele, MIN = Minuten pro Spiel.</p>`;
 }
 function renderNews(){
   const R=D.results||[], H=D.highlights||[], used=new Set(H.map(matchGame).filter(k=>k>=0));
-  let h=`<div class="sec"><h2>Highlights der Nacht</h2><span class="aux">${esc(D.resultsLabel||"")}</span></div>`;
+  let h=`<div class="sec"><h2>${LB()?"Highlights der letzten Spiele":"Highlights der Nacht"}</h2><span class="aux">${esc(D.resultsLabel||"")}</span></div>`;
   h+=H.map(hlCard).join("")||`<div class="card empty">Keine Highlights.</div>`;
   const rest=R.map((g,k)=>[g,k]).filter(([,k])=>!used.has(k));
   if(rest.length) h+=`<div class="sec"><h2>Weitere Spiele im Video</h2><span class="aux">${rest.length} Spiele</span></div><div class="card nl rise">${rest.map(([g])=>vRow(g)).join("")}</div>`;
@@ -1088,8 +1130,8 @@ function renderAll(){
   PANES.forEach(k=>{$("#p-"+k).hidden=k!==pane});tick();duelState();
 }
 function setData(d){
-  D=d;
-  const u=d.updated?new Date(d.updated):null;
+  RAW=d; D=LB()?(d.bbl||{}):d;
+  const u=(D.updated||d.updated)?new Date(D.updated||d.updated):null;
   $("#stamp").textContent=u?`Stand ${u.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit",timeZone:TZ}).replace(",","")}, ${fTime(u)} Uhr`:"";
   const old=u&&(Date.now()-u)/36e5>15,st=$("#stale");
   st.hidden=!old;if(old)st.textContent="Die Daten sind älter als 15 Stunden. Das nächste automatische Update kommt um 6 oder 18 Uhr.";
@@ -1100,6 +1142,7 @@ $$("#dates button").forEach(b=>b.addEventListener("click",()=>setDay(b.dataset.d
 addEventListener("resize",moveUL);
 addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(PANES.includes(h)&&h!==pane)show(h)});
 document.addEventListener("click",e=>{
+  const lg=e.target.closest("[data-lg]");if(lg){setLeague(lg.dataset.lg);return}
   const lf=e.target.closest("[data-lf]");if(lf){lfilter=lf.dataset.lf;store.set("nba-lf",lfilter);renderPrime();tick();return}
   const pb=e.target.closest("[data-psub]");if(pb){psub=pb.dataset.psub;store.set("nba-psub",psub);renderSpieler();return}
   const ps=e.target.closest("[data-psort]");if(ps){psort=ps.dataset.psort;store.set("nba-psort",psort);renderSpieler();return}
@@ -1114,12 +1157,29 @@ document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.tar
 
 /* Lieblingsteams */
 const chips=$("#favChips");
-chips.innerHTML=Object.keys(TEAMS).sort().map(n=>`<label class="chip"><input type="checkbox" id="fav-${TEAMS[n][0]}" value="${esc(n)}"${isFav(n)?" checked":""}>${badge(n,"sm")}<span class="cn">${esc(short(n))}</span><span class="ck"></span></label>`).join("");
+function buildChips(){chips.innerHTML=Object.keys(TEAMS).sort((a,b)=>a.localeCompare(b,"de")).map(n=>`<label class="chip"><input type="checkbox" id="fav-${TEAMS[n][0]}" value="${esc(n)}"${isFav(n)?" checked":""}>${badge(n,"sm")}<span class="cn">${esc(short(n))}</span><span class="ck"></span></label>`).join("")}
+buildChips();
 const favCount=()=>{$("#favCount").textContent=favs.length?`(${favs.length} ausgewählt)`:""};
 function refreshFav(){saveFavs();favCount();if(D){renderSpiele();renderTabelle();duelState()}}
 chips.addEventListener("change",()=>{const now=$$("#favChips input:checked").map(i=>i.value);favs=favs.filter(n=>now.includes(n)).concat(now.filter(n=>!favs.includes(n)));refreshFav()});
 $("#favClear").addEventListener("click",()=>{$$("#favChips input").forEach(i=>i.checked=false);favs=[];refreshFav()});
 favCount();
+function applyLeague(){
+  TEAMS=LB()?TEAMS_B:TEAMS_N;PROV=LB()?PROV_B:PROV_N;favs=loadFavs();
+  const nm=LB()?"BBL Aktuell":"NBA Aktuell";
+  $("#ttl").textContent=nm;document.title=nm;
+  const am=document.querySelector('meta[name="apple-mobile-web-app-title"]');if(am)am.content=nm;
+  $$(".lgsw button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lg===league));
+  document.documentElement.dataset.lg=league;
+  buildChips();favCount();
+}
+function setLeague(l){
+  if(l===league)return;
+  league=l;store.set("nba-league",l);applyLeague();playedFor=null;
+  if(RAW)setData(RAW);else{D=null}
+  window.scrollTo({top:0});
+}
+applyLeague();
 show(pane);
 /* Jam-Modus */
 function pxBall(fire){
@@ -1147,8 +1207,8 @@ applySkin(false);
 
 /* Daten */
 async function loadData(){
-  try{const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);const d=await r.json();if(!D||d.updated!==D.updated)setData(d)}
-  catch(e){if(!D){$("#p-spiele").innerHTML='<div class="card empty"><strong>Keine Verbindung</strong>Die Daten konnten nicht geladen werden. Prüfe deine Internetverbindung und öffne die App erneut.</div>';$("#stamp").textContent=""}}
+  try{const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);const d=await r.json();if(!RAW||d.updated!==RAW.updated||(d.bbl&&d.bbl.updated)!==(RAW.bbl&&RAW.bbl.updated))setData(d)}
+  catch(e){if(!RAW){$("#p-spiele").innerHTML='<div class="card empty"><strong>Keine Verbindung</strong>Die Daten konnten nicht geladen werden. Prüfe deine Internetverbindung und öffne die App erneut.</div>';$("#stamp").textContent=""}}
 }
 loadData();
 setInterval(loadData,20*6e4);
