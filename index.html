@@ -1007,7 +1007,7 @@ function renderSpieler(){
     <p class="note">${esc(D.playersAsOf||"")}. Auswahl: die 20 besten Werfer nach Punkten pro Spiel.</p>`;
 }
 function renderRosters(sw){
-  const RS=(D.rosters&&Object.keys(D.rosters).length)?D.rosters:(LB()?{}:(FILE_R.rosters||{}));
+  const RS=(D.rosters&&Object.keys(D.rosters).length)?D.rosters:(LB()?((FILE_R.bbl||{}).rosters||{}):(FILE_R.rosters||{}));
   if(!Object.keys(RS).length){$("#p-spieler").innerHTML=`<div class="sec"><h2>Alle Teams</h2></div>${sw}<div class="card empty"><strong>Noch keine Kaderdaten</strong>Die Statistiken kommen mit dem nächsten Update.</div>`;return}
   const block=(name,arr,color)=>`<div class="sec"><h2 style="color:${color}">${name}</h2></div>`+arr.map((t,k)=>{
     const ps=RS[t[0]]||[];
@@ -1142,7 +1142,7 @@ $$("#dates button").forEach(b=>b.addEventListener("click",()=>setDay(b.dataset.d
 addEventListener("resize",moveUL);
 addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(PANES.includes(h)&&h!==pane)show(h)});
 document.addEventListener("click",e=>{
-  const lg=e.target.closest("[data-lg]");if(lg){setLeague(lg.dataset.lg);return}
+  const lg=e.target.closest("button[data-lg]");if(lg){setLeague(lg.dataset.lg);return}
   const lf=e.target.closest("[data-lf]");if(lf){lfilter=lf.dataset.lf;store.set("nba-lf",lfilter);renderPrime();tick();return}
   const pb=e.target.closest("[data-psub]");if(pb){psub=pb.dataset.psub;store.set("nba-psub",psub);renderSpieler();return}
   const ps=e.target.closest("[data-psort]");if(ps){psort=ps.dataset.psort;store.set("nba-psort",psort);renderSpieler();return}
