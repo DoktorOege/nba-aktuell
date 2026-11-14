@@ -16,7 +16,7 @@
 <meta name="theme-color" content="#070c18">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=Press+Start+2P&family=Pixelify+Sans:wght@400;600;700&display=swap">
 <style>
 /* Layout: Arena-App bei Nacht nach Vorlage. Fester Kopf mit Titel und rotem Newsband, Datumsleiste, Spielkarten mit Parkett-Grafik, Prime-Karten mit blauem Seitenfeld, Tabelle mit farbigen Zonenbalken, Tableiste unten. Bewusst nur dunkel. */
 :root{
@@ -424,6 +424,130 @@ footer.fine{font-size:.72rem;color:var(--dim);text-align:center;padding-top:20px
   .pc .bs .bdg{--s:44px}
   .sr{grid-template-columns:4px 20px 40px 1fr 50px 40px 30px;gap:6px}
 }
+/* Umschalt-Button */
+.skin-btn{width:44px;height:44px;border:0;background:none;padding:0;cursor:pointer;position:relative;display:grid;place-items:center}
+.skin-btn svg{width:40px;height:auto;image-rendering:pixelated;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+.skin-btn .sb-j{display:none}
+.skin-btn .sb-j svg{width:42px;filter:drop-shadow(0 0 8px rgba(255,90,20,.8))}
+.fl1{opacity:0}
+.skin-btn .fl0{animation:fl0 .32s steps(1) infinite}.skin-btn .fl1{animation:fl1 .32s steps(1) infinite}
+@keyframes fl0{50%{opacity:0}}@keyframes fl1{50%{opacity:1}}
+.skin-btn:hover svg{transform:translateY(-1px)}
+.jbars{display:none}
+.skin-flash{position:fixed;inset:0;z-index:60;pointer-events:none;background:repeating-linear-gradient(0deg,#ff3b2f 0 6px,#ffe14a 6px 12px);animation:sf .6s steps(6) forwards}
+@keyframes sf{0%{opacity:.85;clip-path:inset(100% 0 0 0)}50%{opacity:.85;clip-path:inset(0 0 0 0)}100%{opacity:0;clip-path:inset(0 0 100% 0)}}
+
+/* ===== Jam-Modus: Retro-Arcade in Pixeloptik ===== */
+html[data-skin="jam"]{--bg:#05051a;--bg2:#0b0b33;--card:#0f1d8c;--card2:#1428b0;--line:#06093f;--line2:#ffe14a;--fg:#ffffff;--muted:#d6dcff;--dim:#8f98e0;--blue:#3fd0ff;--red:#ff3b2f;--red-hi:#ff5a2a;--gold:#ffe14a;--green:#4cff6a;--prime:#3fd0ff;--prime2:#0a64d4;
+  --disp:"Pixelify Sans","VT323",monospace;--body:"Pixelify Sans","VT323",monospace;--px:"Press Start 2P","Pixelify Sans",monospace;--wood:#c8822e;--wood2:#6b3d12}
+html[data-skin="jam"] .skin-btn .sb-n{display:none}
+html[data-skin="jam"] .skin-btn .sb-j{display:block}
+html[data-skin="jam"] body{background:#05051a;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.2px);background-size:6px 6px;font-size:16px}
+html[data-skin="jam"] *,html[data-skin="jam"] *::before,html[data-skin="jam"] *::after{border-radius:0!important}
+html[data-skin="jam"] .top{background:#05051a;border-bottom:4px solid #000;box-shadow:0 4px 0 var(--wood2)}
+html[data-skin="jam"] .brand h1{font:400 clamp(.75rem,3.6vw,1.05rem)/1.2 var(--px);color:var(--gold);text-shadow:3px 3px 0 #b3261e,6px 6px 0 #000;letter-spacing:.04em}
+html[data-skin="jam"] .brand h1 svg{display:none}
+html[data-skin="jam"] .brand small{font-family:var(--body);font-size:.85rem;color:var(--muted)}
+html[data-skin="jam"] .icon-btn{background:var(--gold);color:#000;border:3px solid #000;box-shadow:3px 3px 0 #000}
+html[data-skin="jam"] .ticker{background:#000;border-block:3px solid var(--gold)}
+html[data-skin="jam"] .ticker .lbl{background:var(--red);font:400 .6rem var(--px)}
+html[data-skin="jam"] .ticker .item{font:600 1rem var(--body);color:var(--gold)}
+html[data-skin="jam"] .ticker .item b{font:400 .55rem var(--px);background:var(--red);color:#fff;padding:3px 5px}
+html[data-skin="jam"] .ticker .item.sc b{background:var(--blue);color:#000}
+html[data-skin="jam"] .dates{border-bottom:3px solid #000}
+html[data-skin="jam"] .dates button{font:400 .62rem/1.6 var(--px);color:var(--dim)}
+html[data-skin="jam"] .dates button small{font:500 .85rem var(--body)}
+html[data-skin="jam"] .dates button[aria-selected="true"]{color:var(--gold)}
+html[data-skin="jam"] .dates .ul{height:4px;background:var(--gold);box-shadow:none}
+html[data-skin="jam"] .sec h2{font:400 clamp(.7rem,3.4vw,.95rem)/1.4 var(--px);color:var(--gold);text-shadow:3px 3px 0 #b3261e}
+html[data-skin="jam"] .sec .aux{font-size:.9rem}
+html[data-skin="jam"] .card{background:var(--card);border:3px solid #000;box-shadow:inset 3px 3px 0 #3550ff,inset -3px -3px 0 #08104a,0 0 0 3px var(--wood),0 0 0 6px var(--wood2);margin:6px}
+html[data-skin="jam"] .pane{gap:16px}
+html[data-skin="jam"] .btn{background:var(--gold);color:#000;border:3px solid #000;box-shadow:3px 3px 0 #000;font:400 .55rem/1.4 var(--px);padding:8px 10px}
+html[data-skin="jam"] .btn:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 #000}
+html[data-skin="jam"] .btn.vid,html[data-skin="jam"] .rt-v{background:var(--red);color:#fff;border:3px solid #000;font:400 .5rem var(--px)}
+html[data-skin="jam"] .pill{font:400 .5rem/1.6 var(--px);padding:3px 6px}
+html[data-skin="jam"] .bdg{background:var(--c1);box-shadow:inset 0 0 0 max(2px,calc(var(--s)*.06)) var(--c2),3px 3px 0 #000;image-rendering:pixelated}
+html[data-skin="jam"] .bdg::before,html[data-skin="jam"] .bdg::after{display:none}
+html[data-skin="jam"] .bdg b{font:400 calc(var(--s)*.22)/1 var(--px);transform:none;margin:0;text-shadow:2px 2px 0 rgba(0,0,0,.5)}
+html[data-skin="jam"] .bdg em{font:600 calc(var(--s)*.12)/1 var(--body);letter-spacing:.06em}
+html[data-skin="jam"] .tabbar{background:#000;border-top:4px solid var(--wood)}
+html[data-skin="jam"] .tabbar button{font:400 .45rem/1.4 var(--px);color:var(--dim)}
+html[data-skin="jam"] .tabbar button[aria-selected="true"]{color:var(--gold)}
+html[data-skin="jam"] .tabbar button[aria-selected="true"]::before{background:var(--gold);box-shadow:none;height:4px}
+html[data-skin="jam"] .feat .tm,html[data-skin="jam"] .gr .t{font:700 1.2rem var(--body)}
+html[data-skin="jam"] .feat .mid b,html[data-skin="jam"] .gp .c b{font:400 1rem/1.2 var(--px);color:var(--gold)}
+html[data-skin="jam"] .feat .mid small{font:400 .5rem var(--px)}
+html[data-skin="jam"] .vsband{border-block:3px solid #000}
+html[data-skin="jam"] .vsband svg .vs-t{font:400 46px var(--px);fill:var(--gold);stroke:#b3261e;stroke-width:6px}
+html[data-skin="jam"] .poster span{font:400 .6rem var(--px);color:var(--muted)}
+html[data-skin="jam"] .poster b{font:400 .75rem/1.6 var(--px);background:var(--red);box-shadow:4px 4px 0 #000;border:3px solid #000}
+html[data-skin="jam"] .gp .sq{clip-path:none;border-right:3px solid #000;background:var(--sc)}
+html[data-skin="jam"] .gp .sq:last-child{border-right:0;border-left:3px solid #000}
+html[data-skin="jam"] .gp .c .bc{font:400 .45rem/1.5 var(--px);border:2px solid #000}
+html[data-skin="jam"] .gp .c .bc.p{background:var(--prime)}
+html[data-skin="jam"] .rt .row>b,html[data-skin="jam"] .res .row .pt{font:400 1rem var(--px)}
+html[data-skin="jam"] .d-score .sc{font:400 1.4rem var(--px);color:var(--gold)}
+html[data-skin="jam"] .rt em,html[data-skin="jam"] .d-head .k,html[data-skin="jam"] .cd .k{font:400 .5rem/1.5 var(--px)}
+html[data-skin="jam"] .d-stamp{font:400 .7rem var(--px);border:3px solid #000;box-shadow:3px 3px 0 #000}
+html[data-skin="jam"] .pc .tt{font:400 .8rem/1.5 var(--px)}
+html[data-skin="jam"] .pc .r{clip-path:none;background:var(--prime);color:#000;border-left:3px solid #000}
+html[data-skin="jam"] .pc .r::after{display:none}
+html[data-skin="jam"] .pc .r strong{font:400 .75rem/1.4 var(--px)}
+html[data-skin="jam"] .pc .r span,html[data-skin="jam"] .pc .r small{font:600 .85rem var(--body);background:none;color:#000}
+html[data-skin="jam"] .clock div{border:3px solid #000;background:#000}
+html[data-skin="jam"] .clock b{font:400 1.1rem/1.3 var(--px);color:var(--gold)}
+html[data-skin="jam"] .cd{background:var(--card)}
+html[data-skin="jam"] .cd .m{font:700 1.3rem var(--body)}
+html[data-skin="jam"] .seg{background:#000;border:3px solid var(--wood)}
+html[data-skin="jam"] .seg button{font:400 .5rem/1.5 var(--px);color:var(--dim)}
+html[data-skin="jam"] .seg button[aria-pressed="true"]{background:var(--gold);color:#000;box-shadow:none}
+html[data-skin="jam"] .conf .hd h2{font:400 .8rem/1.4 var(--px);text-shadow:3px 3px 0 #000}
+html[data-skin="jam"] .conf[data-c="w"] .hd h2{color:#ff9a1a}
+html[data-skin="jam"] .conf[data-c="e"] .hd h2{color:#c47bff}
+html[data-skin="jam"] .conf .hd span,html[data-skin="jam"] .sr.hdr{font:400 .45rem/1.6 var(--px)}
+html[data-skin="jam"] .sr .nm{font:700 1.05rem var(--body);color:var(--gold)}
+html[data-skin="jam"] .sr .v{font:600 1.05rem var(--body)}
+html[data-skin="jam"] .sr .rk{font:600 1rem var(--body)}
+html[data-skin="jam"] .sr{border-top:2px solid #06093f}
+html[data-skin="jam"] .sr.fav{background:rgba(255,225,74,.18)}
+html[data-skin="jam"] .ttl{transform:none;box-shadow:inset 0 0 0 3px rgba(0,0,0,.35),3px 3px 0 #000;background:var(--tc)}
+html[data-skin="jam"] .ttl .in{transform:none}
+html[data-skin="jam"] .ttl .in>b{font:400 calc(clamp(.38rem,1.7vw,.6rem)*var(--tf,1))/1.4 var(--px)}
+html[data-skin="jam"] .dv h3{font:400 .55rem/1.5 var(--px);color:var(--gold)}
+html[data-skin="jam"] .jbars{display:grid;grid-column:1/-1;grid-template-columns:auto 1fr;gap:6px 10px;align-items:center;background:#000;border:3px solid var(--wood);padding:8px 10px}
+html[data-skin="jam"] .jbars .jl{font:400 .45rem var(--px);color:var(--gold)}
+html[data-skin="jam"] .jbars .js{display:grid;grid-template-columns:repeat(10,1fr);gap:2px}
+html[data-skin="jam"] .jbars .js i{display:block;height:9px;background:var(--green)}
+html[data-skin="jam"] .jbars .js i.o{background:#1c2a3a}
+html[data-skin="jam"] .pod .rk{font:400 1.4rem var(--px)}
+html[data-skin="jam"] .pod .who b{font:700 1.2rem var(--body);color:var(--gold)}
+html[data-skin="jam"] .pod .big b{font:400 1.3rem/1.2 var(--px)}
+html[data-skin="jam"] .pod .big small{font:400 .45rem var(--px)}
+html[data-skin="jam"] .pl-st span{font:400 .42rem/1.6 var(--px)}
+html[data-skin="jam"] .pl-st b{font:700 1rem var(--body)}
+html[data-skin="jam"] .tw thead th{font:400 .45rem/1.6 var(--px);background:#000;color:var(--gold)}
+html[data-skin="jam"] .tw th:first-child{background:var(--card)}
+html[data-skin="jam"] .tw thead th:first-child{background:#000}
+html[data-skin="jam"] .tw th,html[data-skin="jam"] .tw td{font-size:.95rem;border-bottom:2px solid #06093f}
+html[data-skin="jam"] .rs summary{background:linear-gradient(90deg,var(--tc) 0 6px,transparent 6px)}
+html[data-skin="jam"] .rs .who b,html[data-skin="jam"] .fv h3{font:400 .62rem/1.6 var(--px);color:var(--gold)}
+html[data-skin="jam"] .hl .num{font:400 1.4rem var(--px);color:var(--red-hi)}
+html[data-skin="jam"] .hl h3{font:400 .7rem/1.6 var(--px);color:var(--gold)}
+html[data-skin="jam"] .vbox{background:#000;border:3px solid var(--red)}
+html[data-skin="jam"] .vbox .play{box-shadow:none;border:3px solid #000}
+html[data-skin="jam"] .vbox .vt b{font:700 1rem var(--body)}
+html[data-skin="jam"] .nw .pill.n{background:#000;color:var(--gold);border:2px solid var(--gold)}
+html[data-skin="jam"] .sheet{background:var(--bg2);border:4px solid var(--wood)}
+html[data-skin="jam"] .sheet h2{font:400 .8rem var(--px);color:var(--gold)}
+html[data-skin="jam"] .chip{border:3px solid #000;background:var(--card)}
+html[data-skin="jam"] footer.fine{font-size:.85rem}
+html[data-skin="jam"] .rise{animation-timing-function:steps(4)}
+html[data-skin="jam"] .sr{grid-template-columns:4px 26px 40px minmax(0,1fr) 52px 60px 38px;gap:6px}
+html[data-skin="jam"] .sr .v{font-size:.95rem}
+html[data-skin="jam"] .sec h2,html[data-skin="jam"] .brand h1{text-shadow:2px 2px 0 #b3261e}
+
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .ticker .rail{overflow-x:auto}
@@ -433,7 +557,7 @@ footer.fine{font-size:.72rem;color:var(--dim);text-align:center;padding-top:20px
 <body>
 <div class="top">
   <div class="bar">
-    <span></span>
+    <button class="skin-btn" id="skinBtn" type="button" aria-pressed="false" aria-label="Jam-Modus ein- oder ausschalten" title="Jam-Modus"><span class="sb-n" id="sbN"></span><span class="sb-j" id="sbJ"></span></button>
     <div class="brand"><h1><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#e8642c"/><g fill="none" stroke="#3a1606" stroke-width="2"><circle cx="20" cy="20" r="18"/><path d="M2 20h36M20 2v36M7 7c6 5 6 21 0 26M33 7c-6 5-6 21 0 26"/></g></svg>NBA Aktuell</h1><small id="stamp">Daten werden geladen…</small></div>
     <button class="icon-btn" id="openSettings" aria-label="Einstellungen und Lieblingsteams"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
   </div>
@@ -737,7 +861,7 @@ function confBlock(name,arr,color,i){
   const L=arr[0]||["",0,0];
   const rows=arr.map((t,k)=>{const gb=k===0?"–":(((L[1]-t[1])+(t[2]-L[2]))/2).toFixed(1).replace(".0",""),pct=(t[1]+t[2])?(t[1]/(t[1]+t[2])*100).toFixed(1).replace(".0",""):"0";
     return `<div class="sr ${k<6?"z1":k<10?"z2":""}${isFav(t[0])?" fav":""}"><span class="z"></span><span class="rk">${k+1}.</span>${badge(t[0],"sm")}<span class="nm">${esc(nick(t[0]))}</span><span class="v">${t[1]}-${t[2]}</span><span class="v m">${pct}%</span><span class="v m">${gb}</span></div>`}).join("");
-  return `<div class="card conf rise" style="--cc:${color};--i:${i}"><div class="hd"><h2>${name}</h2></div><div class="sr hdr"><span class="z"></span><span class="rk">#</span><span></span><span>Team</span><span class="v">S-N</span><span class="v">%</span><span class="v">GB</span></div>${rows}</div>`;
+  return `<div class="card conf rise" data-c="${/East/.test(name)?"e":"w"}" style="--cc:${color};--i:${i}"><div class="hd"><h2>${name}</h2></div><div class="sr hdr"><span class="z"></span><span class="rk">#</span><span></span><span>Team</span><span class="v">S-N</span><span class="v">%</span><span class="v">GB</span></div>${rows}</div>`;
 }
 const DIVS={west:[["Northwest",["Denver Nuggets","Minnesota Timberwolves","Oklahoma City Thunder","Portland Trail Blazers","Utah Jazz"]],["Pacific",["Golden State Warriors","LA Clippers","Los Angeles Lakers","Phoenix Suns","Sacramento Kings"]],["Southwest",["Dallas Mavericks","Houston Rockets","Memphis Grizzlies","New Orleans Pelicans","San Antonio Spurs"]]],
   east:[["Atlantic",["Boston Celtics","Brooklyn Nets","New York Knicks","Philadelphia 76ers","Toronto Raptors"]],["Central",["Chicago Bulls","Cleveland Cavaliers","Detroit Pistons","Indiana Pacers","Milwaukee Bucks"]],["Southeast",["Atlanta Hawks","Charlotte Hornets","Miami Heat","Orlando Magic","Washington Wizards"]]]};
@@ -757,8 +881,8 @@ function renderTabelle(){
   const seg=`<div class="seg" role="group" aria-label="Ansicht"><button type="button" data-tview="conf" aria-pressed="${tview==="conf"}">Conferences</button><button type="button" data-tview="div" aria-pressed="${tview==="div"}">Divisionen</button></div>`;
   let h=`<div class="sec"><h2>Standings</h2><span class="aux">${esc(dayLabels().gestern?"Stand "+dayLabels().gestern:"")}</span></div>`+seg;
   if(tview==="div"){
-    h+=`<div class="card conf rise" style="--cc:#ff4d63"><div class="hd"><h2>Western Conference</h2></div><div class="dvwrap">${divBlock("west",D.west||[])}</div></div>`
-      +`<div class="card conf rise" style="--cc:#4aa3ff"><div class="hd"><h2>Eastern Conference</h2></div><div class="dvwrap">${divBlock("east",D.east||[])}</div></div>`
+    h+=`<div class="card conf rise" data-c="w" style="--cc:#ff4d63"><div class="hd"><h2>Western Conference</h2></div><div class="dvwrap">${divBlock("west",D.west||[])}</div></div>`
+      +`<div class="card conf rise" data-c="e" style="--cc:#4aa3ff"><div class="hd"><h2>Eastern Conference</h2></div><div class="dvwrap">${divBlock("east",D.east||[])}</div></div>`
       +`<p class="note">Zahl oben links = Platz in der Division, hinter der Bilanz = Platz in der Conference.</p>`;
   } else {
     h+=confBlock("Eastern Conference",D.east||[],"#4aa3ff",0)+confBlock("Western Conference",D.west||[],"#ff4d63",1)
@@ -780,7 +904,9 @@ function renderSpieler(){
   const [key,label]=STATS.find(x=>x[0]===psort);
   P.sort((a,b)=>b[key]-a[key]||b.pts-a.pts);
   const line=p=>`<div class="pl-st">${STATS.map(([k,,sl])=>`<span class="${k===key?"on":""}"><b>${f1(p[k])}</b>${sl}</span>`).join("")}<span><b>${f1(p.fg)}%</b>FG</span><span><b>${f1(p.tp)}%</b>3P</span><span><b>${f1(p.min)}</b>MIN</span><span><b>${p.gp}</b>Spiele</span></div>`;
-  const cards=P.map((p,i)=>`<div class="card pod rise${i<3?" top3":""}${isFav(p.team)?" fav":""}" style="--i:${Math.min(i,8)};--tc:${sideColor(p.team)}"><span class="rk">${i+1}</span>${badge(p.team,"mid")}<div class="who"><b>${esc(p.name)}</b><small>${esc(p.team)}</small></div><div class="big"><b>${f1(p[key])}</b><small>${label}</small></div>${line(p)}</div>`).join("");
+  const MX={};["pts","reb","ast","stl","blk"].forEach(k=>MX[k]=Math.max(...P.map(p=>p[k]))||1);
+  const jb=p=>`<div class="jbars">${[["pts","PUNKTE"],["reb","REBOUNDS"],["ast","ASSISTS"],["blk","BLOCKS"]].map(([k,l])=>{const n=Math.max(1,Math.round(p[k]/MX[k]*10));return `<span class="jl">${l}</span><span class="js">${"<i></i>".repeat(n)}${"<i class=o></i>".repeat(10-n)}</span>`}).join("")}</div>`;
+  const cards=P.map((p,i)=>`<div class="card pod rise${i<3?" top3":""}${isFav(p.team)?" fav":""}" style="--i:${Math.min(i,8)};--tc:${sideColor(p.team)}"><span class="rk">${i+1}</span>${badge(p.team,"mid")}<div class="who"><b>${esc(p.name)}</b><small>${esc(p.team)}</small></div><div class="big"><b>${f1(p[key])}</b><small>${label}</small></div>${jb(p)}${line(p)}</div>`).join("");
   $("#p-spieler").innerHTML=`<div class="sec"><h2>Top 20 Spieler</h2><span class="aux">Saison 2026/27</span></div>${sw}
     <div class="seg seg5" role="group" aria-label="Sortieren nach">${STATS.map(([k,,sl])=>`<button type="button" data-psort="${k}" aria-pressed="${k===psort}">${sl}</button>`).join("")}</div>
     <p class="note" style="margin:0">Sortiert nach ${label} pro Spiel.</p>
@@ -943,6 +1069,29 @@ chips.addEventListener("change",()=>{const now=$$("#favChips input:checked").map
 $("#favClear").addEventListener("click",()=>{$$("#favChips input").forEach(i=>i.checked=false);favs=[];refreshFav()});
 favCount();
 show(pane);
+/* Jam-Modus */
+function pxBall(fire){
+  let r="";const c=7.5;
+  for(let y=0;y<16;y++)for(let x=0;x<16;x++){const d=Math.hypot(x-c,y-c);if(d>7.3)continue;
+    const seam=d>6.3||x===7||x===8||y===7||y===8||Math.abs(Math.hypot(x+3.5,y-c)-9.2)<.6||Math.abs(Math.hypot(x-18.5,y-c)-9.2)<.6;
+    const col=seam?"#3a1606":(x+y<9?"#ffa05a":x+y>20?"#b8461a":"#e8642c");
+    r+=`<rect x="${x}" y="${y+6}" width="1" height="1" fill="${col}"/>`}
+  let f="";
+  if(fire){const H=[2,4,6,5,7,9,6,8,10,7,9,6,7,5,4,2],cols=["#ffe14a","#ff9a1a","#ff3b2f"];
+    for(let fr=0;fr<2;fr++){let g="";H.forEach((h,x)=>{const hh=Math.max(1,h+(fr?((x*7)%3)-1:((x*5)%3)-1));for(let k=0;k<hh;k++){g+=`<rect x="${x}" y="${11-k}" width="1" height="1" fill="${cols[Math.min(2,Math.floor(k/hh*3))]}"/>`}});
+      f+=`<g class="fl fl${fr}">${g}</g>`}}
+  return `<svg viewBox="0 ${fire?0:4} 16 ${fire?22:18}" shape-rendering="crispEdges" aria-hidden="true">${f}${r}</svg>`;
+}
+$("#sbN").innerHTML=pxBall(false);$("#sbJ").innerHTML=pxBall(true);
+let skin=store.get("nba-skin")==="jam"?"jam":"normal";
+function applySkin(anim){
+  document.documentElement.dataset.skin=skin;$("#skinBtn").setAttribute("aria-pressed",skin==="jam");
+  $("#skinBtn").title=skin==="jam"?"Normale Ansicht":"Jam-Modus";
+  const m=document.querySelector('meta[name="theme-color"]');if(m)m.content=skin==="jam"?"#05051a":"#070c18";
+  if(anim&&!RM){const f=document.createElement("div");f.className="skin-flash";document.body.appendChild(f);setTimeout(()=>f.remove(),700)}
+}
+$("#skinBtn").addEventListener("click",()=>{skin=skin==="jam"?"normal":"jam";store.set("nba-skin",skin);applySkin(true)});
+applySkin(false);
 
 /* Daten */
 async function loadData(){
@@ -952,7 +1101,6 @@ async function loadData(){
 loadData();
 setInterval(loadData,20*6e4);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)loadData()});
-/* Installation und Offline-Betrieb */
 let deferredInstall=null;
 addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstall=e;$("#instBtn").hidden=false});
 $("#instBtn").addEventListener("click",async()=>{if(!deferredInstall)return;deferredInstall.prompt();try{await deferredInstall.userChoice}catch(e){}deferredInstall=null;$("#instBtn").hidden=true});
