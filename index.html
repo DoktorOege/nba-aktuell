@@ -1219,5 +1219,6 @@ $("#instBtn").addEventListener("click",async()=>{if(!deferredInstall)return;defe
 addEventListener("appinstalled",()=>{$("#instTxt").textContent="NBA Aktuell ist installiert.";$("#instBtn").hidden=true});
 if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 </script>
+<!-- Cloudflare Web Analytics (Besucherzählung, ohne Cookies) --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5825f26e3fcf4095b2c4339aacac50d1"}'></script>
 </body>
 </html>
