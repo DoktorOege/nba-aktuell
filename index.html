@@ -593,13 +593,31 @@ html[data-skin="jam"] .sec h2,html[data-skin="jam"] .brand h1{text-shadow:2px 2p
   *,*::before,*::after{animation:none!important;transition:none!important}
   .ticker .rail{overflow-x:auto}
 }
+
+.updwrap{margin:26px 0 6px;text-align:center}
+.updbtn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:420px;min-height:52px;padding:12px 18px;border-radius:14px;border:1px solid var(--blue);background:linear-gradient(180deg,#1f4e9a,#16356b);color:#fff;font:800 .95rem/1 var(--disp,inherit);letter-spacing:.06em;cursor:pointer}
+.updbtn:disabled{opacity:.85;cursor:progress}
+.updbtn .spin{display:none;width:16px;height:16px;border-radius:50%;border:3px solid rgba(255,255,255,.35);border-top-color:#fff;animation:upsp .8s linear infinite}
+.updbtn.busy .spin{display:inline-block}
+@keyframes upsp{to{transform:rotate(360deg)}}
+.updmsg{min-height:1.4em;margin-top:10px;font-size:.88rem}
+.updmsg.ok{color:#5ee08a}.updmsg.err{color:#ff8a98}
+.stale.info{background:#10284a;border-color:var(--blue)}
+.stale button{margin-left:8px}
+@media(prefers-reduced-motion:reduce){.updbtn .spin{animation-duration:2s}}
+html[data-skin="jam"][data-lg="dbb"]{--wood:#ffce00;--wood2:#7a0000}
+html[data-skin="jam"][data-lg="dbb"] .top,html[data-skin="jam"][data-lg="dbb"] .tabbar{border-color:#dd0000}
+html[data-skin="jam"][data-lg="dbb"] .card{box-shadow:inset 3px 3px 0 #dd0000,inset -3px -3px 0 #2b0000,0 0 0 3px #ffce00,0 0 0 6px #111}
+html[data-skin="jam"][data-lg="dbb"] .updbtn{background:#dd0000;border:3px solid #ffce00;box-shadow:0 0 0 3px #000;border-radius:0}
+html[data-skin="jam"] .updbtn{border-radius:0;font-family:var(--px)}
 </style>
+<!-- Cloudflare Web Analytics (Besucherzählung, ohne Cookies) --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5825f26e3fcf4095b2c4339aacac50d1"}'></script>
 </head>
 <body>
 <div class="top">
   <div class="bar">
     <button class="skin-btn" id="skinBtn" type="button" aria-pressed="false" aria-label="Jam-Modus ein- oder ausschalten" title="Jam-Modus"><span class="sb-n" id="sbN"></span><span class="sb-j" id="sbJ"></span></button>
-    <div class="brand"><h1><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#e8642c"/><g fill="none" stroke="#3a1606" stroke-width="2"><circle cx="20" cy="20" r="18"/><path d="M2 20h36M20 2v36M7 7c6 5 6 21 0 26M33 7c-6 5-6 21 0 26"/></g></svg><span id="ttl">NBA Aktuell</span></h1><div class="subrow"><span class="lgsw" role="group" aria-label="Liga wählen"><button type="button" data-lg="nba" aria-pressed="true" aria-label="NBA (USA)" title="NBA"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><g fill="#c8102e"><rect y="0.0" width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="13" height="10.8" fill="#1b3a7a"/><g fill="#fff"><circle cx="2.2" cy="2.1" r=".6"/><circle cx="5.1" cy="2.1" r=".6"/><circle cx="8.0" cy="2.1" r=".6"/><circle cx="10.899999999999999" cy="2.1" r=".6"/><circle cx="2.2" cy="4.800000000000001" r=".6"/><circle cx="5.1" cy="4.800000000000001" r=".6"/><circle cx="8.0" cy="4.800000000000001" r=".6"/><circle cx="10.899999999999999" cy="4.800000000000001" r=".6"/><circle cx="2.2" cy="7.5" r=".6"/><circle cx="5.1" cy="7.5" r=".6"/><circle cx="8.0" cy="7.5" r=".6"/><circle cx="10.899999999999999" cy="7.5" r=".6"/></g></svg></button><button type="button" data-lg="bbl" aria-pressed="false" aria-label="Basketball Bundesliga (Deutschland)" title="Bundesliga"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="6.67" fill="#111"/><rect y="6.67" width="30" height="6.67" fill="#dd0000"/><rect y="13.33" width="30" height="6.67" fill="#ffce00"/></svg></button></span><small id="stamp">Daten werden geladen…</small></div></div>
+    <div class="brand"><h1><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#e8642c"/><g fill="none" stroke="#3a1606" stroke-width="2"><circle cx="20" cy="20" r="18"/><path d="M2 20h36M20 2v36M7 7c6 5 6 21 0 26M33 7c-6 5-6 21 0 26"/></g></svg><span id="ttl">NBA Aktuell</span></h1><div class="subrow"><span class="lgsw" role="group" aria-label="Liga wählen"><button type="button" data-lg="nba" aria-pressed="true" aria-label="NBA (USA)" title="NBA"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><g fill="#c8102e"><rect y="0.0" width="30" height="1.54"/><rect y="3.08" width="30" height="1.54"/><rect y="6.15" width="30" height="1.54"/><rect y="9.23" width="30" height="1.54"/><rect y="12.31" width="30" height="1.54"/><rect y="15.38" width="30" height="1.54"/><rect y="18.46" width="30" height="1.54"/></g><rect width="13" height="10.8" fill="#1b3a7a"/><g fill="#fff"><circle cx="2.2" cy="2.1" r=".6"/><circle cx="5.1" cy="2.1" r=".6"/><circle cx="8.0" cy="2.1" r=".6"/><circle cx="10.899999999999999" cy="2.1" r=".6"/><circle cx="2.2" cy="4.800000000000001" r=".6"/><circle cx="5.1" cy="4.800000000000001" r=".6"/><circle cx="8.0" cy="4.800000000000001" r=".6"/><circle cx="10.899999999999999" cy="4.800000000000001" r=".6"/><circle cx="2.2" cy="7.5" r=".6"/><circle cx="5.1" cy="7.5" r=".6"/><circle cx="8.0" cy="7.5" r=".6"/><circle cx="10.899999999999999" cy="7.5" r=".6"/></g></svg></button><button type="button" data-lg="bbl" aria-pressed="false" aria-label="Basketball Bundesliga (Deutschland)" title="Bundesliga"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="6.67" fill="#111"/><rect y="6.67" width="30" height="6.67" fill="#dd0000"/><rect y="13.33" width="30" height="6.67" fill="#ffce00"/></svg></button><button type="button" data-lg="dbb" aria-pressed="false" aria-label="Deutsche Herren-Nationalmannschaft (DBB)" title="DBB-Nationalmannschaft"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#111"/><rect y="13.4" width="30" height="3.3" fill="#dd0000"/><rect y="16.7" width="30" height="3.3" fill="#ffce00"/><circle cx="15" cy="7.2" r="5.3" fill="#e8642c" stroke="#fff" stroke-width=".7"/><path d="M9.7 7.2h10.6M15 1.9v10.6M11 3.4c1.8 2.3 1.8 5.9 0 8.2M19 3.4c-1.8 2.3-1.8 5.9 0 8.2" fill="none" stroke="#3a1606" stroke-width=".55"/></svg></button></span><small id="stamp">Daten werden geladen…</small></div></div>
     <button class="icon-btn" id="openSettings" aria-label="Einstellungen und Lieblingsteams"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
   </div>
   <div class="ticker" id="ticker" aria-label="Newsband">
@@ -616,11 +634,14 @@ html[data-skin="jam"] .sec h2,html[data-skin="jam"] .brand h1{text-shadow:2px 2p
 
 <main>
   <div id="stale" class="stale" hidden></div>
+  <div id="newver" class="stale info" hidden>Eine neue App-Version ist bereit. <button class="btn" type="button" data-upd>Jetzt aktualisieren</button></div>
   <section class="pane" id="p-spiele"><div class="card empty"><strong>Daten werden geladen</strong>Spiele, Prime-Termine, News und Tabelle erscheinen gleich. Die App wird morgens und abends automatisch aktualisiert.</div></section>
   <section class="pane" id="p-prime" hidden></section>
   <section class="pane" id="p-tabelle" hidden></section>
   <section class="pane" id="p-spieler" hidden></section>
   <section class="pane" id="p-news" hidden></section>
+  <div class="updwrap"><button class="updbtn" id="updBtn" type="button" data-upd><span class="spin" aria-hidden="true"></span><span id="updTxt">UPDATE / APP NEU LADEN</span></button><div class="updmsg" id="updMsg" role="status" aria-live="polite"></div>
+    <p class="note">Lädt App-Dateien und Daten komplett neu. Deine Einstellungen (Jam-Modus, Lieblingsteams, gewählter Bereich) bleiben erhalten. Eine installierte App kann sich nicht selbst schließen und neu starten; sie wird per Neuladen aktualisiert. Hilft das nicht, schließe die App einmal und öffne sie neu.</p></div>
   <footer class="fine">Inoffizielle Fan-App · Team-Abzeichen sind eigene Gestaltungen in Vereinsfarben · Alle Zeiten deutsche Zeit</footer>
 </main>
 
@@ -683,9 +704,14 @@ const TEAMS_B={
 "Rasta Vechta":["VEC","#0F7B3F","#F2E205","Vechta","RASTA"],"Löwen Braunschweig":["BRA","#F5C400","#111111","Braunschweig","LÖWEN"],
 "Chemnitz 99ers":["CHE","#17479E","#E6E6E6","Chemnitz","99ERS"],"Veolia Towers Hamburg":["HAM","#C4161C","#111827","Hamburg","TOWERS"],
 "Science City Jena":["JEN","#0B5CAB","#FFC20E","Jena","JENA"],"Phoenix Hagen":["HAG","#D9480F","#1B2A49","Hagen","HAGEN"]};
-let league=store.get("nba-league")==="bbl"?"bbl":"nba";
-const LB=()=>league==="bbl";
-let TEAMS=LB()?TEAMS_B:TEAMS_N;
+const TEAMS_D={"Deutschland":["GER","#16181d","#ffce00","Deutschland","DEUTSCHLAND"],"Lettland":["LAT","#9e1b32","#ffffff","Lettland","LETTLAND"],"Polen":["POL","#dc143c","#ffffff","Polen","POLEN"],"Kroatien":["CRO","#c8102e","#1d3f8f","Kroatien","KROATIEN"],"Niederlande":["NED","#f36c21","#21468b","Niederlande","ORANJE"],"Israel":["ISR","#0b4fb3","#ffffff","Israel","ISRAEL"]};
+const _sl=store.get("nba-league");
+let league=_sl==="bbl"||_sl==="dbb"?_sl:"nba";
+const LB=()=>league!=="nba";   /* Europa-Modus: BBL und DBB */
+const LD=()=>league==="dbb";
+const teamsFor=()=>LD()?TEAMS_D:LB()?TEAMS_B:TEAMS_N;
+const BTV=()=>LD()?"mag":"dyn";
+let TEAMS=teamsFor();
 const TO=()=>LB()?0:6*36e5; /* NBA: Spiele nach Mitternacht zählen zum US-Abend davor */
 const team=n=>TEAMS[n]||[(n||"?").split(" ").map(w=>w[0]).join("").slice(0,3).toUpperCase(),"#3a4a6b","#98a6c8"];
 const ab=n=>team(n)[0];
@@ -698,7 +724,7 @@ function badge(n,cls=""){const [a,c1,c2]=team(n),k=Math.max(0,Object.keys(TEAMS)
 /* Spielfeldfarbe: dunkle Vereinsfarbe für Seitenflächen */
 const sideColor=n=>{const [,c1,c2]=team(n);return ink(c1)==="#ffffff"?c1:c2};
 
-const FK=()=>LB()?"bbl-favs":"nba-favs";
+const FK=()=>LD()?"dbb-favs":LB()?"bbl-favs":"nba-favs";
 const loadFavs=()=>{try{const a=JSON.parse(store.get(FK())||"null");if(Array.isArray(a))return a.filter(n=>TEAMS[n])}catch(e){}if(LB())return [];const o=store.get("nba-fav");return o&&TEAMS[o]?[o]:[]};
 let favs=loadFavs();
 const saveFavs=()=>store.set(FK(),JSON.stringify(favs));
@@ -715,8 +741,8 @@ const ytSearch=g=>"https://www.youtube.com/results?search_query="+encodeURICompo
 const vid=g=>safe(g.video)||ytSearch(g);
 const gTime=g=>g.iso?fTime(g.iso):(g.time||"");
 const status=g=>g.status==="live"?"live":(g.status==="final"||(g.as!=null&&g.hs!=null&&g.status!=="scheduled"))?"final":"pre";
-function gcal(g){const s=new Date(g.iso),e=new Date(s.getTime()+150*6e4),f=d=>d.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,""),pn=PROV[LB()?"dyn":g.tv?(g.tv.includes("prime")?"prime":g.tv.includes("sky")?"sky":"lp"):mainTV(g)].n;
-  return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(`${g.away} @ ${g.home} – ${pn}`)+"&dates="+f(s)+"/"+f(e)+"&details="+encodeURIComponent((LB()?"BBL":"NBA")+" live bei "+pn)}
+function gcal(g){const s=new Date(g.iso),e=new Date(s.getTime()+150*6e4),f=d=>d.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,""),pn=PROV[LB()?BTV():g.tv?(g.tv.includes("prime")?"prime":g.tv.includes("sky")?"sky":"lp"):mainTV(g)].n;
+  return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(`${g.away} @ ${g.home} – ${pn}`)+"&dates="+f(s)+"/"+f(e)+"&details="+encodeURIComponent((LD()?"DBB":LB()?"BBL":"NBA")+" live bei "+pn)}
 function primeList(){
   const out=[],seen=new Set();
   (D.days||[]).forEach(d=>(d.games||[]).forEach(g=>{if(g.prime) out.push({...g,date:g.date||d.label.split("–")[0].trim()})}));
@@ -776,7 +802,7 @@ function renderTicker(){
   (D.news||[]).forEach(n=>items.push(`<span class="item"><b>${esc(n.tag||"News")}</b>${esc(n.text)}</span>`));
   (D.results||[]).forEach(g=>items.push(`<span class="item sc"><b>Final</b>${ab(g.away)} ${g.as} : ${g.hs} ${ab(g.home)}</span>`));
   const p=LB()?null:primeList()[0]; if(p) items.push(`<span class="item"><b>Prime</b>${esc(p.away)} @ ${esc(p.home)} · ${p.iso?fDay(p.iso)+" "+fTime(p.iso):esc(p.date+" "+p.time)} Uhr</span>`);
-  const nxg=LB()?liveList()[0]:null; if(nxg) items.push(`<span class="item"><b>Dyn</b>${esc(short(nxg.away))} @ ${esc(short(nxg.home))} · ${fDay(nxg.iso)} ${fTime(nxg.iso)} Uhr</span>`);
+  const nxg=LB()?liveList()[0]:null; if(nxg) items.push(`<span class="item"><b>${LD()?"MagentaSport":"Dyn"}</b>${esc(short(nxg.away))} @ ${esc(short(nxg.home))} · ${fDay(nxg.iso)} ${fTime(nxg.iso)} Uhr</span>`);
   if(!items.length){$("#track").innerHTML='<span class="item">Keine Meldungen</span>';return}
   const html=items.join(""), tr=$("#track"); tr.innerHTML=html+html;
   tr.style.setProperty("--dur",Math.max(30,tr.textContent.length/2*.16)+"s");
@@ -828,8 +854,10 @@ function gameRow(g,i){
 }
 const PROV_N={prime:{n:"Prime Video",c:"p",info:"im Prime-Abo enthalten"},sky:{n:"Sky",c:"s",info:"Sky-Abo, Sky Go oder WOW"},lp:{n:"League Pass",c:"l",info:"alle Spiele, eigenes NBA-Abo"}};
 const PROV_B={dyn:{n:"Dyn",c:"p",info:"alle Spiele live im Dyn-Abo"}};
-let PROV=LB()?PROV_B:PROV_N;
-const pvc=p=>p==="dyn"?"prime":p;
+const PROV_D={mag:{n:"MagentaSport",c:"p",info:"alle Länderspiele live und kostenlos bei MagentaSport und MagentaTV"}};
+const provFor=()=>LD()?PROV_D:LB()?PROV_B:PROV_N;
+let PROV=provFor();
+const pvc=p=>p==="dyn"||p==="mag"?"prime":p;
 let TVMAP=new Map();
 const gkey=(g)=>g.away+"|"+g.home+"|"+(g.iso?new Date(Date.parse(g.iso)-TO()).toISOString().slice(0,10):(g.date||""));
 function buildTV(){
@@ -838,16 +866,16 @@ function buildTV(){
   (D.days||[]).forEach(d=>(d.games||[]).forEach(g=>add(g,g.tv)));
   (D.prime||[]).forEach(g=>add(g,["prime"]));
   (D.broadcasts||[]).forEach(g=>add(g,g.tv));
-  m.forEach(o=>o.tv.add(LB()?"dyn":"lp"));
+  m.forEach(o=>o.tv.add(LB()?BTV():"lp"));
   TVMAP=m;
 }
-const tvOf=g=>{const o=TVMAP.get(gkey(g));return o?[...o.tv]:(LB()?["dyn"]:g.prime?["prime","lp"]:["lp"])};
-const mainTV=g=>{if(LB())return "dyn";const t=tvOf(g);return t.includes("prime")?"prime":t.includes("sky")?"sky":"lp"};
+const tvOf=g=>{const o=TVMAP.get(gkey(g));return o?[...o.tv]:(LB()?[BTV()]:g.prime?["prime","lp"]:["lp"])};
+const mainTV=g=>{if(LB())return BTV();const t=tvOf(g);return t.includes("prime")?"prime":t.includes("sky")?"sky":"lp"};
 function liveList(){return [...TVMAP.values()].map(o=>({...o,tv:[...o.tv]})).filter(g=>Date.parse(g.iso)+150*6e4>Date.now()).sort((a,b)=>Date.parse(a.iso)-Date.parse(b.iso))}
 let lfilter=["all","prime","sky","lp"].includes(store.get("nba-lf"))?store.get("nba-lf"):"all";
 function primeCard(g,i){
   const when=g.iso?`${fDay(g.iso)} | <b>${fTime(g.iso)} MEZ</b>`:`${esc(g.date||"")} | <b>${esc(g.time||"")} MEZ</b>`;
-  const pv=LB()?"dyn":g.tv?(g.tv.includes("prime")?"prime":g.tv.includes("sky")?"sky":"lp"):mainTV(g);
+  const pv=LB()?BTV():g.tv?(g.tv.includes("prime")?"prime":g.tv.includes("sky")?"sky":"lp"):mainTV(g);
   const r=`<span>Live auf</span><strong>${PROV[pv].n}</strong><small>${g.iso?"+ Kalender":"Termin offen"}</small>`;
   return `<div class="card pc rise pv-${pvc(pv)}" style="--i:${i}"><div class="l"><div class="bs">${badge(g.away,"mid")}${badge(g.home,"mid")}</div><div style="min-width:0"><div class="tt">${esc(short(g.away))} @ ${esc(short(g.home))}</div><div class="ss">${when}</div>${g.tag?`<span class="pill c" style="margin-top:6px">${esc(g.tag)}</span>`:""}</div></div>
     ${g.iso?`<a class="r" href="${gcal(g)}" target="_blank" rel="noopener" aria-label="${esc(g.away)} bei ${esc(g.home)} in Google Kalender eintragen">${r}</a>`:`<div class="r">${r}</div>`}</div>`;
@@ -898,30 +926,41 @@ function gamesDay(d,title){
 }
 
 /* Bereiche */
-function dayLabels(){
-  const g=(D.resultsLabel||"").split("/")[0].trim(), h=((D.days||[])[0]||{}).label, m=((D.days||[])[1]||{}).label;
-  return {gestern:g, heute:h?h.split("–")[0].trim():"", morgen:m?m.split("–")[0].trim():""};
+/* Tageslogik: alles kommt von der Uhr (Europe/Berlin), nie aus festen Datumsfeldern */
+const bKey=ms=>new Date(ms).toLocaleDateString("sv-SE",{timeZone:TZ});            /* YYYY-MM-DD in Berlin */
+const dayKey=off=>bKey(Date.now()-TO()+off*864e5);                                /* NBA: Abend/Nacht zählt zum US-Tag */
+const gDayKey=g=>bKey(Date.parse(g.iso)-TO());
+const fKey=k=>fDay(k+"T12:00:00Z");
+let OV=new Map(), NETERR=false;
+function allGames(){
+  const seen=new Set(),o=[];
+  (D.days||[]).forEach(d=>(d.games||[]).forEach(g=>{if(!g.iso)return;const k=gkey(g);if(seen.has(k))return;seen.add(k);const v=OV.get(k);o.push(v?{...g,...v}:g)}));
+  return o.sort((a,b)=>Date.parse(a.iso)-Date.parse(b.iso));
 }
+const dayObj=off=>({games:allGames().filter(g=>gDayKey(g)===dayKey(off))});
+function dayLabels(){return {gestern:fKey(dayKey(-1)),heute:fKey(dayKey(0)),morgen:fKey(dayKey(1))}}
 function renderDates(){
   const L=dayLabels(), names={gestern:"Gestern",heute:"Heute",morgen:"Morgen"};
-  $$("#dates button").forEach(b=>{const k=b.dataset.day;b.innerHTML=`${names[k]}<small>${esc(L[k]||" ")}</small>`;b.setAttribute("aria-selected",k===day)});
+  $$("#dates button").forEach(b=>{const k=b.dataset.day;b.innerHTML=`${names[k]}<small>${esc(L[k]||" ")}</small>`;b.setAttribute("aria-selected",k===day)});
   moveUL();
 }
 function moveUL(){const b=$(`#dates button[data-day="${day}"]`),u=$("#ul");if(!b)return;u.style.left=(b.offsetLeft+b.offsetWidth*.18)+"px";u.style.width=(b.offsetWidth*.64)+"px"}
 function renderSpiele(){
   const fi=featuredIdx(), r=D.results||[]; let h="";
   if(day==="heute"){
-    h+=gamesDay((D.days||[])[0],"Heutige Spiele");
-    const P=LB()?[]:liveList().filter(g=>g.tv.includes("prime")||g.tv.includes("sky")).slice(0,2);
-    if(P.length) h+=`<div class="sec"><h2>Nächste Spiele im TV</h2><button class="btn" type="button" data-go="prime" style="padding:4px 12px;font-size:.78rem">Alle</button></div>`+P.map(primeCard).join("");
+    h+=gamesDay(dayObj(0),"Heutige Spiele");
+    const P=LD()?liveList().slice(0,2):LB()?[]:liveList().filter(g=>g.tv.includes("prime")||g.tv.includes("sky")).slice(0,2);
+    if(P.length) h+=`<div class="sec"><h2>${LD()?"Nächste Länderspiele":"Nächste Spiele im TV"}</h2><button class="btn" type="button" data-go="prime" style="padding:4px 12px;font-size:.78rem">Alle</button></div>`+P.map(primeCard).join("");
     h+=favBlock();
     if(r.length) h+=`<div class="sec"><h2>Frühere Spiele</h2><span class="aux">Karte = Animation · Video = Highlights</span></div><div class="tiles">${[fi,...r.map((_,i)=>i).filter(i=>i!==fi)].filter(i=>i>=0).map(i=>tile(r[i],i,fi)).join("")}</div>`;
   } else if(day==="gestern"){
-    if(fi>=0) h+=`<div class="sec"><h2>Spiel der Nacht</h2></div>`+duelHTML(r[fi],fi,esc(D.resultsLabel||""));
+    const rk=(D.resultsLabel||"").split("/")[0].trim();
+    if(!LB()&&r.length&&rk&&rk!==fKey(dayKey(-1))) h+=`<div class="stale" style="margin-bottom:12px">Neueste gespeicherte Ergebnisse: ${esc(D.resultsLabel||"")}. Neuere Ergebnisse erscheinen mit dem nächsten Update.</div>`;
+    if(fi>=0) h+=`<div class="sec"><h2>${LD()?"Letztes Länderspiel":LB()?"Spiel des Spieltags":"Spiel der Nacht"}</h2></div>`+duelHTML(r[fi],fi,esc(D.resultsLabel||""));
     h+=`<div class="sec"><h2>Alle Ergebnisse</h2><span class="aux">${r.length} Spiele</span></div>`+(r.length?r.map(resCard).join(""):`<div class="card empty">Letzte Nacht wurde nicht gespielt.</div>`);
     if((D.highlights||[]).length) h+=`<div class="sec"><h2>Highlights</h2></div>`+D.highlights.map(hlCard).join("");
   } else {
-    h+=gamesDay((D.days||[])[1],"Spiele morgen");
+    h+=gamesDay(dayObj(1),"Spiele morgen");
   }
   $("#p-spiele").innerHTML=h;
   const dr=$("#p-spiele .duel"); if(dr) wireDuel(dr,r[fi]);
@@ -929,17 +968,17 @@ function renderSpiele(){
 function renderPrime(){
   const lf=LB()?"all":lfilter, all=liveList(), L=all.filter(g=>lf==="all"||g.tv.includes(lf)), p=L[0];
   const cnt=k=>k==="all"?all.length:all.filter(g=>g.tv.includes(k)).length;
-  let h=`<div class="sec"><h2>${LB()?"Live bei Dyn":"Live im TV"}</h2><span class="aux">${LB()?"Alle Spiele der BBL":"Alle Spiele in Deutschland"}</span></div>
+  let h=`<div class="sec"><h2>${LD()?"Live bei MagentaSport":LB()?"Live bei Dyn":"Live im TV"}</h2><span class="aux">${LD()?"Alle Länderspiele der Herren":LB()?"Alle Spiele der BBL":"Alle Spiele in Deutschland"}</span></div>
     ${LB()?"":`<div class="seg lf" role="group" aria-label="Anbieter filtern">${[["all","Alle"],["prime","Prime"],["sky","Sky"],["lp","League Pass"]].map(([k,l])=>`<button type="button" data-lf="${k}" aria-pressed="${k===lf}">${l}<small>${cnt(k)}</small></button>`).join("")}</div>`}`;
   if(p){const pv=lf==="all"?(p.tv.includes("prime")?"prime":p.tv.includes("sky")?"sky":"lp"):lf;
     h+=`<div class="card cd rise pv-${pvc(pv)}"><div class="k">Nächstes Spiel${lf==="all"?"":" bei "+PROV[lf].n}</div><div class="m">${badge(p.away,"mid")}<span class="at">@</span>${badge(p.home,"mid")}<span style="font-size:1.1rem">${esc(short(p.away))} bei ${esc(short(p.home))}</span></div>
     <div data-cd="${esc(p.iso)}"></div>
-    <div class="foot"><span>${fDay(p.iso)}, ${fTime(p.iso)} Uhr · ${p.tv.filter(t=>t!=="lp"||p.tv.length===1).map(t=>PROV[t].n).join(", ")}</span><a class="btn" href="${gcal(p)}" target="_blank" rel="noopener">+ In Kalender</a></div></div>`}
+    <div class="foot"><span>${fDay(p.iso)}, ${fTime(p.iso)} Uhr · ${p.tv.filter(t=>t!=="lp"||p.tv.length===1).map(t=>PROV[t].n).join(", ")}</span>${safe(p.stream)?`<a class="btn" href="${esc(safe(p.stream))}" target="_blank" rel="noopener">▶ Livestream</a>`:""}<a class="btn" href="${gcal(p)}" target="_blank" rel="noopener">+ In Kalender</a></div></div>`}
   let last="";
   h+=L.length?L.map((g,i)=>{const d=fDay(new Date(Date.parse(g.iso)-TO()).toISOString().replace(/T.*/,"T12:00:00Z"));let hd="";if(d!==last){last=d;const dd=new Date(Date.parse(g.iso)-TO()),nx=new Date(dd.getTime()+864e5).toLocaleDateString("de-DE",{weekday:"short",timeZone:TZ}).replace(".","");hd=`<div class="ldate">${esc(dd.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",timeZone:TZ}))}${LB()?"":`<span> · Abend & Nacht auf ${esc(nx)}</span>`}</div>`}
       return hd+`<div class="card lv rise${isFavG(g)?" fav":""}" style="--i:${Math.min(i,8)}"><time>${fTime(g.iso)}</time><div class="mu"><span class="tm">${badge(g.away,"sm")}${esc(short(g.away))} <span class="muted">@</span> ${badge(g.home,"sm")}${esc(short(g.home))}</span><span class="pv">${Object.keys(PROV).filter(t=>g.tv.includes(t)).map(t=>`<span class="pill ${PROV[t].c}">${PROV[t].n}</span>`).join("")}${g.tag?`<span class="pill c">${esc(g.tag)}</span>`:""}</span></div><a class="cal" href="${gcal({...g,tv:lf!=="all"?[lf]:g.tv})}" target="_blank" rel="noopener" aria-label="In Kalender eintragen">+</a></div>`}).join("")
     :`<div class="card empty">Für diesen Filter sind gerade keine Spiele hinterlegt.</div>`;
-  h+=LB()?`<div class="card prov"><div><span class="pill p">Dyn</span><span class="muted">${PROV.dyn.info}</span></div><p class="note">Dyn zeigt jedes Spiel der easyCredit BBL live. Hier stehen alle Spiele der nächsten Spieltage, Anwurfzeiten in deutscher Zeit. Kurzfristige Änderungen sind möglich.</p></div>`:`<div class="card prov">${["prime","sky","lp"].map(t=>`<div><span class="pill ${PROV[t].c}">${PROV[t].n}</span><span class="muted">${PROV[t].info}</span></div>`).join("")}<p class="note">League Pass zeigt alle Spiele. Hier sind alle Spiele der nächsten Tage aufgeführt, dazu alle angekündigten Übertragungen bei Prime Video und Sky. DAZN und Free-TV zeigen in dieser Saison keine NBA. Kurzfristige Änderungen sind möglich.</p></div>`;
+  h+=LD()?`<div class="card prov"><div><span class="pill p">MagentaSport</span><span class="muted">${PROV.mag.info}</span></div><p class="note">MagentaSport zeigt alle Spiele der deutschen Herren-Nationalmannschaft live und kostenlos, ohne Anmeldung.${D.later?" "+esc(D.later):""} Anwurfzeiten in deutscher Zeit, kurzfristige Änderungen sind möglich.</p></div>`:LB()?`<div class="card prov"><div><span class="pill p">Dyn</span><span class="muted">${PROV.dyn.info}</span></div><p class="note">Dyn zeigt jedes Spiel der easyCredit BBL live. Hier stehen alle Spiele der nächsten Spieltage, Anwurfzeiten in deutscher Zeit. Kurzfristige Änderungen sind möglich.</p></div>`:`<div class="card prov">${["prime","sky","lp"].map(t=>`<div><span class="pill ${PROV[t].c}">${PROV[t].n}</span><span class="muted">${PROV[t].info}</span></div>`).join("")}<p class="note">League Pass zeigt alle Spiele. Hier sind alle Spiele der nächsten Tage aufgeführt, dazu alle angekündigten Übertragungen bei Prime Video und Sky. DAZN und Free-TV zeigen in dieser Saison keine NBA. Kurzfristige Änderungen sind möglich.</p></div>`;
   $("#p-prime").innerHTML=h;
 }
 function confBlock(name,arr,color,i){
@@ -964,15 +1003,15 @@ function divBlock(confKey,arr){
 }
 function bblTable(){
   const T=D.table||[], n=T.length;
-  const rows=T.map((t,k)=>`<div class="sr bb ${k<6?"z1":k<10?"z2":k>=n-2?"z3":""}${isFav(t[0])?" fav":""}"><span class="z"></span><span class="rk">${k+1}.</span>${badge(t[0],"sm")}<span class="nm"${short(t[0]).length>9?' style="font-size:.86rem;letter-spacing:.02em"':""}>${esc(short(t[0]))}</span><span class="v">${t[1]}-${t[2]}</span><span class="v m">${t[1]+t[2]}</span><span class="v m">${t[3]>0?"+":""}${t[3]}</span></div>`).join("");
-  return `<div class="sec"><h2>Tabelle</h2><span class="aux">${esc(dayLabels().gestern?"Stand "+dayLabels().gestern:"")}</span></div>`
-   +(n?`<div class="card conf rise" data-c="e" style="--cc:#4aa3ff"><div class="hd"><h2>easyCredit BBL</h2></div><div class="sr bb hdr"><span class="z"></span><span class="rk">#</span><span></span><span>Team</span><span class="v">S-N</span><span class="v">Sp</span><span class="v">Diff</span></div>${rows}</div>
-   <div class="legend"><span><i></i>Play-offs (1–6)</span><span><i class="g"></i>Play-in (7–10)</span><span><i class="r"></i>Abstieg (17–18)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>`:`<div class="card empty"><strong>Noch keine Tabelle</strong>Die Daten kommen mit dem nächsten Update.</div>`);
+  const rows=T.map((t,k)=>`<div class="sr bb ${LD()?(k<3?"z1":""):(k<6?"z1":k<10?"z2":k>=n-2?"z3":"")}${isFav(t[0])?" fav":""}"><span class="z"></span><span class="rk">${k+1}.</span>${badge(t[0],"sm")}<span class="nm"${short(t[0]).length>9?' style="font-size:.86rem;letter-spacing:.02em"':""}>${esc(short(t[0]))}</span><span class="v">${t[1]}-${t[2]}</span><span class="v m">${t[1]+t[2]}</span><span class="v m">${t[3]>0?"+":""}${t[3]}</span></div>`).join("");
+  return `<div class="sec"><h2>Tabelle</h2><span class="aux">${LASTU?"Stand "+esc(fDay(LASTU.toISOString())):""}</span></div>`
+   +(n?`<div class="card conf rise" data-c="e" style="--cc:#4aa3ff"><div class="hd"><h2>${LD()?"WM-Qualifikation · Gruppe K":"easyCredit BBL"}</h2></div><div class="sr bb hdr"><span class="z"></span><span class="rk">#</span><span></span><span>Team</span><span class="v">S-N</span><span class="v">Sp</span><span class="v">Diff</span></div>${rows}</div>
+   ${LD()?`<div class="legend"><span><i></i>WM-Ticket (Platz 1–3)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>`:`<div class="legend"><span><i></i>Play-offs (1–6)</span><span><i class="g"></i>Play-in (7–10)</span><span><i class="r"></i>Abstieg (17–18)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>`}`:`<div class="card empty"><strong>Noch keine Tabelle</strong>Die Daten kommen mit dem nächsten Update.</div>`);
 }
 function renderTabelle(){
   if(LB()){$("#p-tabelle").innerHTML=bblTable();return}
   const seg=`<div class="seg" role="group" aria-label="Ansicht"><button type="button" data-tview="conf" aria-pressed="${tview==="conf"}">Conferences</button><button type="button" data-tview="div" aria-pressed="${tview==="div"}">Divisionen</button></div>`;
-  let h=`<div class="sec"><h2>Standings</h2><span class="aux">${esc(dayLabels().gestern?"Stand "+dayLabels().gestern:"")}</span></div>`+seg;
+  let h=`<div class="sec"><h2>Standings</h2><span class="aux">${LASTU?"Stand "+esc(fDay(LASTU.toISOString())):""}</span></div>`+seg;
   if(tview==="div"){
     h+=`<div class="card conf rise" data-c="w" style="--cc:#ff4d63"><div class="hd"><h2>Western Conference</h2></div><div class="dvwrap">${divBlock("west",D.west||[])}</div></div>`
       +`<div class="card conf rise" data-c="e" style="--cc:#4aa3ff"><div class="hd"><h2>Eastern Conference</h2></div><div class="dvwrap">${divBlock("east",D.east||[])}</div></div>`
@@ -989,7 +1028,14 @@ const f1=v=>(Math.round(v*10)/10).toFixed(1).replace(".",",");
 let FILE_R={};
 fetch("rosters.json").then(r=>r.ok?r.json():{}).then(j=>{FILE_R=j||{};if(D&&psub==="teams")renderSpieler()}).catch(()=>{});
 let psub=store.get("nba-psub")==="teams"?"teams":"top";
+function renderKader(){
+  const K=D.kader||[];
+  $("#p-spieler").innerHTML=`<div class="sec"><h2>Kader</h2><span class="aux">${esc(D.kaderLabel||"")}</span></div>`
+   +(K.length?`<div class="card nl rise">${K.map(p=>`<div class="nw"><span class="pill n">${esc(p[1]||"")}</span><p><b>${esc(p[0])}</b></p></div>`).join("")}</div>`:`<div class="card empty"><strong>Noch kein Kader</strong>Der Kader kommt mit dem nächsten Update.</div>`)
+   +`<p class="note">${esc(D.kaderNote||"")}</p>`;
+}
 function renderSpieler(){
+  if(LD()){renderKader();return}
   const sw=`<div class="seg" role="group" aria-label="Ansicht"><button type="button" data-psub="top" aria-pressed="${psub==="top"}">Top 20</button><button type="button" data-psub="teams" aria-pressed="${psub==="teams"}">Alle Teams</button></div>`;
   if(psub==="teams"){renderRosters(sw);return}
   const P=(D.players||[]).slice();
@@ -1025,7 +1071,7 @@ function renderNews(){
   h+=H.map(hlCard).join("")||`<div class="card empty">Keine Highlights.</div>`;
   const rest=R.map((g,k)=>[g,k]).filter(([,k])=>!used.has(k));
   if(rest.length) h+=`<div class="sec"><h2>Weitere Spiele im Video</h2><span class="aux">${rest.length} Spiele</span></div><div class="card nl rise">${rest.map(([g])=>vRow(g)).join("")}</div>`;
-  h+=`<div class="sec"><h2>Liga-News</h2><span class="aux">${(D.news||[]).length} Meldungen</span></div><div class="card nl rise">${(D.news||[]).map(n=>`<div class="nw"><span class="pill n">${esc(n.tag||"News")}</span><p>${esc(n.text)}${safe(n.video)?` <a class="vl" href="${esc(safe(n.video))}" target="_blank" rel="noopener">▶ Video</a>`:""}</p></div>`).join("")||'<p class="muted">Keine Meldungen.</p>'}</div>`;
+  h+=`<div class="sec"><h2>${LD()?"Team-News":"Liga-News"}</h2><span class="aux">${(D.news||[]).length} Meldungen</span></div><div class="card nl rise">${(D.news||[]).map(n=>`<div class="nw"><span class="pill n">${esc(n.tag||"News")}</span><p>${esc(n.text)}${safe(n.video)?` <a class="vl" href="${esc(safe(n.video))}" target="_blank" rel="noopener">▶ Video</a>`:""}</p></div>`).join("")||'<p class="muted">Keine Meldungen.</p>'}</div>`;
   $("#p-news").innerHTML=h;
 }
 /* Highlights mit passendem Spielvideo */
@@ -1126,15 +1172,27 @@ function show(p){
 function setDay(d){day=d;if(D){renderSpiele();duelState()}renderDatesSel();window.scrollTo({top:0})}
 function renderDatesSel(){$$("#dates button").forEach(b=>b.setAttribute("aria-selected",b.dataset.day===day));moveUL()}
 function renderAll(){
-  buildTV();renderTicker();renderDates();renderSpiele();renderPrime();renderTabelle();renderSpieler();renderNews();
+  buildTV();renderStale();renderTicker();renderDates();renderSpiele();renderPrime();renderTabelle();renderSpieler();renderNews();
   PANES.forEach(k=>{$("#p-"+k).hidden=k!==pane});tick();duelState();
 }
+let LASTU=null;
+function fStamp(u){return u.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit",timeZone:TZ}).replace(",","")+", "+fTime(u)+" Uhr"}
+function renderStale(){
+  const st=$("#stale"),u=LASTU;let msg="";
+  if(!u)msg="";
+  else{
+    const ageH=(Date.now()-u)/36e5,last=[...TVMAP.values()].reduce((m,g)=>Math.max(m,Date.parse(g.iso)||0),0),noFuture=!last||bKey(last-TO())<dayKey(0);
+    if(NETERR)msg=`Aktualisierung fehlgeschlagen oder offline. Angezeigt wird der letzte Stand vom ${fStamp(u)}.`;
+    else if(ageH>15)msg=`Daten nicht aktuell: letzte Aktualisierung ${fStamp(u)}. Spiele und Ergebnisse können fehlen.`;
+    else if(noFuture)msg=`Stand ${fStamp(u)}: Der Spielplan reicht nicht bis heute. Das nächste Update ergänzt ihn.`;
+  }
+  st.hidden=!msg;if(msg){st.innerHTML=esc(msg)+` <button class="btn" type="button" data-upd>Neu laden</button>`}
+}
 function setData(d){
-  RAW=d; D=LB()?(d.bbl||{}):d;
+  RAW=d; D=LD()?(d.dbb||{}):LB()?(d.bbl||{}):d;
   const u=(D.updated||d.updated)?new Date(D.updated||d.updated):null;
   $("#stamp").textContent=u?`Stand ${u.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit",timeZone:TZ}).replace(",","")}, ${fTime(u)} Uhr`:"";
-  const old=u&&(Date.now()-u)/36e5>15,st=$("#stale");
-  st.hidden=!old;if(old)st.textContent="Die Daten sind älter als 15 Stunden. Das nächste automatische Update kommt um 6 oder 18 Uhr.";
+  LASTU=u;
   renderAll();
 }
 $$(".tabbar button").forEach(b=>b.addEventListener("click",()=>show(b.dataset.p)));
@@ -1142,6 +1200,7 @@ $$("#dates button").forEach(b=>b.addEventListener("click",()=>setDay(b.dataset.d
 addEventListener("resize",moveUL);
 addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(PANES.includes(h)&&h!==pane)show(h)});
 document.addEventListener("click",e=>{
+  const up=e.target.closest("[data-upd]");if(up){doUpdate();return}
   const lg=e.target.closest("button[data-lg]");if(lg){setLeague(lg.dataset.lg);return}
   const lf=e.target.closest("[data-lf]");if(lf){lfilter=lf.dataset.lf;store.set("nba-lf",lfilter);renderPrime();tick();return}
   const pb=e.target.closest("[data-psub]");if(pb){psub=pb.dataset.psub;store.set("nba-psub",psub);renderSpieler();return}
@@ -1165,8 +1224,8 @@ chips.addEventListener("change",()=>{const now=$$("#favChips input:checked").map
 $("#favClear").addEventListener("click",()=>{$$("#favChips input").forEach(i=>i.checked=false);favs=[];refreshFav()});
 favCount();
 function applyLeague(){
-  TEAMS=LB()?TEAMS_B:TEAMS_N;PROV=LB()?PROV_B:PROV_N;favs=loadFavs();
-  const nm=LB()?"BBL Aktuell":"NBA Aktuell";
+  TEAMS=teamsFor();PROV=provFor();favs=loadFavs();
+  const nm=LD()?"DBB Aktuell":LB()?"BBL Aktuell":"NBA Aktuell";
   $("#ttl").textContent=nm;document.title=nm;
   const am=document.querySelector('meta[name="apple-mobile-web-app-title"]');if(am)am.content=nm;
   $$(".lgsw button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lg===league));
@@ -1205,19 +1264,82 @@ function applySkin(anim){
 $("#skinBtn").addEventListener("click",()=>{skin=skin==="jam"?"normal":"jam";store.set("nba-skin",skin);applySkin(true)});
 applySkin(false);
 
-/* Daten */
-async function loadData(){
-  try{const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(r.status);const d=await r.json();if(!RAW||d.updated!==RAW.updated||(d.bbl&&d.bbl.updated)!==(RAW.bbl&&RAW.bbl.updated))setData(d)}
-  catch(e){if(!RAW){$("#p-spiele").innerHTML='<div class="card empty"><strong>Keine Verbindung</strong>Die Daten konnten nicht geladen werden. Prüfe deine Internetverbindung und öffne die App erneut.</div>';$("#stamp").textContent=""}}
+
+/* Live-Abgleich (NBA): ESPN-Scoreboard, nur ergänzend; bei Fehler bleibt der gespeicherte Stand */
+const espnKey=k=>k.replace(/-/g,"");
+async function liveOverlay(){
+  if(LB()||!D||document.hidden||navigator.onLine===false)return;
+  try{
+    const m=new Map();
+    for(const off of [-1,0]){
+      const c=new AbortController(),t=setTimeout(()=>c.abort(),7000);
+      const r=await fetch("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates="+espnKey(dayKey(off)),{signal:c.signal,cache:"no-store"});clearTimeout(t);
+      if(!r.ok)throw new Error(r.status);
+      const j=await r.json();
+      (j.events||[]).forEach(ev=>{const c0=(ev.competitions||[])[0];if(!c0)return;
+        const aw=c0.competitors.find(x=>x.homeAway==="away"),hm=c0.competitors.find(x=>x.homeAway==="home");if(!aw||!hm)return;
+        const st=(ev.status&&ev.status.type)||{},state=st.state;if(state==="pre")return;
+        const k=aw.team.displayName+"|"+hm.team.displayName+"|"+new Date(Date.parse(ev.date)-TO()).toISOString().slice(0,10);
+        m.set(k,{status:state==="in"?"live":"final",as:+aw.score,hs:+hm.score,clock:state==="in"?(st.shortDetail||"Live"):""});
+      });
+    }
+    OV=m;OVAT=Date.now();renderSpiele();renderPrime();renderTicker();
+  }catch(e){/* offline/blockiert: gespeicherter Stand bleibt */}
 }
+let OVAT=0;
+setInterval(()=>{if(!D||LB())return;const n=Date.now(),near=allGames().some(g=>Math.abs(Date.parse(g.iso)-n)<5*36e5);if(near||n-OVAT>10*6e4)liveOverlay()},45e3);
+/* Mitternacht / Zeitumstellung: Tage neu berechnen, sobald sich der Berliner Tag ändert */
+let LASTDAY=bKey(Date.now());
+function dayRoll(){const k=bKey(Date.now())+"|"+dayKey(0);if(k!==LASTDAY){LASTDAY=k;if(D)renderAll()}else if(D)renderStale()}
+LASTDAY=bKey(Date.now())+"|"+dayKey(0);
+setInterval(dayRoll,30e3);
+document.addEventListener("visibilitychange",()=>{if(!document.hidden){dayRoll();liveOverlay()}});
+addEventListener("online",()=>{NETERR=false;if(window.__reloadData)window.__reloadData().catch(()=>{});liveOverlay()});
+addEventListener("offline",()=>{if(D)renderStale()});
+
+/* UPDATE / APP NEU LADEN */
+let updating=false;
+function updMsg(t,c){const m=$("#updMsg");m.textContent=t;m.className="updmsg "+(c||"")}
+function showNewVer(){$("#newver").hidden=false}
+async function doUpdate(){
+  if(updating)return;updating=true;
+  const b=$("#updBtn");b.disabled=true;b.classList.add("busy");$("#updTxt").textContent="App wird aktualisiert …";updMsg("App wird aktualisiert …");
+  try{
+    if(navigator.onLine===false)throw new Error("Keine Internetverbindung.");
+    if(window.__standalone){
+      const c=new AbortController(),t=setTimeout(()=>c.abort(),15000);
+      const r=await fetch(location.pathname+"?u="+Date.now(),{cache:"reload",signal:c.signal});clearTimeout(t);
+      if(!r.ok)throw new Error("Server antwortet mit Status "+r.status+".");
+    }
+    if("serviceWorker" in navigator){try{const rg=await navigator.serviceWorker.getRegistrations();await Promise.all(rg.map(x=>x.update().catch(()=>{})))}catch(e){}}
+    if(window.caches){try{const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)))}catch(e){}}
+    if(window.__reloadData)await window.__reloadData(true);
+    try{sessionStorage.setItem("nba-upd-ok","1")}catch(e){}
+    $("#updTxt").textContent="Update erfolgreich";updMsg("Update erfolgreich – alle Änderungen sind aktiv","ok");
+    setTimeout(()=>location.reload(),700);
+  }catch(e){
+    updating=false;b.disabled=false;b.classList.remove("busy");$("#updTxt").textContent="UPDATE / APP NEU LADEN";
+    updMsg("Update fehlgeschlagen: "+(e&&e.name==="AbortError"?"Zeitüberschreitung.":(e&&e.message)||"Unbekannter Fehler.")+" Bitte Verbindung prüfen und erneut tippen.","err");
+  }
+}
+try{if(sessionStorage.getItem("nba-upd-ok")){sessionStorage.removeItem("nba-upd-ok");updMsg("Update erfolgreich – alle Änderungen sind aktiv","ok");setTimeout(()=>{if($("#updMsg").classList.contains("ok"))updMsg("")},8000)}}catch(e){}
+
+/* Daten */
+window.__standalone=true;
+async function loadData(strict){
+  try{const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("Daten: Status "+r.status);const d=await r.json();NETERR=false;
+    if(!RAW||JSON.stringify([d.updated,d.bbl&&d.bbl.updated,d.dbb&&d.dbb.updated])!==JSON.stringify([RAW.updated,RAW.bbl&&RAW.bbl.updated,RAW.dbb&&RAW.dbb.updated]))setData(d);else renderStale()}
+  catch(e){NETERR=true;if(!RAW){$("#p-spiele").innerHTML='<div class="card empty"><strong>Keine Verbindung</strong>Die Daten konnten nicht geladen werden. Prüfe deine Internetverbindung und tippe unten auf „UPDATE / APP NEU LADEN“.</div>';$("#stamp").textContent=""}else renderStale();if(strict)throw e}
+}
+window.__reloadData=loadData;
 loadData();
-setInterval(loadData,20*6e4);
+setInterval(()=>loadData(),10*6e4);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)loadData()});
 let deferredInstall=null;
 addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstall=e;$("#instBtn").hidden=false});
 $("#instBtn").addEventListener("click",async()=>{if(!deferredInstall)return;deferredInstall.prompt();try{await deferredInstall.userChoice}catch(e){}deferredInstall=null;$("#instBtn").hidden=true});
 addEventListener("appinstalled",()=>{$("#instTxt").textContent="NBA Aktuell ist installiert.";$("#instBtn").hidden=true});
-if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+if("serviceWorker" in navigator){const hadCtl=!!navigator.serviceWorker.controller;addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));navigator.serviceWorker.addEventListener("controllerchange",()=>{if(hadCtl)showNewVer()})}
 </script>
 <!-- Cloudflare Web Analytics (Besucherzählung, ohne Cookies) --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5825f26e3fcf4095b2c4339aacac50d1"}'></script>
 </body>
