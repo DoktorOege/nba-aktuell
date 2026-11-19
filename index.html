@@ -101,6 +101,9 @@ main{max-width:720px;margin:0 auto;padding-block:16px calc(100px + env(safe-area
 .bdg>i{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;font-style:normal}
 .bdg b{font:700 calc(var(--s)*.35)/1 var(--disp);margin-right:calc(var(--s)*.08);color:var(--ink);letter-spacing:.03em;transform:skewX(-8deg);text-shadow:0 calc(var(--s)*.02) 0 rgba(0,0,0,.35),0 0 calc(var(--s)*.1) rgba(0,0,0,.3)}
 .bdg em{display:none;font:600 calc(var(--s)*var(--nf,.11))/1 var(--disp);font-style:normal;color:var(--ink);opacity:.9;letter-spacing:.12em;margin-top:calc(var(--s)*.05);max-width:88%;white-space:nowrap;overflow:hidden}
+.bdg.flag{height:calc(var(--s)*.667);border-radius:calc(var(--s)*.06);background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.bdg.flag::before,.bdg.flag::after{display:none}
+.bdg.flag svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .bdg.sm{--s:36px}.bdg.md{--s:54px}.bdg.mid{--s:74px}.bdg.big{--s:112px}
 .bdg.big em,.bdg.mid em{display:block}
 .bdg.big b,.bdg.mid b{font-size:calc(var(--s)*.34)}
@@ -315,7 +318,7 @@ main{max-width:720px;margin:0 auto;padding-block:16px calc(100px + env(safe-area
 .lgsw button svg{width:28px;height:19px;border-radius:3px;display:block}
 .lgsw button[aria-pressed=true]{opacity:1;box-shadow:0 0 0 2px var(--gold)}
 .sr.bb{grid-template-columns:4px 24px 44px 1fr 56px 34px 46px}
-@media (max-width:420px){.sr.bb{grid-template-columns:4px 20px 40px 1fr 50px 30px 44px}}
+@media (max-width:420px){.sr.bb{grid-template-columns:4px 20px 40px minmax(0,1fr) 42px 26px 40px;gap:6px}}
 html[data-skin="jam"] .sr.bb{grid-template-columns:4px 26px 40px minmax(0,1fr) 52px 34px 54px}
 html[data-skin="jam"] .lgsw{background:#06093f;border:2px solid #000}
 
@@ -519,6 +522,7 @@ html[data-skin="jam"] .btn:hover{transform:translate(1px,1px);box-shadow:2px 2px
 html[data-skin="jam"] .btn.vid,html[data-skin="jam"] .rt-v{background:var(--red);color:#fff;border:3px solid #000;font:400 .5rem var(--px)}
 html[data-skin="jam"] .pill{font:400 .5rem/1.6 var(--px);padding:3px 6px}
 html[data-skin="jam"] .bdg{background:var(--c1);box-shadow:inset 0 0 0 max(2px,calc(var(--s)*.06)) var(--c2),3px 3px 0 #000;image-rendering:pixelated}
+html[data-skin="jam"] .bdg.flag{background:#fff;box-shadow:0 0 0 max(2px,calc(var(--s)*.04)) #000,3px 3px 0 #000;image-rendering:auto}
 html[data-skin="jam"] .bdg::before,html[data-skin="jam"] .bdg::after{display:none}
 html[data-skin="jam"] .bdg b{font:400 calc(var(--s)*.22)/1 var(--px);transform:none;margin:0;text-shadow:2px 2px 0 rgba(0,0,0,.5)}
 html[data-skin="jam"] .bdg em{font:600 calc(var(--s)*.12)/1 var(--body);letter-spacing:.06em}
@@ -729,7 +733,16 @@ const ink=h=>{const v=parseInt(h.slice(1),16);return (.299*(v>>16&255)+.587*(v>>
 const short=n=>(TEAMS[n]&&TEAMS[n][3])||(/Blazers/.test(n||"")?"Trail Blazers":String(n||"").split(" ").pop());
 const nick=n=>(TEAMS[n]&&TEAMS[n][4])||(/Blazers/.test(n||"")?"BLAZERS":String(n||"").split(" ").pop().toUpperCase());
 const SHAPES=["shield","hex","circle","oct","square","crest","penta"];
-function badge(n,cls=""){const [a,c1,c2]=team(n),k=Math.max(0,Object.keys(TEAMS).indexOf(n)),sh=SHAPES[k%SHAPES.length],L=nick(n).length;
+const FLAGS={
+"Deutschland":'<rect width="60" height="13.4" fill="#000"/><rect y="13.3" width="60" height="13.4" fill="#d00"/><rect y="26.6" width="60" height="13.4" fill="#ffce00"/>',
+"Lettland":'<rect width="60" height="40" fill="#9e3039"/><rect y="16" width="60" height="8" fill="#fff"/>',
+"Polen":'<rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#dc143c"/>',
+"Niederlande":'<rect width="60" height="13.4" fill="#ae1c28"/><rect y="13.3" width="60" height="13.4" fill="#fff"/><rect y="26.6" width="60" height="13.4" fill="#21468b"/>',
+"Kroatien":'<rect width="60" height="13.4" fill="#ff0000"/><rect y="13.3" width="60" height="13.4" fill="#fff"/><rect y="26.6" width="60" height="13.4" fill="#171796"/><path d="M24 11h12v10c0 5-4 8-6 9-2-1-6-4-6-9z" fill="#fff" stroke="#ff0000" stroke-width="1"/><path d="M26 12h4v4h-4zM34 12h-4v4h4zM26 20h4v4h-4zM34 20h-4v4h4zM30 16h-4v4h4zM30 16h4v4h-4zM30 24h-4v4h4zM30 24h4v4h-4z" fill="#ff0000" opacity=".9"/>',
+"Israel":'<rect width="60" height="40" fill="#fff"/><rect y="4" width="60" height="5" fill="#0038b8"/><rect y="31" width="60" height="5" fill="#0038b8"/><path d="M30 12l6 10.4H24zM30 28l-6-10.4h12z" fill="none" stroke="#0038b8" stroke-width="1.6"/>',
+"Zypern":'<rect width="60" height="40" fill="#fff"/><path d="M16 21c3-4 8-6 12-5 3-3 8-3 11-1 3 1 6 3 8 4-3 3-8 3-12 2-3 2-7 2-10 0-3 0-7-1-9 0z" fill="#d57800"/><path d="M20 28c6 5 14 5 20 0" fill="none" stroke="#4e5b31" stroke-width="2"/>'};
+function badge(n,cls=""){if(LD()&&FLAGS[n])return `<span class="bdg flag ${cls}" title="${esc(n)}"><svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true">${FLAGS[n]}</svg></span>`;
+  const [a,c1,c2]=team(n),k=Math.max(0,Object.keys(TEAMS).indexOf(n)),sh=SHAPES[k%SHAPES.length],L=nick(n).length;
   return `<span class="bdg ${cls}" style="--c1:${c1};--c2:${c2};--ink:${ink(c1)};--nf:${L>9?.075:L>7?.09:.105}" title="${esc(n)}"><i><b>${a}</b><em>${esc(nick(n))}</em></i></span>`}
 /* Spielfeldfarbe: dunkle Vereinsfarbe für Seitenflächen */
 const sideColor=n=>{const [,c1,c2]=team(n);return ink(c1)==="#ffffff"?c1:c2};
@@ -1013,7 +1026,7 @@ function divBlock(confKey,arr){
 }
 function bblTable(){
   const T=D.table||[], n=T.length;
-  const rows=T.map((t,k)=>`<div class="sr bb ${LD()?(k<3?"z1":""):(k<6?"z1":k<10?"z2":k>=n-2?"z3":"")}${isFav(t[0])?" fav":""}"><span class="z"></span><span class="rk">${k+1}.</span>${badge(t[0],"sm")}<span class="nm"${short(t[0]).length>9?' style="font-size:.86rem;letter-spacing:.02em"':""}>${esc(short(t[0]))}</span><span class="v">${t[1]}-${t[2]}</span><span class="v m">${t[1]+t[2]}</span><span class="v m">${t[3]>0?"+":""}${t[3]}</span></div>`).join("");
+  const rows=T.map((t,k)=>`<div class="sr bb ${LD()?(k<3?"z1":""):(k<6?"z1":k<10?"z2":k>=n-2?"z3":"")}${isFav(t[0])?" fav":""}"><span class="z"></span><span class="rk">${k+1}.</span>${badge(t[0],"sm")}<span class="nm"${short(t[0]).length>9?' style="font-size:.78rem;letter-spacing:0"':short(t[0]).length>7?' style="font-size:.9rem;letter-spacing:.02em"':""}>${esc(short(t[0]))}</span><span class="v">${t[1]}-${t[2]}</span><span class="v m">${t[1]+t[2]}</span><span class="v m">${t[3]>0?"+":""}${t[3]}</span></div>`).join("");
   return `<div class="sec"><h2>Tabelle</h2><span class="aux">${LASTU?"Stand "+esc(fDay(LASTU.toISOString())):""}</span></div>`
    +(n?`<div class="card conf rise" data-c="e" style="--cc:#4aa3ff"><div class="hd"><h2>${LD()?"WM-Qualifikation · Gruppe K":"easyCredit BBL"}</h2></div><div class="sr bb hdr"><span class="z"></span><span class="rk">#</span><span></span><span>Team</span><span class="v">S-N</span><span class="v">Sp</span><span class="v">Diff</span></div>${rows}</div>
    ${LD()?`<div class="legend"><span><i></i>WM-Ticket (Platz 1–3)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>`:`<div class="legend"><span><i></i>Play-offs (1–6)</span><span><i class="g"></i>Play-in (7–10)</span><span><i class="r"></i>Abstieg (17–18)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>`}`:`<div class="card empty"><strong>Noch keine Tabelle</strong>Die Daten kommen mit dem nächsten Update.</div>`);
