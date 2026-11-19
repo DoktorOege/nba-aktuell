@@ -404,6 +404,16 @@ html[data-skin="jam"] .lgsw{background:#06093f;border:2px solid #000}
 .pc.pv-lp .r{background:linear-gradient(135deg,#2d6bd8,#13306e)}
 .cd.pv-sky{border-color:#7a1424;background:radial-gradient(120% 140% at 100% 0%,#7d0a1d 0%,transparent 55%),linear-gradient(180deg,#2a0f18,#170c18)}
 .cd.pv-sky .k{color:#ff6b7f}
+.pc.pv-mag{grid-template-columns:minmax(0,1fr) 150px;border-color:#7d0a45;box-shadow:0 0 0 1px rgba(226,0,116,.2),0 8px 30px -12px rgba(226,0,116,.5)}
+.pc.pv-mag .r{background:linear-gradient(135deg,#ff1a8c,#b0005a);padding-left:24px;padding-right:8px}
+.pc.pv-mag .r strong{font-size:1.02rem;letter-spacing:0;white-space:nowrap}
+.pc.pv-mag .r small{background:rgba(60,0,30,.35)}
+.cd.pv-mag{border-color:#7d0a45;background:radial-gradient(120% 140% at 100% 0%,#a30057 0%,transparent 55%),linear-gradient(180deg,#2a0f20,#170c18)}
+.cd.pv-mag .k{color:#ff6bb5}
+.pill.m{background:#e20074;color:#fff}
+html[data-skin="jam"] .pc.pv-mag .r{background:#e20074;color:#fff}
+html[data-skin="jam"] .pc.pv-mag .r span,html[data-skin="jam"] .pc.pv-mag .r small{color:#fff}
+html[data-skin="jam"] .pc.pv-mag .r strong{font:400 .6rem/1.4 var(--px)}
 html[data-skin="jam"] .pill.s{background:#ff3b2f;color:#fff}
 html[data-skin="jam"] .ldate{font:400 .55rem/1.6 var(--px);color:var(--gold)}
 html[data-skin="jam"] .lv time{font:400 .8rem var(--px);color:var(--gold)}
@@ -611,6 +621,7 @@ html[data-skin="jam"][data-lg="dbb"] .card{box-shadow:inset 3px 3px 0 #dd0000,in
 html[data-skin="jam"][data-lg="dbb"] .updbtn{background:#dd0000;border:3px solid #ffce00;box-shadow:0 0 0 3px #000;border-radius:0}
 html[data-skin="jam"] .updbtn{border-radius:0;font-family:var(--px)}
 </style>
+<!-- Cloudflare Web Analytics (Besucherzählung, ohne Cookies) --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5825f26e3fcf4095b2c4339aacac50d1"}'></script>
 </head>
 <body>
 <div class="top">
@@ -853,10 +864,10 @@ function gameRow(g,i){
 }
 const PROV_N={prime:{n:"Prime Video",c:"p",info:"im Prime-Abo enthalten"},sky:{n:"Sky",c:"s",info:"Sky-Abo, Sky Go oder WOW"},lp:{n:"League Pass",c:"l",info:"alle Spiele, eigenes NBA-Abo"}};
 const PROV_B={dyn:{n:"Dyn",c:"p",info:"alle Spiele live im Dyn-Abo"}};
-const PROV_D={mag:{n:"MagentaSport",c:"p",info:"alle Länderspiele live und kostenlos bei MagentaSport und MagentaTV"}};
+const PROV_D={mag:{n:"MagentaSport",c:"m",info:"alle Länderspiele live und kostenlos bei MagentaSport und MagentaTV"}};
 const provFor=()=>LD()?PROV_D:LB()?PROV_B:PROV_N;
 let PROV=provFor();
-const pvc=p=>p==="dyn"||p==="mag"?"prime":p;
+const pvc=p=>p==="dyn"?"prime":p;
 let TVMAP=new Map();
 const gkey=(g)=>g.away+"|"+g.home+"|"+(g.iso?new Date(Date.parse(g.iso)-TO()).toISOString().slice(0,10):(g.date||""));
 function buildTV(){
@@ -977,7 +988,7 @@ function renderPrime(){
   h+=L.length?L.map((g,i)=>{const d=fDay(new Date(Date.parse(g.iso)-TO()).toISOString().replace(/T.*/,"T12:00:00Z"));let hd="";if(d!==last){last=d;const dd=new Date(Date.parse(g.iso)-TO()),nx=new Date(dd.getTime()+864e5).toLocaleDateString("de-DE",{weekday:"short",timeZone:TZ}).replace(".","");hd=`<div class="ldate">${esc(dd.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",timeZone:TZ}))}${LB()?"":`<span> · Abend & Nacht auf ${esc(nx)}</span>`}</div>`}
       return hd+`<div class="card lv rise${isFavG(g)?" fav":""}" style="--i:${Math.min(i,8)}"><time>${fTime(g.iso)}</time><div class="mu"><span class="tm">${badge(g.away,"sm")}${esc(short(g.away))} <span class="muted">@</span> ${badge(g.home,"sm")}${esc(short(g.home))}</span><span class="pv">${Object.keys(PROV).filter(t=>g.tv.includes(t)).map(t=>`<span class="pill ${PROV[t].c}">${PROV[t].n}</span>`).join("")}${g.tag?`<span class="pill c">${esc(g.tag)}</span>`:""}</span></div><a class="cal" href="${gcal({...g,tv:lf!=="all"?[lf]:g.tv})}" target="_blank" rel="noopener" aria-label="In Kalender eintragen">+</a></div>`}).join("")
     :`<div class="card empty">Für diesen Filter sind gerade keine Spiele hinterlegt.</div>`;
-  h+=LD()?`<div class="card prov"><div><span class="pill p">MagentaSport</span><span class="muted">${PROV.mag.info}</span></div><p class="note">MagentaSport zeigt alle Spiele der deutschen Herren-Nationalmannschaft live und kostenlos, ohne Anmeldung.${D.later?" "+esc(D.later):""} Anwurfzeiten in deutscher Zeit, kurzfristige Änderungen sind möglich.</p></div>`:LB()?`<div class="card prov"><div><span class="pill p">Dyn</span><span class="muted">${PROV.dyn.info}</span></div><p class="note">Dyn zeigt jedes Spiel der easyCredit BBL live. Hier stehen alle Spiele der nächsten Spieltage, Anwurfzeiten in deutscher Zeit. Kurzfristige Änderungen sind möglich.</p></div>`:`<div class="card prov">${["prime","sky","lp"].map(t=>`<div><span class="pill ${PROV[t].c}">${PROV[t].n}</span><span class="muted">${PROV[t].info}</span></div>`).join("")}<p class="note">League Pass zeigt alle Spiele. Hier sind alle Spiele der nächsten Tage aufgeführt, dazu alle angekündigten Übertragungen bei Prime Video und Sky. DAZN und Free-TV zeigen in dieser Saison keine NBA. Kurzfristige Änderungen sind möglich.</p></div>`;
+  h+=LD()?`<div class="card prov"><div><span class="pill m">MagentaSport</span><span class="muted">${PROV.mag.info}</span></div><p class="note">MagentaSport zeigt alle Spiele der deutschen Herren-Nationalmannschaft live und kostenlos, ohne Anmeldung.${D.later?" "+esc(D.later):""} Anwurfzeiten in deutscher Zeit, kurzfristige Änderungen sind möglich.</p></div>`:LB()?`<div class="card prov"><div><span class="pill p">Dyn</span><span class="muted">${PROV.dyn.info}</span></div><p class="note">Dyn zeigt jedes Spiel der easyCredit BBL live. Hier stehen alle Spiele der nächsten Spieltage, Anwurfzeiten in deutscher Zeit. Kurzfristige Änderungen sind möglich.</p></div>`:`<div class="card prov">${["prime","sky","lp"].map(t=>`<div><span class="pill ${PROV[t].c}">${PROV[t].n}</span><span class="muted">${PROV[t].info}</span></div>`).join("")}<p class="note">League Pass zeigt alle Spiele. Hier sind alle Spiele der nächsten Tage aufgeführt, dazu alle angekündigten Übertragungen bei Prime Video und Sky. DAZN und Free-TV zeigen in dieser Saison keine NBA. Kurzfristige Änderungen sind möglich.</p></div>`;
   $("#p-prime").innerHTML=h;
 }
 function confBlock(name,arr,color,i){
@@ -1340,6 +1351,5 @@ $("#instBtn").addEventListener("click",async()=>{if(!deferredInstall)return;defe
 addEventListener("appinstalled",()=>{$("#instTxt").textContent="NBA Aktuell ist installiert.";$("#instBtn").hidden=true});
 if("serviceWorker" in navigator){const hadCtl=!!navigator.serviceWorker.controller;addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));navigator.serviceWorker.addEventListener("controllerchange",()=>{if(hadCtl)showNewVer()})}
 </script>
-<!-- Cloudflare Web Analytics (Besucherzählung, ohne Cookies) --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5825f26e3fcf4095b2c4339aacac50d1"}'></script>
 </body>
 </html>
