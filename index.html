@@ -760,6 +760,7 @@ const saveFavs=()=>store.set(FK(),JSON.stringify(favs));
 const isFav=n=>favs.includes(n), isFavG=g=>isFav(g.away)||isFav(g.home);
 let D=null, RAW=null, playedFor=null, day="heute";
 const PANES=["spiele","prime","tabelle","spieler","news"];
+function liveVis(){const lb=document.getElementById("livebar");if(lb)lb.hidden=LB()||!["spiele","prime","tabelle"].includes(pane)}
 let pane=(()=>{const h=(location.hash||"").slice(1),s=store.get("nba-pane");return PANES.includes(h)?h:(PANES.includes(s)?s:"spiele")})();
 
 const TZ="Europe/Berlin";
@@ -1193,6 +1194,7 @@ function show(p){
   pane=p;store.set("nba-pane",p);
   PANES.forEach(k=>{$("#p-"+k).hidden=k!==p});
   $("#dates").hidden=p!=="spiele";
+  liveVis();
   $$(".tabbar button").forEach(b=>b.setAttribute("aria-selected",b.dataset.p===p));
   try{history.replaceState(null,"","#"+p)}catch(e){}
   window.scrollTo({top:0});
@@ -1261,7 +1263,7 @@ function applyLeague(){
   const am=document.querySelector('meta[name="apple-mobile-web-app-title"]');if(am)am.content=nm;
   $$(".lgsw button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lg===league));
   document.documentElement.dataset.lg=league;
-  $("#livebar").hidden=LB();
+  liveVis();
   buildChips();favCount();
 }
 function setLeague(l){
@@ -1331,7 +1333,7 @@ addEventListener("offline",()=>{if(D)renderStale()});
 
 /* NBA live aktualisieren (Button): Ergebnisse, Spielplan und Tabelle direkt von ESPN.
    TV-Sender, Prime, News, Spieler, BBL und DBB bleiben aus data.json. */
-let LIVE=null, liveBusy=false;
+let LIVE=null, liveBusy=false, liveT=0;
 const ESPN="https://site.api.espn.com/apis/";
 async function espnGet(path){
   const c=new AbortController(),t=setTimeout(()=>c.abort(),10000);
@@ -1365,7 +1367,7 @@ function espnStandings(j){
 async function liveRefresh(){
   if(liveBusy||LB()||!RAW)return;
   const b=$("#liveBtn"),m=$("#liveMsg");
-  const say=(t,err)=>{m.textContent=t;m.className="livemsg"+(err?" err":"")};
+  const say=(t,err,ms)=>{clearTimeout(liveT);m.textContent=t;m.className="livemsg"+(err?" err":"");if(ms)liveT=setTimeout(()=>{m.textContent=""},ms)};
   liveBusy=true;b.disabled=true;say("Lade live von ESPN …");
   try{
     if(navigator.onLine===false)throw new Error("Keine Internetverbindung");
@@ -1404,9 +1406,9 @@ async function liveRefresh(){
     f.updated=isoZ(Date.now());
     LIVE={at:Date.now(),f};OV=new Map();
     setData({...RAW,...f});
-    say("Live von ESPN geladen ("+fTime(Date.now())+" Uhr): "+(f.results?f.results.length:0)+" Ergebnisse, Spielplan, Tabelle. TV, News und Spieler aus dem letzten Update.");
+    say("Live von ESPN geladen ("+fTime(Date.now())+" Uhr): "+(f.results?f.results.length:0)+" Ergebnisse, Spielplan, Tabelle. TV, News und Spieler aus dem letzten Update.",false,6000);
   }catch(e){
-    say("Live-Laden nicht möglich ("+(e&&e.name==="AbortError"?"Zeitüberschreitung":e&&e.name==="TypeError"?"ESPN blockiert den Abruf oder offline":(e&&e.message)||"Fehler")+"). Der gespeicherte Stand bleibt.",true);
+    say("Live-Laden nicht möglich ("+(e&&e.name==="AbortError"?"Zeitüberschreitung":e&&e.name==="TypeError"?"ESPN blockiert den Abruf oder offline":(e&&e.message)||"Fehler")+"). Der gespeicherte Stand bleibt.",true,12000);
   }finally{liveBusy=false;b.disabled=false}
 }
 
