@@ -760,7 +760,7 @@ const saveFavs=()=>store.set(FK(),JSON.stringify(favs));
 const isFav=n=>favs.includes(n), isFavG=g=>isFav(g.away)||isFav(g.home);
 let D=null, RAW=null, playedFor=null, day="heute";
 const PANES=["spiele","prime","tabelle","spieler","news"];
-function liveVis(){const lb=document.getElementById("livebar");if(lb)lb.hidden=LB()||!["spiele","prime","tabelle"].includes(pane)}
+function liveVis(){const lb=document.getElementById("livebar");if(lb)lb.hidden=LB()}
 let pane=(()=>{const h=(location.hash||"").slice(1),s=store.get("nba-pane");return PANES.includes(h)?h:(PANES.includes(s)?s:"spiele")})();
 
 const TZ="Europe/Berlin";
@@ -1373,6 +1373,8 @@ async function liveRefresh(){
     if(navigator.onLine===false)throw new Error("Keine Internetverbindung");
     const offs=[-1,0,1,2,3,4,5,6,7,8];
     const [st,...sb]=await Promise.all([espnGet("v2/sports/basketball/nba/standings")].concat(offs.map(o=>espnGet("site/v2/sports/basketball/nba/scoreboard?dates="+espnKey(dayKey(o))))));
+    const opt=p=>espnGet(p).catch(()=>null);
+    const [pl,nw]=await Promise.all([opt("common/v3/sports/basketball/nba/statistics/byathlete?region=us&lang=en&contentorigin=espn&isqualified=true&page=1&limit=25&sort=offensive.avgPoints:desc"),opt("site/v2/sports/basketball/nba/news?limit=25")]);
     const base=LIVE?{...RAW}:RAW;
     /* TV-/Prime-Infos aus data.json übernehmen */
     const info=new Map();
@@ -1400,13 +1402,34 @@ async function liveRefresh(){
     (base.broadcasts||[]).forEach(g=>{if(gDayKey(g)>lastK&&!seen.has(gkey(g)))bc.push(g)});
     f.broadcasts=bc.sort((a,b)=>Date.parse(a.iso)-Date.parse(b.iso));
     f.prime=(base.prime||[]).filter(g=>!g.iso||Date.parse(g.iso)>Date.now()-3*36e5);
+    /* Spieler (Top 20 nach Punkten) */
+    const fold=x=>String(x||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+    const nm=new Map();(base.players||[]).forEach(q=>nm.set(fold(q.name),q.name));Object.values(base.rosters||{}).forEach(r=>(r||[]).forEach(q=>nm.set(fold(q.n),q.n)));
+    let np=0;
+    if(pl&&pl.athletes&&pl.categories){
+      const ix={};pl.categories.forEach(c=>ix[c.name]=c.names||[]);
+      const v=(a,cat,n)=>{const c=(a.categories||[]).find(x=>x.name===cat),i=(ix[cat]||[]).indexOf(n);return c&&i>=0?+c.values[i]:0};
+      const r1=x=>Math.round(x*10)/10;
+      const ps=pl.athletes.map(a=>{const t=(a.athlete.teams||[]).find(t=>t.abbreviation===a.athlete.teamShortName)||(a.athlete.teams||[]).slice(-1)[0]||{};
+        return {name:nm.get(fold(a.athlete.displayName))||a.athlete.displayName,team:t.displayName||"",gp:v(a,"general","gamesPlayed"),min:r1(v(a,"general","avgMinutes")),pts:r1(v(a,"offensive","avgPoints")),reb:r1(v(a,"general","avgRebounds")),ast:r1(v(a,"offensive","avgAssists")),stl:r1(v(a,"defensive","avgSteals")),blk:r1(v(a,"defensive","avgBlocks")),fg:r1(v(a,"offensive","fieldGoalPct")),tp:r1(v(a,"offensive","threePointFieldGoalPct"))}})
+        .filter(q=>q.gp>=7).sort((a,b)=>b.pts-a.pts).slice(0,20);
+      if(ps.length>=10){f.players=ps;f.playersAsOf="Stand "+fStamp(new Date())+" · Quelle: ESPN (live) · nach Punkten pro Spiel, mind. 7 Spiele";np=ps.length}
+    }
+    /* News: neueste ESPN-Schlagzeilen (englisch) vor den deutschen Meldungen */
+    let nn=0;
+    if(nw&&nw.articles){
+      const isNba=a=>(a.categories||[]).some(c=>c.leagueId===46||(c.league&&c.league.id===46))&&!(a.categories||[]).some(c=>c.type==="league"&&c.leagueId!==46);
+      const en=nw.articles.filter(a=>a.headline&&a.type!=="Media"&&isNba(a)).slice(0,8).map(a=>({tag:"ESPN · "+fTime(a.published),text:a.headline}));
+      const de=(base.news||[]).filter(n=>!/^ESPN/.test(n.tag||""));
+      if(en.length){f.news=en.concat(de);nn=en.length}
+    }
     const sd=espnStandings(st);if(sd.east&&sd.east.length)f.east=sd.east;if(sd.west&&sd.west.length)f.west=sd.west;
     const n=f.days.reduce((s,d)=>s+d.games.length,0)+f.broadcasts.length;
     if(!n&&!fin.length)throw new Error("ESPN lieferte keine Spiele");
     f.updated=isoZ(Date.now());
     LIVE={at:Date.now(),f};OV=new Map();
     setData({...RAW,...f});
-    say("Live von ESPN geladen ("+fTime(Date.now())+" Uhr): "+(f.results?f.results.length:0)+" Ergebnisse, Spielplan, Tabelle. TV, News und Spieler aus dem letzten Update.",false,6000);
+    say("Live von ESPN geladen ("+fTime(Date.now())+" Uhr): "+(f.results?f.results.length:0)+" Ergebnisse, Spielplan, Tabelle"+(np?", Top-Spieler":"")+(nn?", "+nn+" News":"")+". TV-Sender kommen aus dem letzten Update.",false,6000);
   }catch(e){
     say("Live-Laden nicht möglich ("+(e&&e.name==="AbortError"?"Zeitüberschreitung":e&&e.name==="TypeError"?"ESPN blockiert den Abruf oder offline":(e&&e.message)||"Fehler")+"). Der gespeicherte Stand bleibt.",true,12000);
   }finally{liveBusy=false;b.disabled=false}
