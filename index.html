@@ -85,6 +85,11 @@ main{max-width:720px;margin:0 auto;padding-block:16px calc(100px + env(safe-area
 .muted{color:var(--muted)}
 .btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line2);background:var(--card2);border-radius:999px;padding:7px 14px;font-weight:600;font-size:.85rem;cursor:pointer}
 .btn:hover{border-color:var(--blue)}
+.livebar{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;margin-bottom:12px}
+.livebar[hidden]{display:none}
+.livebar .btn[disabled]{opacity:.6;cursor:wait}
+.livemsg{font-size:.8rem;opacity:.85}
+.livemsg.err{color:var(--red-hi,#ff6b7d);opacity:1}
 .pill{display:inline-flex;align-items:center;gap:5px;font:600 .72rem var(--disp);letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:5px;line-height:1.5}
 .pill.live{background:var(--red);color:#fff}
 .pill.live::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1s infinite}
@@ -647,6 +652,7 @@ html[data-skin="jam"] .updbtn{border-radius:0;font-family:var(--px)}
 </div>
 
 <main>
+  <div id="livebar" class="livebar"><button class="btn" id="liveBtn" type="button" data-live>&#x27F3; NBA live aktualisieren</button><span id="liveMsg" class="livemsg" role="status" aria-live="polite"></span></div>
   <div id="stale" class="stale" hidden></div>
   <div id="newver" class="stale info" hidden>Eine neue App-Version ist bereit. <button class="btn" type="button" data-upd>Jetzt aktualisieren</button></div>
   <section class="pane" id="p-spiele"><div class="card empty"><strong>Daten werden geladen</strong>Spiele, Prime-Termine, News und Tabelle erscheinen gleich. Die App wird morgens und abends automatisch aktualisiert.</div></section>
@@ -1212,6 +1218,7 @@ function renderStale(){
   st.hidden=!msg;if(msg){st.innerHTML=esc(msg)+` <button class="btn" type="button" data-upd>Neu laden</button>`}
 }
 function setData(d){
+  if(LIVE&&d!==RAW&&!(Date.parse(d.updated)>LIVE.at))d={...d,...LIVE.f};
   RAW=d; D=LD()?(d.dbb||{}):LB()?(d.bbl||{}):d;
   const u=(D.updated||d.updated)?new Date(D.updated||d.updated):null;
   $("#stamp").textContent=u?`Stand ${u.toLocaleDateString("de-DE",{weekday:"short",day:"2-digit",month:"2-digit",timeZone:TZ}).replace(",","")}, ${fTime(u)} Uhr`:"";
@@ -1224,6 +1231,7 @@ addEventListener("resize",moveUL);
 addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(PANES.includes(h)&&h!==pane)show(h)});
 document.addEventListener("click",e=>{
   const up=e.target.closest("[data-upd]");if(up){doUpdate();return}
+  const lv=e.target.closest("[data-live]");if(lv){liveRefresh();return}
   const lg=e.target.closest("button[data-lg]");if(lg){setLeague(lg.dataset.lg);return}
   const lf=e.target.closest("[data-lf]");if(lf){lfilter=lf.dataset.lf;store.set("nba-lf",lfilter);renderPrime();tick();return}
   const pb=e.target.closest("[data-psub]");if(pb){psub=pb.dataset.psub;store.set("nba-psub",psub);renderSpieler();return}
@@ -1253,6 +1261,7 @@ function applyLeague(){
   const am=document.querySelector('meta[name="apple-mobile-web-app-title"]');if(am)am.content=nm;
   $$(".lgsw button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lg===league));
   document.documentElement.dataset.lg=league;
+  $("#livebar").hidden=LB();
   buildChips();favCount();
 }
 function setLeague(l){
@@ -1319,6 +1328,87 @@ setInterval(dayRoll,30e3);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden){dayRoll();liveOverlay()}});
 addEventListener("online",()=>{NETERR=false;if(window.__reloadData)window.__reloadData().catch(()=>{});liveOverlay()});
 addEventListener("offline",()=>{if(D)renderStale()});
+
+/* NBA live aktualisieren (Button): Ergebnisse, Spielplan und Tabelle direkt von ESPN.
+   TV-Sender, Prime, News, Spieler, BBL und DBB bleiben aus data.json. */
+let LIVE=null, liveBusy=false;
+const ESPN="https://site.api.espn.com/apis/";
+async function espnGet(path){
+  const c=new AbortController(),t=setTimeout(()=>c.abort(),10000);
+  try{const r=await fetch(ESPN+path,{signal:c.signal,cache:"no-store"});if(!r.ok)throw new Error("ESPN Status "+r.status);return await r.json()}
+  finally{clearTimeout(t)}
+}
+const isoZ=ms=>new Date(ms).toISOString().replace(/\.\d{3}Z$/,"Z");
+const wdLong=k=>new Date(k+"T12:00:00Z").toLocaleDateString("de-DE",{weekday:"long",timeZone:TZ});
+const wdShort=k=>fKey(k).split(" ")[0];
+const nextK=k=>new Date(Date.parse(k+"T12:00:00Z")+864e5).toISOString().slice(0,10);
+function espnGames(j){
+  const o=[];
+  (j.events||[]).forEach(ev=>{const c0=(ev.competitions||[])[0];if(!c0)return;
+    const aw=c0.competitors.find(x=>x.homeAway==="away"),hm=c0.competitors.find(x=>x.homeAway==="home");if(!aw||!hm)return;
+    const st=(ev.status&&ev.status.type)||{};const ms=Date.parse(ev.date);if(!ms)return;
+    o.push({away:aw.team.displayName,home:hm.team.displayName,iso:isoZ(ms),state:st.state||"pre",as:+aw.score||0,hs:+hm.score||0,clock:st.shortDetail||""});
+  });
+  return o.sort((a,b)=>Date.parse(a.iso)-Date.parse(b.iso));
+}
+function espnStandings(j){
+  const out={east:null,west:null};
+  (j.children||[]).forEach(ch=>{
+    const ent=((ch.standings||{}).entries||[]).map(e=>{const sv=n=>{const x=(e.stats||[]).find(s=>s.name===n);return x?+x.value:0};
+      return {n:e.team.displayName,w:sv("wins"),l:sv("losses"),seed:sv("playoffSeed")||99,pct:sv("winPercent")}});
+    ent.sort((a,b)=>a.seed-b.seed||b.pct-a.pct);
+    const rows=ent.map(e=>[e.n,e.w,e.l]);
+    if(/east/i.test(ch.name||ch.abbreviation||""))out.east=rows;else if(/west/i.test(ch.name||ch.abbreviation||""))out.west=rows;
+  });
+  return out;
+}
+async function liveRefresh(){
+  if(liveBusy||LB()||!RAW)return;
+  const b=$("#liveBtn"),m=$("#liveMsg");
+  const say=(t,err)=>{m.textContent=t;m.className="livemsg"+(err?" err":"")};
+  liveBusy=true;b.disabled=true;say("Lade live von ESPN …");
+  try{
+    if(navigator.onLine===false)throw new Error("Keine Internetverbindung");
+    const offs=[-1,0,1,2,3,4,5,6,7,8];
+    const [st,...sb]=await Promise.all([espnGet("v2/sports/basketball/nba/standings")].concat(offs.map(o=>espnGet("site/v2/sports/basketball/nba/scoreboard?dates="+espnKey(dayKey(o))))));
+    const base=LIVE?{...RAW}:RAW;
+    /* TV-/Prime-Infos aus data.json übernehmen */
+    const info=new Map();
+    const keep=g=>{const k=gkey(g),p=info.get(k)||{};info.set(k,{tv:(g.tv&&g.tv.length?g.tv:p.tv)||[],prime:g.prime||p.prime,tag:g.tag||p.tag,wp:g.wp||p.wp})};
+    (base.days||[]).forEach(d=>(d.games||[]).forEach(keep));(base.broadcasts||[]).forEach(keep);
+    (base.prime||[]).forEach(g=>{const k=gkey(g),p=info.get(k)||{tv:[]};if(!p.tv.includes("prime"))p.tv=[...p.tv,"prime"];p.prime=true;info.set(k,p)});
+    const withInfo=g=>{const i=info.get(gkey(g))||{},o={away:g.away,home:g.home,iso:g.iso,tv:i.tv||[]};if(i.prime)o.prime=true;if(i.tag)o.tag=i.tag;if(i.wp&&g.state==="pre")o.wp=i.wp;return o};
+    const f={};
+    /* Ergebnisse der letzten Nacht */
+    const y=dayKey(-1),fin=espnGames(sb[0]).filter(g=>g.state==="post");
+    if(fin.length){
+      const old=new Map((base.results||[]).map(r=>[r.away+"|"+r.home,r]));
+      f.results=fin.map(g=>{const o=old.get(g.away+"|"+g.home)||{},i=info.get(gkey(g))||{},r={away:g.away,home:g.home,as:g.as,hs:g.hs,note:o.note||""};if(o.prime||i.prime)r.prime=true;if(o.video)r.video=o.video;return r});
+      f.resultsLabel=fKey(y)+" / Nacht auf "+wdShort(nextK(y));
+      const fo=(base.results||[])[base.featured||0];let fi=fo?f.results.findIndex(r=>r.away===fo.away&&r.home===fo.home):-1;
+      if(fi<0){fi=0;f.results.forEach((r,i)=>{if(Math.abs(r.as-r.hs)<Math.abs(f.results[fi].as-f.results[fi].hs))fi=i})}
+      f.featured=fi;
+      f.highlights=(base.highlights||[]).map(h=>{const o=(base.results||[])[h.game];const ni=o?f.results.findIndex(r=>r.away===o.away&&r.home===o.home):-1;return ni<0?null:{...h,game:ni}}).filter(Boolean);
+    }
+    /* Heute und morgen */
+    f.days=[1,2].map(n=>{const k=dayKey(n-1);return {label:fKey(k)+" – Nacht auf "+wdLong(nextK(k)),games:espnGames(sb[n]).map(g=>{const o={...withInfo(g),time:fTime(g.iso)};if(g.state==="in"){o.status="live";o.as=g.as;o.hs=g.hs;o.clock=g.clock}else if(g.state==="post"){o.status="final";o.as=g.as;o.hs=g.hs}return o})}});
+    /* Weitere Tage + spätere TV-Termine aus data.json */
+    const lastK=dayKey(8),bc=[];sb.slice(3).forEach(j=>espnGames(j).forEach(g=>bc.push(withInfo(g))));
+    const seen=new Set(bc.map(gkey));
+    (base.broadcasts||[]).forEach(g=>{if(gDayKey(g)>lastK&&!seen.has(gkey(g)))bc.push(g)});
+    f.broadcasts=bc.sort((a,b)=>Date.parse(a.iso)-Date.parse(b.iso));
+    f.prime=(base.prime||[]).filter(g=>!g.iso||Date.parse(g.iso)>Date.now()-3*36e5);
+    const sd=espnStandings(st);if(sd.east&&sd.east.length)f.east=sd.east;if(sd.west&&sd.west.length)f.west=sd.west;
+    const n=f.days.reduce((s,d)=>s+d.games.length,0)+f.broadcasts.length;
+    if(!n&&!fin.length)throw new Error("ESPN lieferte keine Spiele");
+    f.updated=isoZ(Date.now());
+    LIVE={at:Date.now(),f};OV=new Map();
+    setData({...RAW,...f});
+    say("Live von ESPN geladen ("+fTime(Date.now())+" Uhr): "+(f.results?f.results.length:0)+" Ergebnisse, Spielplan, Tabelle. TV, News und Spieler aus dem letzten Update.");
+  }catch(e){
+    say("Live-Laden nicht möglich ("+(e&&e.name==="AbortError"?"Zeitüberschreitung":e&&e.name==="TypeError"?"ESPN blockiert den Abruf oder offline":(e&&e.message)||"Fehler")+"). Der gespeicherte Stand bleibt.",true);
+  }finally{liveBusy=false;b.disabled=false}
+}
 
 /* UPDATE / APP NEU LADEN */
 let updating=false;
