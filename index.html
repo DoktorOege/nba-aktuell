@@ -311,6 +311,8 @@ main{max-width:720px;margin:0 auto;padding-block:16px calc(100px + env(safe-area
 .sr.hdr .v,.sr.hdr .rk{font:inherit;color:inherit}
 .sr.fav{background:rgba(255,199,44,.09)}
 .sr.fav .nm{color:var(--gold)}
+.grp{margin-top:12px}.gdt{border-top:1px solid var(--line)}.gdt>summary{cursor:pointer;padding:10px 12px;font-weight:700;font-size:.85rem;color:var(--muted);list-style:none}.gdt>summary::-webkit-details-marker{display:none}.gdt>summary::after{content:" ▾"}.gdt[open]>summary::after{content:" ▴"}
+.glh{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:10px 12px 4px}.gl{padding:6px 12px;border-top:1px solid var(--line)}.gl small{display:block;color:var(--muted);font-size:.72rem;margin-bottom:3px}.gm{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto minmax(0,1fr);align-items:center;gap:6px;font-size:.88rem}.gm>b{font-variant-numeric:tabular-nums;padding:0 4px}.gm>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.76rem;color:var(--muted)}
 .legend i{display:inline-block;width:4px;height:12px;vertical-align:-1px;margin-right:6px;background:var(--blue)}
 .legend i.g{background:var(--green)}
@@ -724,7 +726,7 @@ const TEAMS_B={
 "Rasta Vechta":["VEC","#0F7B3F","#F2E205","Vechta","RASTA"],"Löwen Braunschweig":["BRA","#F5C400","#111111","Braunschweig","LÖWEN"],
 "Chemnitz 99ers":["CHE","#17479E","#E6E6E6","Chemnitz","99ERS"],"Veolia Towers Hamburg":["HAM","#C4161C","#111827","Hamburg","TOWERS"],
 "Science City Jena":["JEN","#0B5CAB","#FFC20E","Jena","JENA"],"Phoenix Hagen":["HAG","#D9480F","#1B2A49","Hagen","HAGEN"]};
-const TEAMS_D={"Deutschland":["GER","#16181d","#ffce00","Deutschland","DEUTSCHLAND"],"Lettland":["LAT","#9e1b32","#ffffff","Lettland","LETTLAND"],"Polen":["POL","#dc143c","#ffffff","Polen","POLEN"],"Kroatien":["CRO","#c8102e","#1d3f8f","Kroatien","KROATIEN"],"Niederlande":["NED","#f36c21","#21468b","Niederlande","ORANJE"],"Israel":["ISR","#0b4fb3","#ffffff","Israel","ISRAEL"]};
+const TEAMS_D={"Deutschland":["GER","#16181d","#ffce00","Deutschland","DEUTSCHLAND"],"Lettland":["LAT","#9e1b32","#ffffff","Lettland","LETTLAND"],"Polen":["POL","#dc143c","#ffffff","Polen","POLEN"],"Kroatien":["CRO","#c8102e","#1d3f8f","Kroatien","KROATIEN"],"Niederlande":["NED","#f36c21","#21468b","Niederlande","ORANJE"],"Israel":["ISR","#0b4fb3","#ffffff","Israel","ISRAEL"],"Spanien":["ESP","#c60b1e","#ffc400","Spanien","SPANIEN"],"Ukraine":["UKR","#0057b7","#ffd700","Ukraine","UKRAINE"],"Georgien":["GEO","#ffffff","#e8112d","Georgien","GEORGIEN"],"Portugal":["POR","#006600","#ff0000","Portugal","PORTUGAL"],"Griechenland":["GRE","#0d5eaf","#ffffff","Griechenland","HELLAS"],"Montenegro":["MNE","#c40308","#d4af37","Montenegro","MONTENEGRO"],"Türkei":["TUR","#e30a17","#ffffff","Türkei","TÜRKEI"],"Italien":["ITA","#009246","#ce2b37","Italien","ITALIEN"],"Serbien":["SRB","#c6363c","#0c4076","Serbien","SERBIEN"],"Litauen":["LTU","#006a44","#fdb913","Litauen","LITAUEN"],"Island":["ISL","#02529c","#dc1e35","Island","ISLAND"],"Bosnien-Herzegowina":["BIH","#002395","#fecb00","Bosnien","BOSNIEN"],"Frankreich":["FRA","#0055a4","#ef4135","Frankreich","FRANCE"],"Finnland":["FIN","#003580","#ffffff","Finnland","FINNLAND"],"Estland":["EST","#0072ce","#000000","Estland","ESTLAND"],"Slowenien":["SLO","#005ce5","#ed1c24","Slowenien","SLOWENIEN"],"Schweden":["SWE","#006aa7","#fecc02","Schweden","SCHWEDEN"],"Ungarn":["HUN","#436f4d","#cd2a3e","Ungarn","UNGARN"]};
 const _sl=store.get("nba-league");
 let league=_sl==="bbl"||_sl==="dbb"?_sl:"nba";
 const LB=()=>league!=="nba";   /* Europa-Modus: BBL und DBB */
@@ -746,6 +748,24 @@ const FLAGS={
 "Niederlande":'<rect width="60" height="13.4" fill="#ae1c28"/><rect y="13.3" width="60" height="13.4" fill="#fff"/><rect y="26.6" width="60" height="13.4" fill="#21468b"/>',
 "Kroatien":'<rect width="60" height="13.4" fill="#ff0000"/><rect y="13.3" width="60" height="13.4" fill="#fff"/><rect y="26.6" width="60" height="13.4" fill="#171796"/><path d="M24 11h12v10c0 5-4 8-6 9-2-1-6-4-6-9z" fill="#fff" stroke="#ff0000" stroke-width="1"/><path d="M26 12h4v4h-4zM34 12h-4v4h4zM26 20h4v4h-4zM34 20h-4v4h4zM30 16h-4v4h4zM30 16h4v4h-4zM30 24h-4v4h4zM30 24h4v4h-4z" fill="#ff0000" opacity=".9"/>',
 "Israel":'<rect width="60" height="40" fill="#fff"/><rect y="4" width="60" height="5" fill="#0038b8"/><rect y="31" width="60" height="5" fill="#0038b8"/><path d="M30 12l6 10.4H24zM30 28l-6-10.4h12z" fill="none" stroke="#0038b8" stroke-width="1.6"/>',
+"Spanien":'<rect width="60" height="40" fill="#c60b1e"/><rect y="10" width="60" height="20" fill="#ffc400"/>',
+"Ukraine":'<rect width="60" height="20" fill="#0057b7"/><rect y="20" width="60" height="20" fill="#ffd700"/>',
+"Georgien":'<rect width="60" height="40" fill="#fff"/><rect x="26" width="8" height="40" fill="#e8112d"/><rect y="16" width="60" height="8" fill="#e8112d"/><g fill="#e8112d"><rect x="10" y="5" width="3" height="7"/><rect x="8" y="7" width="7" height="3"/><rect x="47" y="5" width="3" height="7"/><rect x="45" y="7" width="7" height="3"/><rect x="10" y="28" width="3" height="7"/><rect x="8" y="30" width="7" height="3"/><rect x="47" y="28" width="3" height="7"/><rect x="45" y="30" width="7" height="3"/></g>',
+"Portugal":'<rect width="60" height="40" fill="#ff0000"/><rect width="24" height="40" fill="#006600"/><circle cx="24" cy="20" r="7" fill="#ffe000"/><circle cx="24" cy="20" r="4" fill="#ff0000" stroke="#fff" stroke-width="1"/>',
+"Griechenland":'<rect width="60" height="40" fill="#0d5eaf"/><g fill="#fff"><rect y="4.4" width="60" height="4.4"/><rect y="13.3" width="60" height="4.4"/><rect y="22.2" width="60" height="4.4"/><rect y="31.1" width="60" height="4.4"/></g><rect width="22.2" height="22.2" fill="#0d5eaf"/><rect x="8.9" width="4.4" height="22.2" fill="#fff"/><rect y="8.9" width="22.2" height="4.4" fill="#fff"/>',
+"Montenegro":'<rect width="60" height="40" fill="#d4af37"/><rect x="2.5" y="2.5" width="55" height="35" fill="#c40308"/><path d="M24 13l6 4 6-4-1 8 3 3h-16l3-3z" fill="#d4af37"/><rect x="27" y="24" width="6" height="5" fill="#d4af37"/>',
+"Türkei":'<rect width="60" height="40" fill="#e30a17"/><circle cx="22" cy="20" r="10" fill="#fff"/><circle cx="24.5" cy="20" r="8" fill="#e30a17"/><path d="M33 20l9-3-5.6 7.7v-9.4L42 23z" fill="#fff"/>',
+"Italien":'<rect width="20.1" height="40" fill="#009246"/><rect x="20" width="20.1" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#ce2b37"/>',
+"Serbien":'<rect width="60" height="13.4" fill="#c6363c"/><rect y="13.3" width="60" height="13.4" fill="#0c4076"/><rect y="26.6" width="60" height="13.4" fill="#fff"/><path d="M15 9h10v12c0 4-3 6-5 7-2-1-5-3-5-7z" fill="#c6363c" stroke="#edb92e" stroke-width="1.2"/><path d="M20 12v13M16 17h8" stroke="#fff" stroke-width="1.6"/>',
+"Litauen":'<rect width="60" height="13.4" fill="#fdb913"/><rect y="13.3" width="60" height="13.4" fill="#006a44"/><rect y="26.6" width="60" height="13.4" fill="#c1272d"/>',
+"Island":'<rect width="60" height="40" fill="#02529c"/><rect x="16" width="10" height="40" fill="#fff"/><rect y="15" width="60" height="10" fill="#fff"/><rect x="19" width="4" height="40" fill="#dc1e35"/><rect y="18" width="60" height="4" fill="#dc1e35"/>',
+"Bosnien-Herzegowina":'<rect width="60" height="40" fill="#002395"/><path d="M17 0h28v40z" fill="#fecb00"/><g fill="#fff"><circle cx="13" cy="3" r="1.6"/><circle cx="17.5" cy="9.5" r="1.6"/><circle cx="22" cy="16" r="1.6"/><circle cx="26.5" cy="22.5" r="1.6"/><circle cx="31" cy="29" r="1.6"/><circle cx="35.5" cy="35.5" r="1.6"/></g>',
+"Frankreich":'<rect width="20.1" height="40" fill="#0055a4"/><rect x="20" width="20.1" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#ef4135"/>',
+"Finnland":'<rect width="60" height="40" fill="#fff"/><rect x="16" width="10" height="40" fill="#003580"/><rect y="15" width="60" height="10" fill="#003580"/>',
+"Estland":'<rect width="60" height="13.4" fill="#0072ce"/><rect y="13.3" width="60" height="13.4" fill="#000"/><rect y="26.6" width="60" height="13.4" fill="#fff"/>',
+"Slowenien":'<rect width="60" height="13.4" fill="#fff"/><rect y="13.3" width="60" height="13.4" fill="#005ce5"/><rect y="26.6" width="60" height="13.4" fill="#ed1c24"/><path d="M12 6h10v8c0 4-3 6-5 7-2-1-5-3-5-7z" fill="#005ce5" stroke="#ed1c24" stroke-width="1"/><path d="M13 15l2.5-3 2 2 2-2 2.5 3" fill="none" stroke="#fff" stroke-width="1.2"/>',
+"Schweden":'<rect width="60" height="40" fill="#006aa7"/><rect x="16" width="10" height="40" fill="#fecc02"/><rect y="15" width="60" height="10" fill="#fecc02"/>',
+"Ungarn":'<rect width="60" height="13.4" fill="#cd2a3e"/><rect y="13.3" width="60" height="13.4" fill="#fff"/><rect y="26.6" width="60" height="13.4" fill="#436f4d"/>',
 "Zypern":'<rect width="60" height="40" fill="#fff"/><path d="M16 21c3-4 8-6 12-5 3-3 8-3 11-1 3 1 6 3 8 4-3 3-8 3-12 2-3 2-7 2-10 0-3 0-7-1-9 0z" fill="#d57800"/><path d="M20 28c6 5 14 5 20 0" fill="none" stroke="#4e5b31" stroke-width="2"/>'};
 function badge(n,cls=""){if(LD()&&FLAGS[n])return `<span class="bdg flag ${cls}" title="${esc(n)}"><svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true">${FLAGS[n]}</svg></span>`;
   const [a,c1,c2]=team(n),k=Math.max(0,Object.keys(TEAMS).indexOf(n)),sh=SHAPES[k%SHAPES.length],L=nick(n).length;
@@ -1031,12 +1051,29 @@ function divBlock(confKey,arr){
     return `<div class="dv rise"><h3>${dn} Division</h3><div class="tiles5">${sorted.map((n,k)=>teamTile(n,rec(n),k,pos(n)>=0?pos(n)+1:0)).join("")}</div></div>`;
   }).join("");
 }
+function grpRows(T){return T.map((t,k)=>`<div class="sr bb ${k<3?"z1":""}${isFav(t[0])?" fav":""}"><span class="z"></span><span class="rk">${k+1}.</span>${badge(t[0],"sm")}<span class="nm"${short(t[0]).length>9?' style="font-size:.78rem;letter-spacing:0"':short(t[0]).length>7?' style="font-size:.9rem;letter-spacing:.02em"':""}>${esc(short(t[0]))}</span><span class="v">${t[1]}-${t[2]}</span><span class="v m">${t[1]+t[2]}</span><span class="v m">${t[3]>0?"+":""}${t[3]}</span></div>`).join("")}
+function grpGames(g){
+  const L=x=>`${badge(x,"sm")}<span>${esc(short(x))}</span>`;
+  const res=(g.results||[]).map(r=>`<div class="gl"><small>${esc(r.note||"")}</small><div class="gm">${L(r.home)}<b>${r.hs}:${r.as}</b>${L(r.away)}</div></div>`).join("");
+  const up=(g.games||[]).map(r=>`<div class="gl"><small>${r.iso?esc(fDay(r.iso))+" · "+esc(fTime(r.iso))+" Uhr":esc(r.date||"")}${r.note?" · "+esc(r.note):""}</small><div class="gm">${L(r.home)}<b>–</b>${L(r.away)}</div></div>`).join("");
+  return (up?`<h3 class="glh">Nächste Spiele</h3>${up}`:"")+(res?`<h3 class="glh">Ergebnisse 2. Runde</h3>${res}`:"");
+}
+function grpBlock(g){
+  const T=g.table||[];
+  return `<div class="card conf rise grp" data-c="e" style="--cc:#9aa7c7"><div class="hd"><h2>WM-Qualifikation · ${esc(g.name)}</h2></div>${T.length?`<div class="sr bb hdr"><span class="z"></span><span class="rk">#</span><span></span><span>Team</span><span class="v">S-N</span><span class="v">Sp</span><span class="v">Diff</span></div>${grpRows(T)}`:""}<details class="gdt"><summary>Termine &amp; Ergebnisse</summary>${grpGames(g)}</details></div>`;
+}
+function dbbGroups(){
+  const G=D.groups||[]; if(!G.length) return "";
+  const k=G.find(g=>/ K$/.test(g.name)), o=G.filter(g=>g!==k);
+  return (k?`<div class="card conf rise grp" style="--cc:#4aa3ff"><details class="gdt"><summary>Gruppe K · alle Termine &amp; Ergebnisse</summary>${grpGames(k)}</details></div>`:"")
+   +(o.length?`<div class="sec"><h2>Andere Gruppen</h2><span class="aux">Europa · 2. Runde</span></div>${o.map(grpBlock).join("")}<p class="note muted" style="font-size:.76rem;margin:4px 2px 12px">Die besten drei jeder Gruppe fahren zur WM 2027 nach Katar. ${esc(D.groupsNote||"")}</p>`:"");
+}
 function bblTable(){
   const T=D.table||[], n=T.length;
   const rows=T.map((t,k)=>`<div class="sr bb ${LD()?(k<3?"z1":""):(k<6?"z1":k<10?"z2":k>=n-2?"z3":"")}${isFav(t[0])?" fav":""}"><span class="z"></span><span class="rk">${k+1}.</span>${badge(t[0],"sm")}<span class="nm"${short(t[0]).length>9?' style="font-size:.78rem;letter-spacing:0"':short(t[0]).length>7?' style="font-size:.9rem;letter-spacing:.02em"':""}>${esc(short(t[0]))}</span><span class="v">${t[1]}-${t[2]}</span><span class="v m">${t[1]+t[2]}</span><span class="v m">${t[3]>0?"+":""}${t[3]}</span></div>`).join("");
   return `<div class="sec"><h2>Tabelle</h2><span class="aux">${LASTU?"Stand "+esc(fDay(LASTU.toISOString())):""}</span></div>`
    +(n?`<div class="card conf rise" data-c="e" style="--cc:#4aa3ff"><div class="hd"><h2>${LD()?"WM-Qualifikation · Gruppe K":"easyCredit BBL"}</h2></div><div class="sr bb hdr"><span class="z"></span><span class="rk">#</span><span></span><span>Team</span><span class="v">S-N</span><span class="v">Sp</span><span class="v">Diff</span></div>${rows}</div>
-   ${LD()?`<div class="legend"><span><i></i>WM-Ticket (Platz 1–3)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>`:`<div class="legend"><span><i></i>Play-offs (1–6)</span><span><i class="g"></i>Play-in (7–10)</span><span><i class="r"></i>Abstieg (17–18)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>`}`:`<div class="card empty"><strong>Noch keine Tabelle</strong>Die Daten kommen mit dem nächsten Update.</div>`);
+   ${LD()?`<div class="legend"><span><i></i>WM-Ticket (Platz 1–3)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>${dbbGroups()}`:`<div class="legend"><span><i></i>Play-offs (1–6)</span><span><i class="g"></i>Play-in (7–10)</span><span><i class="r"></i>Abstieg (17–18)</span><span>Sp = Spiele · Diff = Korbdifferenz</span></div>`}`:`<div class="card empty"><strong>Noch keine Tabelle</strong>Die Daten kommen mit dem nächsten Update.</div>`);
 }
 function renderTabelle(){
   if(LB()){$("#p-tabelle").innerHTML=bblTable();return}

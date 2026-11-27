@@ -4425,7 +4425,614 @@
     -34
    ]
   ],
-  "updated": "2026-11-27T18:02:00+01:00"
+  "updated": "2026-11-27T18:53:28+01:00",
+  "groups": [
+   {
+    "name": "Gruppe K",
+    "results": [
+     {
+      "away": "Israel",
+      "home": "Lettland",
+      "as": 70,
+      "hs": 85,
+      "note": "2. Spieltag · So 30.08."
+     },
+     {
+      "away": "Deutschland",
+      "home": "Polen",
+      "as": 96,
+      "hs": 94,
+      "note": "2. Spieltag · So 30.08. · n. V."
+     },
+     {
+      "away": "Kroatien",
+      "home": "Niederlande",
+      "as": 101,
+      "hs": 99,
+      "note": "2. Spieltag · So 30.08."
+     },
+     {
+      "away": "Niederlande",
+      "home": "Deutschland",
+      "as": 83,
+      "hs": 99,
+      "note": "1. Spieltag · Do 27.08."
+     },
+     {
+      "away": "Polen",
+      "home": "Israel",
+      "as": 106,
+      "hs": 86,
+      "note": "1. Spieltag · Do 27.08."
+     },
+     {
+      "away": "Lettland",
+      "home": "Kroatien",
+      "as": 80,
+      "hs": 115,
+      "note": "1. Spieltag · Do 27.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Deutschland",
+      "home": "Lettland",
+      "note": "3. Spieltag",
+      "iso": "2026-11-27T17:30:00Z"
+     },
+     {
+      "away": "Israel",
+      "home": "Niederlande",
+      "note": "3. Spieltag",
+      "iso": "2026-11-27T19:00:00Z"
+     },
+     {
+      "away": "Kroatien",
+      "home": "Polen",
+      "note": "3. Spieltag",
+      "iso": "2026-11-27T19:45:00Z"
+     },
+     {
+      "away": "Lettland",
+      "home": "Israel",
+      "note": "4. Spieltag",
+      "iso": "2026-11-30T17:30:00Z"
+     },
+     {
+      "away": "Polen",
+      "home": "Deutschland",
+      "note": "4. Spieltag",
+      "iso": "2026-11-30T18:30:00Z"
+     },
+     {
+      "away": "Niederlande",
+      "home": "Kroatien",
+      "note": "4. Spieltag",
+      "iso": "2026-11-30T19:00:00Z"
+     },
+     {
+      "away": "Kroatien",
+      "home": "Lettland",
+      "note": "5. Spieltag",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Deutschland",
+      "home": "Niederlande",
+      "note": "5. Spieltag",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Israel",
+      "home": "Polen",
+      "note": "5. Spieltag",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Lettland",
+      "home": "Deutschland",
+      "note": "6. Spieltag",
+      "iso": "2027-02-28T17:00:00Z"
+     },
+     {
+      "away": "Polen",
+      "home": "Kroatien",
+      "note": "6. Spieltag",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Niederlande",
+      "home": "Israel",
+      "note": "6. Spieltag",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     }
+    ]
+   },
+   {
+    "name": "Gruppe I",
+    "results": [
+     {
+      "away": "Ukraine",
+      "home": "Portugal",
+      "as": 90,
+      "hs": 95,
+      "note": "3. Spieltag · Do 26.11."
+     },
+     {
+      "away": "Spanien",
+      "home": "Montenegro",
+      "as": 93,
+      "hs": 62,
+      "note": "3. Spieltag · Do 26.11."
+     },
+     {
+      "away": "Georgien",
+      "home": "Griechenland",
+      "as": 92,
+      "hs": 88,
+      "note": "3. Spieltag · Do 26.11. · n. V."
+     },
+     {
+      "away": "Ukraine",
+      "home": "Montenegro",
+      "as": 98,
+      "hs": 89,
+      "note": "2. Spieltag · Mo 31.08."
+     },
+     {
+      "away": "Georgien",
+      "home": "Portugal",
+      "as": 98,
+      "hs": 90,
+      "note": "2. Spieltag · Mo 31.08."
+     },
+     {
+      "away": "Spanien",
+      "home": "Griechenland",
+      "as": 106,
+      "hs": 108,
+      "note": "2. Spieltag · Mo 31.08. · n. V."
+     },
+     {
+      "away": "Portugal",
+      "home": "Spanien",
+      "as": 95,
+      "hs": 89,
+      "note": "1. Spieltag · Fr 28.08."
+     },
+     {
+      "away": "Griechenland",
+      "home": "Ukraine",
+      "as": 76,
+      "hs": 82,
+      "note": "1. Spieltag · Fr 28.08."
+     },
+     {
+      "away": "Montenegro",
+      "home": "Georgien",
+      "as": 74,
+      "hs": 101,
+      "note": "1. Spieltag · Fr 28.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Portugal",
+      "home": "Georgien",
+      "note": "4. Spieltag",
+      "iso": "2026-11-29T15:30:00Z"
+     },
+     {
+      "away": "Montenegro",
+      "home": "Ukraine",
+      "note": "4. Spieltag",
+      "iso": "2026-11-29T16:30:00Z"
+     },
+     {
+      "away": "Griechenland",
+      "home": "Spanien",
+      "note": "4. Spieltag",
+      "iso": "2026-11-29T17:00:00Z"
+     },
+     {
+      "away": "Spanien",
+      "home": "Portugal",
+      "note": "5. Spieltag",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Ukraine",
+      "home": "Griechenland",
+      "note": "5. Spieltag",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Georgien",
+      "home": "Montenegro",
+      "note": "5. Spieltag",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Montenegro",
+      "home": "Spanien",
+      "note": "6. Spieltag",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Portugal",
+      "home": "Ukraine",
+      "note": "6. Spieltag",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Griechenland",
+      "home": "Georgien",
+      "note": "6. Spieltag",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     }
+    ],
+    "table": [
+     [
+      "Spanien",
+      6,
+      3,
+      122
+     ],
+     [
+      "Ukraine",
+      6,
+      3,
+      55
+     ],
+     [
+      "Georgien",
+      6,
+      3,
+      27
+     ],
+     [
+      "Portugal",
+      5,
+      4,
+      39
+     ],
+     [
+      "Griechenland",
+      4,
+      5,
+      17
+     ],
+     [
+      "Montenegro",
+      4,
+      5,
+      -90
+     ]
+    ]
+   },
+   {
+    "name": "Gruppe J",
+    "results": [
+     {
+      "away": "Bosnien-Herzegowina",
+      "home": "Island",
+      "as": 101,
+      "hs": 113,
+      "note": "3. Spieltag · Do 26.11."
+     },
+     {
+      "away": "Türkei",
+      "home": "Italien",
+      "as": 72,
+      "hs": 86,
+      "note": "3. Spieltag · Do 26.11."
+     },
+     {
+      "away": "Serbien",
+      "home": "Litauen",
+      "as": 78,
+      "hs": 97,
+      "note": "3. Spieltag · Do 26.11."
+     },
+     {
+      "away": "Türkei",
+      "home": "Island",
+      "as": 110,
+      "hs": 73,
+      "note": "2. Spieltag · Mo 31.08."
+     },
+     {
+      "away": "Serbien",
+      "home": "Italien",
+      "as": 76,
+      "hs": 64,
+      "note": "2. Spieltag · Mo 31.08."
+     },
+     {
+      "away": "Bosnien-Herzegowina",
+      "home": "Litauen",
+      "as": 73,
+      "hs": 78,
+      "note": "2. Spieltag · Mo 31.08."
+     },
+     {
+      "away": "Island",
+      "home": "Serbien",
+      "as": 73,
+      "hs": 102,
+      "note": "1. Spieltag · Fr 28.08."
+     },
+     {
+      "away": "Italien",
+      "home": "Bosnien-Herzegowina",
+      "as": 76,
+      "hs": 78,
+      "note": "1. Spieltag · Fr 28.08."
+     },
+     {
+      "away": "Litauen",
+      "home": "Türkei",
+      "as": 66,
+      "hs": 94,
+      "note": "1. Spieltag · Fr 28.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Island",
+      "home": "Türkei",
+      "note": "4. Spieltag",
+      "iso": "2026-11-29T16:00:00Z"
+     },
+     {
+      "away": "Litauen",
+      "home": "Bosnien-Herzegowina",
+      "note": "4. Spieltag",
+      "iso": "2026-11-29T17:00:00Z"
+     },
+     {
+      "away": "Italien",
+      "home": "Serbien",
+      "note": "4. Spieltag",
+      "iso": "2026-11-29T18:00:00Z"
+     },
+     {
+      "away": "Türkei",
+      "home": "Litauen",
+      "note": "5. Spieltag",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Serbien",
+      "home": "Island",
+      "note": "5. Spieltag",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Bosnien-Herzegowina",
+      "home": "Italien",
+      "note": "5. Spieltag",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Italien",
+      "home": "Türkei",
+      "note": "6. Spieltag",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Litauen",
+      "home": "Serbien",
+      "note": "6. Spieltag",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Island",
+      "home": "Bosnien-Herzegowina",
+      "note": "6. Spieltag",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     }
+    ],
+    "table": [
+     [
+      "Türkei",
+      8,
+      1,
+      140
+     ],
+     [
+      "Italien",
+      6,
+      3,
+      63
+     ],
+     [
+      "Serbien",
+      6,
+      3,
+      53
+     ],
+     [
+      "Litauen",
+      5,
+      4,
+      29
+     ],
+     [
+      "Island",
+      4,
+      5,
+      -88
+     ],
+     [
+      "Bosnien-Herzegowina",
+      3,
+      6,
+      -4
+     ]
+    ]
+   },
+   {
+    "name": "Gruppe L",
+    "results": [
+     {
+      "away": "Ungarn",
+      "home": "Slowenien",
+      "as": 77,
+      "hs": 92,
+      "note": "2. Spieltag · So 30.08."
+     },
+     {
+      "away": "Finnland",
+      "home": "Estland",
+      "as": 96,
+      "hs": 67,
+      "note": "2. Spieltag · So 30.08."
+     },
+     {
+      "away": "Frankreich",
+      "home": "Schweden",
+      "as": 84,
+      "hs": 69,
+      "note": "2. Spieltag · So 30.08."
+     },
+     {
+      "away": "Slowenien",
+      "home": "Frankreich",
+      "as": 67,
+      "hs": 92,
+      "note": "1. Spieltag · Do 27.08."
+     },
+     {
+      "away": "Estland",
+      "home": "Ungarn",
+      "as": 67,
+      "hs": 85,
+      "note": "1. Spieltag · Do 27.08."
+     },
+     {
+      "away": "Schweden",
+      "home": "Finnland",
+      "as": 86,
+      "hs": 81,
+      "note": "1. Spieltag · Do 27.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Frankreich",
+      "home": "Estland",
+      "note": "3. Spieltag",
+      "iso": "2026-11-27T17:00:00Z"
+     },
+     {
+      "away": "Ungarn",
+      "home": "Schweden",
+      "note": "3. Spieltag",
+      "iso": "2026-11-27T18:00:00Z"
+     },
+     {
+      "away": "Finnland",
+      "home": "Slowenien",
+      "note": "3. Spieltag",
+      "iso": "2026-11-27T19:00:00Z"
+     },
+     {
+      "away": "Estland",
+      "home": "Finnland",
+      "note": "4. Spieltag",
+      "iso": "2026-11-30T16:30:00Z"
+     },
+     {
+      "away": "Slowenien",
+      "home": "Ungarn",
+      "note": "4. Spieltag",
+      "iso": "2026-11-30T17:00:00Z"
+     },
+     {
+      "away": "Schweden",
+      "home": "Frankreich",
+      "note": "4. Spieltag",
+      "iso": "2026-11-30T19:30:00Z"
+     },
+     {
+      "away": "Frankreich",
+      "home": "Slowenien",
+      "note": "5. Spieltag",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Finnland",
+      "home": "Schweden",
+      "note": "5. Spieltag",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Ungarn",
+      "home": "Estland",
+      "note": "5. Spieltag",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Estland",
+      "home": "Frankreich",
+      "note": "6. Spieltag",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Slowenien",
+      "home": "Finnland",
+      "note": "6. Spieltag",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Schweden",
+      "home": "Ungarn",
+      "note": "6. Spieltag",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     }
+    ],
+    "table": [
+     [
+      "Frankreich",
+      7,
+      1,
+      108
+     ],
+     [
+      "Finnland",
+      5,
+      3,
+      11
+     ],
+     [
+      "Slowenien",
+      4,
+      4,
+      2
+     ],
+     [
+      "Schweden",
+      4,
+      4,
+      -19
+     ],
+     [
+      "Ungarn",
+      4,
+      4,
+      -3
+     ],
+     [
+      "Estland",
+      3,
+      5,
+      -21
+     ]
+    ]
+   }
+  ],
+  "groupsNote": "Tabellen: Stand vor den Spielen vom 27.11. (Gruppen K, L) bzw. nach dem 26.11. (I, J), inkl. der Ergebnisse aus der 1. Runde. Quelle: sportschau.de."
  },
  "rosters": {
   "Atlanta Hawks": [
