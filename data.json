@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T18:27:18+01:00",
+ "updated": "2026-11-27T06:01:11+01:00",
  "resultsLabel": "Mi 25.11. / Nacht auf Do",
  "results": [
   {
@@ -87,43 +87,43 @@
  "news": [
   {
    "tag": "Spielplan",
-   "text": "Thanksgiving-Pause: In der Nacht auf Freitag ruht die NBA, am Freitag geht es mit elf Spielen weiter"
+   "text": "Nach der Thanksgiving-Pause geht es in der Nacht auf Samstag mit elf Spielen weiter, zwei davon bei Prime Video"
   },
   {
-   "tag": "Ergebnis",
-   "text": "Minnesota gewinnt 113:106 in Oklahoma City, Jaden McDaniels kommt auf 32 Punkte"
-  },
-  {
-   "tag": "Rekord",
-   "text": "Wembanyama erzielt 44 Punkte, trotzdem verliert San Antonio 111:116 in Portland"
+   "tag": "NBA Cup",
+   "text": "Am Freitag stehen die letzten Gruppenspiele an, die Viertelfinals folgen am 4. und 5. Dezember bei Prime Video"
   },
   {
    "tag": "Verletzung",
-   "text": "Jaylen Brown muss beim Sieg der 76ers gegen Miami mit Oberschenkelproblemen raus, eine Untersuchung folgt"
+   "text": "Detroit muss erneut ohne Cade Cunningham auskommen, der wegen einer Knie-Sehnenreizung gegen Milwaukee fehlt"
   },
   {
    "tag": "Verletzung",
-   "text": "Tyrese Haliburton hat wieder voll mit den Pacers trainiert, ein Comeback-Termin steht noch nicht fest"
+   "text": "Bei den Spurs sind Dylan Harper (Hüftbeuger) und De'Aaron Fox (Schienbeinprellung) vor dem Duell mit den Lakers fraglich"
   },
   {
    "tag": "Verletzung",
-   "text": "Toronto plant eine weitere Woche ohne Kawhi Leonard"
+   "text": "Jaylen Brown fällt mit Oberschenkelproblemen für das Spiel der 76ers in Indiana aus"
+  },
+  {
+   "tag": "Verletzung",
+   "text": "Tyrese Haliburton steht vor seinem Comeback, wird gegen Philadelphia aber noch geschont"
+  },
+  {
+   "tag": "Comeback",
+   "text": "Ja Morant könnte in Portlands anstehender Heimserie sein Saisondebüt geben"
+  },
+  {
+   "tag": "Vertrag",
+   "text": "Jaden McDaniels verlängert in Minnesota vorzeitig um ein Jahr bis 2029/30"
+  },
+  {
+   "tag": "Verletzung",
+   "text": "LaMelo Ball hat sich beim Sieg in Oklahoma City den Knöchel verstaucht, eine schwere Verletzung blieb wohl aus"
   },
   {
    "tag": "Transfer",
-   "text": "Orlando verpflichtet Guard Kevin Porter Jr. mit einem Zweijahresvertrag"
-  },
-  {
-   "tag": "NBA Cup",
-   "text": "Dallas gewinnt als erstes Team seine Gruppe (West A) und steht in der K.-o.-Runde"
-  },
-  {
-   "tag": "NBA Cup",
-   "text": "Am Freitag steigen die letzten Gruppenspiele, die Viertelfinal-Paarungen folgen danach"
-  },
-  {
-   "tag": "Europa",
-   "text": "Die NBA stellt Pläne für neue und modernisierte Arenen in Europa vor"
+   "text": "Orlando nimmt Guard Kevin Porter Jr. unter Vertrag, Jabari Parker wechselt nach China"
   },
   {
    "tag": "Liga",
@@ -1638,7 +1638,7 @@
     -124
    ]
   ],
-  "updated": "2026-11-26T18:27:18+01:00",
+  "updated": "2026-11-27T06:01:11+01:00",
   "rosters": {
    "Gladiators Trier": [
     {
@@ -4300,7 +4300,7 @@
   "later": "Weiterer Termin: Do 25.02.2027 Niederlande – Deutschland (Ort und Uhrzeit noch offen).",
   "news": [
    {
-    "tag": "Morgen",
+    "tag": "Heute",
     "text": "Freitag, 18:30 Uhr in Riga: Mit einem Sieg in Lettland macht Deutschland einen großen Schritt Richtung WM 2027"
    },
    {
@@ -4314,6 +4314,10 @@
    {
     "tag": "Termin",
     "text": "Das letzte Quali-Spiel gegen Lettland steigt am Sonntag, 28.2.2027, um 18 Uhr in der EWE Arena in Oldenburg"
+   },
+   {
+    "tag": "Tickets",
+    "text": "Für das letzte Quali-Spiel gegen Lettland am 28.2. in Oldenburg startet heute der Ticketverkauf"
    },
    {
     "tag": "Tabelle",
@@ -4421,7 +4425,7 @@
     -34
    ]
   ],
-  "updated": "2026-11-26T18:27:18+01:00"
+  "updated": "2026-11-27T06:01:11+01:00"
  },
  "rosters": {
   "Atlanta Hawks": [
