@@ -4425,7 +4425,7 @@
     -34
    ]
   ],
-  "updated": "2026-11-27T18:53:28+01:00",
+  "updated": "2026-11-27T19:50:54+01:00",
   "groups": [
    {
     "name": "Gruppe K",
@@ -4546,7 +4546,9 @@
       "note": "6. Spieltag",
       "date": "So 28.02.2027 · Uhrzeit offen"
      }
-    ]
+    ],
+    "region": "Europa",
+    "q": 3
    },
    {
     "name": "Gruppe I",
@@ -4708,7 +4710,9 @@
       5,
       -90
      ]
-    ]
+    ],
+    "region": "Europa",
+    "q": 3
    },
    {
     "name": "Gruppe J",
@@ -4870,7 +4874,9 @@
       6,
       -4
      ]
-    ]
+    ],
+    "region": "Europa",
+    "q": 3
    },
    {
     "name": "Gruppe L",
@@ -5029,10 +5035,936 @@
       5,
       -21
      ]
+    ],
+    "region": "Europa",
+    "q": 3
+   },
+   {
+    "name": "Gruppe E",
+    "region": "Amerika",
+    "q": 3,
+    "table": [
+     [
+      "USA",
+      7,
+      1,
+      136
+     ],
+     [
+      "Dominikanische Republik",
+      6,
+      2,
+      100
+     ],
+     [
+      "Brasilien",
+      6,
+      2,
+      101
+     ],
+     [
+      "Mexiko",
+      5,
+      3,
+      35
+     ],
+     [
+      "Kolumbien",
+      3,
+      5,
+      -79
+     ],
+     [
+      "Chile",
+      2,
+      6,
+      -83
+     ]
+    ],
+    "results": [
+     {
+      "away": "Kolumbien",
+      "home": "USA",
+      "as": 80,
+      "hs": 104,
+      "note": "Mo 31.08."
+     },
+     {
+      "away": "Chile",
+      "home": "Dominikanische Republik",
+      "as": 66,
+      "hs": 101,
+      "note": "Mo 31.08."
+     },
+     {
+      "away": "Brasilien",
+      "home": "Mexiko",
+      "as": 74,
+      "hs": 79,
+      "note": "Mo 31.08."
+     },
+     {
+      "away": "USA",
+      "home": "Chile",
+      "as": 89,
+      "hs": 71,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Dominikanische Republik",
+      "home": "Brasilien",
+      "as": 94,
+      "hs": 90,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Kolumbien",
+      "home": "Mexiko",
+      "as": 86,
+      "hs": 112,
+      "note": "Do 27.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Mexiko",
+      "home": "Chile",
+      "iso": "2026-11-27T22:40:00Z"
+     },
+     {
+      "away": "USA",
+      "home": "Brasilien",
+      "iso": "2026-11-27T23:10:00Z"
+     },
+     {
+      "away": "Dominikanische Republik",
+      "home": "Kolumbien",
+      "iso": "2026-11-28T01:10:00Z"
+     },
+     {
+      "away": "Dominikanische Republik",
+      "home": "Chile",
+      "iso": "2026-11-30T22:40:00Z"
+     },
+     {
+      "away": "Mexiko",
+      "home": "Brasilien",
+      "iso": "2026-11-30T23:10:00Z"
+     },
+     {
+      "away": "USA",
+      "home": "Kolumbien",
+      "iso": "2026-12-01T01:10:00Z"
+     },
+     {
+      "away": "Chile",
+      "home": "USA",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Brasilien",
+      "home": "Dominikanische Republik",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Mexiko",
+      "home": "Kolumbien",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Chile",
+      "home": "Mexiko",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Kolumbien",
+      "home": "Dominikanische Republik",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Brasilien",
+      "home": "USA",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     }
+    ]
+   },
+   {
+    "name": "Gruppe F",
+    "region": "Amerika",
+    "q": 3,
+    "table": [
+     [
+      "Kanada",
+      8,
+      1,
+      152
+     ],
+     [
+      "Uruguay",
+      7,
+      2,
+      94
+     ],
+     [
+      "Argentinien",
+      7,
+      2,
+      163
+     ],
+     [
+      "Bahamas",
+      4,
+      5,
+      -28
+     ],
+     [
+      "Puerto Rico",
+      3,
+      6,
+      -12
+     ],
+     [
+      "Panama",
+      2,
+      7,
+      -131
+     ]
+    ],
+    "results": [
+     {
+      "away": "Kanada",
+      "home": "Uruguay",
+      "as": 78,
+      "hs": 84,
+      "note": "Do 26.11."
+     },
+     {
+      "away": "Bahamas",
+      "home": "Argentinien",
+      "as": 65,
+      "hs": 102,
+      "note": "Do 26.11."
+     },
+     {
+      "away": "Puerto Rico",
+      "home": "Panama",
+      "as": 99,
+      "hs": 76,
+      "note": "Do 26.11."
+     },
+     {
+      "away": "Argentinien",
+      "home": "Kanada",
+      "as": 92,
+      "hs": 97,
+      "note": "Mo 31.08."
+     },
+     {
+      "away": "Puerto Rico",
+      "home": "Uruguay",
+      "as": 75,
+      "hs": 80,
+      "note": "Mo 31.08."
+     },
+     {
+      "away": "Panama",
+      "home": "Bahamas",
+      "as": 82,
+      "hs": 100,
+      "note": "Mo 31.08."
+     },
+     {
+      "away": "Puerto Rico",
+      "home": "Argentinien",
+      "as": 75,
+      "hs": 89,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Bahamas",
+      "home": "Uruguay",
+      "as": 103,
+      "hs": 94,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Kanada",
+      "home": "Panama",
+      "as": 86,
+      "hs": 66,
+      "note": "Do 27.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Kanada",
+      "home": "Argentinien",
+      "iso": "2026-11-29T21:10:00Z"
+     },
+     {
+      "away": "Bahamas",
+      "home": "Panama",
+      "iso": "2026-11-29T23:10:00Z"
+     },
+     {
+      "away": "Uruguay",
+      "home": "Puerto Rico",
+      "iso": "2026-11-30T00:10:00Z"
+     },
+     {
+      "away": "Panama",
+      "home": "Kanada",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Uruguay",
+      "home": "Bahamas",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Argentinien",
+      "home": "Puerto Rico",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Panama",
+      "home": "Puerto Rico",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Argentinien",
+      "home": "Bahamas",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Uruguay",
+      "home": "Kanada",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     }
+    ]
+   },
+   {
+    "name": "Gruppe E",
+    "region": "Asien/Ozeanien",
+    "q": 3,
+    "table": [
+     [
+      "Australien",
+      9,
+      0,
+      271
+     ],
+     [
+      "Neuseeland",
+      7,
+      2,
+      179
+     ],
+     [
+      "Philippinen",
+      5,
+      4,
+      40
+     ],
+     [
+      "Jordanien",
+      5,
+      4,
+      77
+     ],
+     [
+      "Iran",
+      5,
+      4,
+      40
+     ],
+     [
+      "Syrien",
+      2,
+      7,
+      -224
+     ]
+    ],
+    "results": [
+     {
+      "away": "Neuseeland",
+      "home": "Jordanien",
+      "as": 103,
+      "hs": 64,
+      "note": "Fr 27.11."
+     },
+     {
+      "away": "Australien",
+      "home": "Iran",
+      "as": 84,
+      "hs": 67,
+      "note": "Fr 27.11."
+     },
+     {
+      "away": "Philippinen",
+      "home": "Syrien",
+      "as": 97,
+      "hs": 58,
+      "note": "Fr 27.11."
+     },
+     {
+      "away": "Syrien",
+      "home": "Neuseeland",
+      "as": 74,
+      "hs": 126,
+      "note": "So 30.08."
+     },
+     {
+      "away": "Jordanien",
+      "home": "Australien",
+      "as": 93,
+      "hs": 126,
+      "note": "So 30.08."
+     },
+     {
+      "away": "Iran",
+      "home": "Philippinen",
+      "as": 56,
+      "hs": 68,
+      "note": "So 30.08."
+     },
+     {
+      "away": "Neuseeland",
+      "home": "Iran",
+      "as": 93,
+      "hs": 91,
+      "note": "Fr 28.08."
+     },
+     {
+      "away": "Australien",
+      "home": "Syrien",
+      "as": 123,
+      "hs": 64,
+      "note": "Fr 28.08."
+     },
+     {
+      "away": "Philippinen",
+      "home": "Jordanien",
+      "as": 82,
+      "hs": 81,
+      "note": "Fr 28.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Neuseeland",
+      "home": "Syrien",
+      "iso": "2026-11-29T06:00:00Z"
+     },
+     {
+      "away": "Philippinen",
+      "home": "Iran",
+      "iso": "2026-11-29T09:00:00Z"
+     },
+     {
+      "away": "Australien",
+      "home": "Jordanien",
+      "iso": "2026-11-29T12:00:00Z"
+     },
+     {
+      "away": "Syrien",
+      "home": "Australien",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Iran",
+      "home": "Neuseeland",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Jordanien",
+      "home": "Philippinen",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Syrien",
+      "home": "Philippinen",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Jordanien",
+      "home": "Neuseeland",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Iran",
+      "home": "Australien",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     }
+    ]
+   },
+   {
+    "name": "Gruppe F",
+    "region": "Asien/Ozeanien",
+    "q": 3,
+    "table": [
+     [
+      "Japan",
+      7,
+      2,
+      134
+     ],
+     [
+      "Libanon",
+      6,
+      3,
+      116
+     ],
+     [
+      "Südkorea",
+      5,
+      4,
+      16
+     ],
+     [
+      "China",
+      5,
+      4,
+      21
+     ],
+     [
+      "Saudi-Arabien",
+      4,
+      5,
+      -24
+     ],
+     [
+      "Katar",
+      4,
+      5,
+      -67
+     ]
+    ],
+    "results": [
+     {
+      "away": "China",
+      "home": "Saudi-Arabien",
+      "as": 80,
+      "hs": 82,
+      "note": "Do 26.11."
+     },
+     {
+      "away": "Südkorea",
+      "home": "Katar",
+      "as": 74,
+      "hs": 52,
+      "note": "Do 26.11."
+     },
+     {
+      "away": "Japan",
+      "home": "Libanon",
+      "as": 86,
+      "hs": 82,
+      "note": "Do 26.11."
+     },
+     {
+      "away": "Saudi-Arabien",
+      "home": "Südkorea",
+      "as": 72,
+      "hs": 85,
+      "note": "Mo 31.08."
+     },
+     {
+      "away": "Katar",
+      "home": "Japan",
+      "as": 70,
+      "hs": 123,
+      "note": "Mo 31.08."
+     },
+     {
+      "away": "Libanon",
+      "home": "China",
+      "as": 87,
+      "hs": 89,
+      "note": "Mo 31.08."
+     },
+     {
+      "away": "China",
+      "home": "Katar",
+      "as": 83,
+      "hs": 57,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Japan",
+      "home": "Saudi-Arabien",
+      "as": 106,
+      "hs": 78,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Südkorea",
+      "home": "Libanon",
+      "as": 74,
+      "hs": 93,
+      "note": "Do 27.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Japan",
+      "home": "Katar",
+      "iso": "2026-11-29T13:00:00Z"
+     },
+     {
+      "away": "Südkorea",
+      "home": "Saudi-Arabien",
+      "iso": "2026-11-29T16:00:00Z"
+     },
+     {
+      "away": "China",
+      "home": "Libanon",
+      "iso": "2026-11-29T19:00:00Z"
+     },
+     {
+      "away": "Saudi-Arabien",
+      "home": "Japan",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Libanon",
+      "home": "Südkorea",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Katar",
+      "home": "China",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Saudi-Arabien",
+      "home": "China",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Katar",
+      "home": "Südkorea",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Libanon",
+      "home": "Japan",
+      "date": "Mo 01.03.2027 · Uhrzeit offen"
+     }
+    ]
+   },
+   {
+    "name": "Gruppe E",
+    "region": "Afrika",
+    "q": 2,
+    "table": [
+     [
+      "Kamerun",
+      7,
+      2,
+      44
+     ],
+     [
+      "Südsudan",
+      7,
+      2,
+      121
+     ],
+     [
+      "Guinea",
+      6,
+      3,
+      82
+     ],
+     [
+      "Tunesien",
+      5,
+      4,
+      16
+     ],
+     [
+      "Nigeria",
+      5,
+      4,
+      27
+     ],
+     [
+      "Kap Verde",
+      3,
+      6,
+      -52
+     ]
+    ],
+    "results": [
+     {
+      "away": "Kap Verde",
+      "home": "Nigeria",
+      "as": 84,
+      "hs": 100,
+      "note": "So 30.08."
+     },
+     {
+      "away": "Kamerun",
+      "home": "Guinea",
+      "as": 67,
+      "hs": 90,
+      "note": "So 30.08."
+     },
+     {
+      "away": "Südsudan",
+      "home": "Tunesien",
+      "as": 79,
+      "hs": 75,
+      "note": "So 30.08."
+     },
+     {
+      "away": "Nigeria",
+      "home": "Südsudan",
+      "as": 79,
+      "hs": 82,
+      "note": "Fr 28.08."
+     },
+     {
+      "away": "Guinea",
+      "home": "Kap Verde",
+      "as": 81,
+      "hs": 61,
+      "note": "Fr 28.08."
+     },
+     {
+      "away": "Tunesien",
+      "home": "Kamerun",
+      "as": 61,
+      "hs": 83,
+      "note": "Fr 28.08."
+     },
+     {
+      "away": "Südsudan",
+      "home": "Guinea",
+      "as": 81,
+      "hs": 71,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Kamerun",
+      "home": "Nigeria",
+      "as": 78,
+      "hs": 62,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Kap Verde",
+      "home": "Tunesien",
+      "as": 56,
+      "hs": 60,
+      "note": "Do 27.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Nigeria",
+      "home": "Kamerun",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Guinea",
+      "home": "Südsudan",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Tunesien",
+      "home": "Kap Verde",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Südsudan",
+      "home": "Nigeria",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Kap Verde",
+      "home": "Guinea",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Kamerun",
+      "home": "Tunesien",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Guinea",
+      "home": "Kamerun",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Nigeria",
+      "home": "Kap Verde",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Tunesien",
+      "home": "Südsudan",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     }
+    ]
+   },
+   {
+    "name": "Gruppe F",
+    "region": "Afrika",
+    "q": 2,
+    "table": [
+     [
+      "Senegal",
+      7,
+      2,
+      142
+     ],
+     [
+      "Elfenbeinküste",
+      7,
+      2,
+      109
+     ],
+     [
+      "Angola",
+      6,
+      3,
+      124
+     ],
+     [
+      "Mali",
+      6,
+      3,
+      31
+     ],
+     [
+      "Ägypten",
+      4,
+      5,
+      25
+     ],
+     [
+      "DR Kongo",
+      3,
+      6,
+      -152
+     ]
+    ],
+    "results": [
+     {
+      "away": "DR Kongo",
+      "home": "Ägypten",
+      "as": 77,
+      "hs": 75,
+      "note": "So 30.08."
+     },
+     {
+      "away": "Elfenbeinküste",
+      "home": "Angola",
+      "as": 70,
+      "hs": 91,
+      "note": "So 30.08."
+     },
+     {
+      "away": "Senegal",
+      "home": "Mali",
+      "as": 97,
+      "hs": 71,
+      "note": "So 30.08."
+     },
+     {
+      "away": "Ägypten",
+      "home": "Elfenbeinküste",
+      "as": 66,
+      "hs": 72,
+      "note": "Sa 29.08."
+     },
+     {
+      "away": "Mali",
+      "home": "DR Kongo",
+      "as": 101,
+      "hs": 76,
+      "note": "Sa 29.08."
+     },
+     {
+      "away": "Angola",
+      "home": "Senegal",
+      "as": 82,
+      "hs": 84,
+      "note": "Sa 29.08."
+     },
+     {
+      "away": "DR Kongo",
+      "home": "Angola",
+      "as": 68,
+      "hs": 100,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Elfenbeinküste",
+      "home": "Mali",
+      "as": 83,
+      "hs": 77,
+      "note": "Do 27.08."
+     },
+     {
+      "away": "Senegal",
+      "home": "Ägypten",
+      "as": 67,
+      "hs": 76,
+      "note": "Do 27.08."
+     }
+    ],
+    "games": [
+     {
+      "away": "Mali",
+      "home": "Elfenbeinküste",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Ägypten",
+      "home": "Senegal",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Angola",
+      "home": "DR Kongo",
+      "date": "Do 25.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Elfenbeinküste",
+      "home": "Ägypten",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Senegal",
+      "home": "Angola",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "DR Kongo",
+      "home": "Mali",
+      "date": "Fr 26.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Angola",
+      "home": "Elfenbeinküste",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Mali",
+      "home": "Senegal",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     },
+     {
+      "away": "Ägypten",
+      "home": "DR Kongo",
+      "date": "So 28.02.2027 · Uhrzeit offen"
+     }
     ]
    }
   ],
-  "groupsNote": "Tabellen: Stand vor den Spielen vom 27.11. (Gruppen K, L) bzw. nach dem 26.11. (I, J), inkl. der Ergebnisse aus der 1. Runde. Quelle: sportschau.de."
+  "groupsNote": "Tabellen inkl. der Ergebnisse aus der 1. Runde. Europa: Gruppen K und L Stand vor den Spielen vom 27.11. Quellen: sportschau.de, fiba.basketball, olympics.com."
  },
  "rosters": {
   "Atlanta Hawks": [
