@@ -1,224 +1,153 @@
 {
- "updated": "2026-11-27T18:02:00+01:00",
- "resultsLabel": "Mi 25.11. / Nacht auf Do",
+ "updated": "2026-11-28T06:18:29+01:00",
+ "resultsLabel": "Fr 27.11. / Nacht auf Sa",
  "results": [
   {
    "away": "Miami Heat",
-   "home": "Philadelphia 76ers",
-   "as": 104,
-   "hs": 111,
-   "note": "Antetokounmpo 32 Pkt, 14 Reb für Miami · Jaylen Brown verletzt raus"
-  },
-  {
-   "away": "Chicago Bulls",
-   "home": "Charlotte Hornets",
-   "as": 107,
-   "hs": 105,
-   "note": "Giddey 12 Pkt, 11 Reb, 7 Ast · Brandon Miller 35 für Charlotte"
-  },
-  {
-   "away": "Cleveland Cavaliers",
    "home": "New York Knicks",
-   "as": 102,
-   "hs": 121,
-   "note": "Hart 15 Pkt, 11 Ast · Mitchell 30 für Cleveland"
+   "as": 108,
+   "hs": 105,
+   "note": "Antetokounmpo 22 Pkt, 23 Reb · Brunson 27 Pkt, 8 Ast für New York",
+   "prime": true
   },
   {
-   "away": "Minnesota Timberwolves",
-   "home": "Oklahoma City Thunder",
-   "as": 113,
-   "hs": 106,
-   "note": "McDaniels 32 Pkt, 10 Reb · Gilgeous-Alexander 32 für OKC"
+   "away": "Milwaukee Bucks",
+   "home": "Detroit Pistons",
+   "as": 98,
+   "hs": 113,
+   "note": "Harkless 14 Pkt, 8 Ast · Jaquez Jr. 19 Pkt, 11 Reb für Milwaukee"
   },
   {
-   "away": "LA Clippers",
-   "home": "Memphis Grizzlies",
-   "as": 97,
-   "hs": 115,
-   "note": "Ty Jerome 17 Pkt, 7 Ast · Hachimura 14, 12 Reb für LA"
+   "away": "Philadelphia 76ers",
+   "home": "Indiana Pacers",
+   "as": 111,
+   "hs": 87,
+   "note": "LeBron James 21 Pkt, 7 Reb, 6 Ast · Nembhard 14 für Indiana"
   },
   {
    "away": "Brooklyn Nets",
-   "home": "Milwaukee Bucks",
-   "as": 104,
-   "hs": 97,
-   "note": "Randle 28 Pkt, 9 Reb · Herro 28 für Milwaukee"
+   "home": "Toronto Raptors",
+   "as": 100,
+   "hs": 124,
+   "note": "Quickley 24 Pkt, 10 Reb, 14 Ast · Mikel Brown Jr. 21 für Brooklyn"
   },
   {
-   "away": "Phoenix Suns",
-   "home": "Houston Rockets",
-   "as": 104,
-   "hs": 116,
-   "note": "Şengün 23 Pkt, 11 Reb, 11 Ast · Booker 25 für Phoenix"
+   "away": "Atlanta Hawks",
+   "home": "Boston Celtics",
+   "as": 87,
+   "hs": 86,
+   "note": "Jalen Johnson 24 Pkt, 12 Reb · Queta 11 Pkt, 22 Reb für Boston"
   },
   {
-   "away": "Sacramento Kings",
-   "home": "Golden State Warriors",
-   "as": 110,
-   "hs": 129,
-   "note": "Melton 24 Pkt · Sabonis 27 Pkt, 10 Reb für Sacramento"
+   "away": "Memphis Grizzlies",
+   "home": "Minnesota Timberwolves",
+   "as": 114,
+   "hs": 109,
+   "note": "Coward 22 Pkt · Dosunmu 27 Pkt, 8 Ast für Minnesota"
   },
   {
-   "away": "San Antonio Spurs",
+   "away": "Dallas Mavericks",
+   "home": "Phoenix Suns",
+   "as": 113,
+   "hs": 109,
+   "note": "Flagg 34 Pkt, 7 Reb, 8 Ast · Booker 31 für Phoenix"
+  },
+  {
+   "away": "Denver Nuggets",
+   "home": "Utah Jazz",
+   "as": 120,
+   "hs": 107,
+   "note": "Murray 36 Pkt, 3 Stl · Keyonte George 25 für Utah"
+  },
+  {
+   "away": "New Orleans Pelicans",
+   "home": "LA Clippers",
+   "as": 105,
+   "hs": 104,
+   "note": "Zion Williamson 25 Pkt, 7 Reb · Garland 19 Pkt, 9 Ast für LA"
+  },
+  {
+   "away": "Los Angeles Lakers",
+   "home": "San Antonio Spurs",
+   "as": 96,
+   "hs": 99,
+   "prime": true,
+   "note": "Castle 26 Pkt, 9 Ast · Wembanyama 16 Reb · Dončić 31 Pkt, 8 Ast für LA"
+  },
+  {
+   "away": "Golden State Warriors",
    "home": "Portland Trail Blazers",
-   "as": 111,
+   "as": 94,
    "hs": 116,
-   "note": "Avdija 33 Pkt, 12 Reb · Wembanyama 44 Pkt, 16 Reb für San Antonio"
+   "note": "Portland feiert den 13. Saisonsieg, Golden State weiter ohne Curry"
   }
  ],
- "featured": 8,
+ "featured": 0,
  "highlights": [
   {
-   "title": "Wembanyama mit 44 Punkten",
-   "text": "Victor Wembanyama kommt auf 44 Punkte und 16 Rebounds, doch Portland gewinnt 116:111 – Deni Avdija liefert 33 Punkte, 12 Rebounds und 7 Assists.",
-   "game": 8
+   "title": "Giannis mit 23 Rebounds",
+   "text": "Giannis Antetokounmpo kommt beim 108:105 der Heat in New York auf 22 Punkte und 23 Rebounds, Jalen Brunson trifft 27 für die Knicks.",
+   "game": 0
   },
   {
-   "title": "McDaniels führt Minnesota",
-   "text": "Jaden McDaniels erzielt 32 Punkte, die Timberwolves gewinnen 113:106 in Oklahoma City trotz 32 Punkten von Shai Gilgeous-Alexander.",
-   "game": 3
+   "title": "Atlanta jubelt in Boston",
+   "text": "Die Hawks gewinnen in Boston mit 87:86 und ziehen ins Cup-Viertelfinale ein. Jalen Johnson liefert 24 Punkte und 12 Rebounds.",
+   "game": 4
   },
   {
-   "title": "Şengün mit Triple-Double",
-   "text": "Alperen Şengün verbucht 23 Punkte, 11 Rebounds und 11 Assists beim 116:104 der Rockets gegen Phoenix.",
+   "title": "Flagg mit 34 Punkten",
+   "text": "Cooper Flagg führt Dallas mit 34 Punkten, 7 Rebounds und 8 Assists zum 113:109 in Phoenix, Devin Booker kommt auf 31.",
    "game": 6
+  },
+  {
+   "title": "Spurs schlagen die Lakers",
+   "text": "San Antonio setzt sich im Topspiel 99:96 gegen die Lakers durch. Stephon Castle trifft 26 Punkte, Luka Dončić kommt auf 31.",
+   "game": 9
   }
  ],
  "news": [
   {
-   "tag": "Spielplan",
-   "text": "Nach der Thanksgiving-Pause geht es in der Nacht auf Samstag mit elf Spielen weiter, zwei davon bei Prime Video"
+   "tag": "NBA Cup",
+   "text": "Im Osten haben sich Detroit, Philadelphia, Atlanta und Boston für das Viertelfinale des NBA Cups qualifiziert"
   },
   {
    "tag": "NBA Cup",
-   "text": "Am Freitag stehen die letzten Gruppenspiele an, die Viertelfinals folgen am 4. und 5. Dezember bei Prime Video"
+   "text": "Die Viertelfinals steigen am 4. und 5. Dezember bei Prime Video, die genauen Paarungen und Zeiten stehen noch aus"
   },
   {
    "tag": "Verletzung",
-   "text": "Detroit muss erneut ohne Cade Cunningham auskommen, der wegen einer Knie-Sehnenreizung gegen Milwaukee fehlt"
-  },
-  {
-   "tag": "Verletzung",
-   "text": "Bei den Spurs sind Dylan Harper (Hüftbeuger) und De'Aaron Fox (Schienbeinprellung) vor dem Duell mit den Lakers fraglich"
-  },
-  {
-   "tag": "Verletzung",
-   "text": "Jaylen Brown fällt mit Oberschenkelproblemen für das Spiel der 76ers in Indiana aus"
-  },
-  {
-   "tag": "Verletzung",
-   "text": "Tyrese Haliburton steht vor seinem Comeback, wird gegen Philadelphia aber noch geschont"
+   "text": "Stephen Curry muss wegen seiner Bauchmuskelverletzung mindestens drei weitere Spiele pausieren"
   },
   {
    "tag": "Comeback",
-   "text": "Ja Morant könnte in Portlands anstehender Heimserie sein Saisondebüt geben"
+   "text": "Austin Reaves ist nach seiner Fersenprellung zurück im Aufgebot der Lakers"
   },
   {
-   "tag": "Vertrag",
-   "text": "Jaden McDaniels verlängert in Minnesota vorzeitig um ein Jahr bis 2029/30"
+   "tag": "Comeback",
+   "text": "Jusuf Nurkic feiert gegen Denver sein Saisondebüt für die Utah Jazz"
   },
   {
    "tag": "Verletzung",
-   "text": "LaMelo Ball hat sich beim Sieg in Oklahoma City den Knöchel verstaucht, eine schwere Verletzung blieb wohl aus"
+   "text": "LaMelo Ball, Damian Lillard und Moritz Wagner fehlen ihren Teams weiterhin verletzt"
   },
   {
-   "tag": "Transfer",
-   "text": "Orlando nimmt Guard Kevin Porter Jr. unter Vertrag, Jabari Parker wechselt nach China"
+   "tag": "Lakers",
+   "text": "Luka Dončić bestätigt, dass er sich bei den Lakers für die Verpflichtung von Walker Kessler starkgemacht hat"
   },
   {
-   "tag": "Liga",
-   "text": "Bei der Erweiterung tendieren die Klubbesitzer dazu, zwei neue Teams gleichzeitig aufzunehmen"
+   "tag": "Kings",
+   "text": "Zach LaVine soll in Sacramento unzufrieden mit seiner Situation sein"
+  },
+  {
+   "tag": "Ergebnis",
+   "text": "Giannis Antetokounmpo holt beim 108:105 der Heat in New York 23 Rebounds, Miami steht bei 11:7 Siegen"
+  },
+  {
+   "tag": "Ergebnis",
+   "text": "Philadelphia gewinnt deutlich in Indiana und baut die beste Bilanz der Liga auf 16:4 aus"
   }
  ],
  "days": [
-  {
-   "label": "Fr 27.11. – Nacht auf Samstag",
-   "games": [
-    {
-     "away": "Miami Heat",
-     "home": "New York Knicks",
-     "time": "01:00",
-     "iso": "2026-11-28T00:00:00Z",
-     "tv": [
-      "prime"
-     ],
-     "prime": true
-    },
-    {
-     "away": "Milwaukee Bucks",
-     "home": "Detroit Pistons",
-     "time": "01:30",
-     "iso": "2026-11-28T00:30:00Z",
-     "tv": []
-    },
-    {
-     "away": "Philadelphia 76ers",
-     "home": "Indiana Pacers",
-     "time": "01:30",
-     "iso": "2026-11-28T00:30:00Z",
-     "tv": []
-    },
-    {
-     "away": "Brooklyn Nets",
-     "home": "Toronto Raptors",
-     "time": "01:30",
-     "iso": "2026-11-28T00:30:00Z",
-     "tv": []
-    },
-    {
-     "away": "Atlanta Hawks",
-     "home": "Boston Celtics",
-     "time": "02:00",
-     "iso": "2026-11-28T01:00:00Z",
-     "tv": []
-    },
-    {
-     "away": "Memphis Grizzlies",
-     "home": "Minnesota Timberwolves",
-     "time": "02:30",
-     "iso": "2026-11-28T01:30:00Z",
-     "tv": []
-    },
-    {
-     "away": "Dallas Mavericks",
-     "home": "Phoenix Suns",
-     "time": "03:00",
-     "iso": "2026-11-28T02:00:00Z",
-     "tv": []
-    },
-    {
-     "away": "Los Angeles Lakers",
-     "home": "San Antonio Spurs",
-     "time": "03:30",
-     "iso": "2026-11-28T02:30:00Z",
-     "tv": [
-      "prime"
-     ],
-     "prime": true
-    },
-    {
-     "away": "Denver Nuggets",
-     "home": "Utah Jazz",
-     "time": "03:30",
-     "iso": "2026-11-28T02:30:00Z",
-     "tv": []
-    },
-    {
-     "away": "New Orleans Pelicans",
-     "home": "LA Clippers",
-     "time": "03:30",
-     "iso": "2026-11-28T02:30:00Z",
-     "tv": []
-    },
-    {
-     "away": "Golden State Warriors",
-     "home": "Portland Trail Blazers",
-     "time": "03:30",
-     "iso": "2026-11-28T02:30:00Z",
-     "tv": []
-    }
-   ]
-  },
   {
    "label": "Sa 28.11. – Nacht auf Sonntag",
    "games": [
@@ -260,69 +189,87 @@
      "tv": []
     }
    ]
+  },
+  {
+   "label": "So 29.11. – Nacht auf Montag",
+   "games": [
+    {
+     "away": "Miami Heat",
+     "home": "Cleveland Cavaliers",
+     "time": "21:30",
+     "iso": "2026-11-29T20:30:00Z",
+     "tv": []
+    },
+    {
+     "away": "Los Angeles Lakers",
+     "home": "Memphis Grizzlies",
+     "time": "22:00",
+     "iso": "2026-11-29T21:00:00Z",
+     "tv": []
+    },
+    {
+     "away": "Boston Celtics",
+     "home": "San Antonio Spurs",
+     "time": "22:00",
+     "iso": "2026-11-29T21:00:00Z",
+     "tv": [
+      "prime"
+     ],
+     "prime": true
+    },
+    {
+     "away": "Phoenix Suns",
+     "home": "Utah Jazz",
+     "time": "23:00",
+     "iso": "2026-11-29T22:00:00Z",
+     "tv": []
+    },
+    {
+     "away": "Orlando Magic",
+     "home": "Detroit Pistons",
+     "time": "00:00",
+     "iso": "2026-11-29T23:00:00Z",
+     "tv": []
+    },
+    {
+     "away": "Atlanta Hawks",
+     "home": "New York Knicks",
+     "time": "00:00",
+     "iso": "2026-11-29T23:00:00Z",
+     "tv": []
+    },
+    {
+     "away": "Denver Nuggets",
+     "home": "Toronto Raptors",
+     "time": "00:00",
+     "iso": "2026-11-29T23:00:00Z",
+     "tv": []
+    },
+    {
+     "away": "New Orleans Pelicans",
+     "home": "Portland Trail Blazers",
+     "time": "00:00",
+     "iso": "2026-11-29T23:00:00Z",
+     "tv": []
+    },
+    {
+     "away": "LA Clippers",
+     "home": "Golden State Warriors",
+     "time": "02:30",
+     "iso": "2026-11-30T01:30:00Z",
+     "tv": []
+    },
+    {
+     "away": "Minnesota Timberwolves",
+     "home": "Sacramento Kings",
+     "time": "03:00",
+     "iso": "2026-11-30T02:00:00Z",
+     "tv": []
+    }
+   ]
   }
  ],
  "broadcasts": [
-  {
-   "away": "Miami Heat",
-   "home": "Cleveland Cavaliers",
-   "iso": "2026-11-29T20:30:00Z",
-   "tv": []
-  },
-  {
-   "away": "Los Angeles Lakers",
-   "home": "Memphis Grizzlies",
-   "iso": "2026-11-29T21:00:00Z",
-   "tv": []
-  },
-  {
-   "away": "Boston Celtics",
-   "home": "San Antonio Spurs",
-   "iso": "2026-11-29T21:00:00Z",
-   "tv": []
-  },
-  {
-   "away": "Phoenix Suns",
-   "home": "Utah Jazz",
-   "iso": "2026-11-29T22:00:00Z",
-   "tv": []
-  },
-  {
-   "away": "Orlando Magic",
-   "home": "Detroit Pistons",
-   "iso": "2026-11-29T23:00:00Z",
-   "tv": []
-  },
-  {
-   "away": "Atlanta Hawks",
-   "home": "New York Knicks",
-   "iso": "2026-11-29T23:00:00Z",
-   "tv": []
-  },
-  {
-   "away": "Denver Nuggets",
-   "home": "Toronto Raptors",
-   "iso": "2026-11-29T23:00:00Z",
-   "tv": []
-  },
-  {
-   "away": "New Orleans Pelicans",
-   "home": "Portland Trail Blazers",
-   "iso": "2026-11-29T23:00:00Z",
-   "tv": []
-  },
-  {
-   "away": "LA Clippers",
-   "home": "Golden State Warriors",
-   "iso": "2026-11-30T01:30:00Z",
-   "tv": []
-  },
-  {
-   "away": "Minnesota Timberwolves",
-   "home": "Sacramento Kings",
-   "iso": "2026-11-30T02:00:00Z",
-   "tv": []
-  },
   {
    "away": "Washington Wizards",
    "home": "Charlotte Hornets",
@@ -508,49 +455,42 @@
  ],
  "prime": [
   {
-   "away": "Miami Heat",
-   "home": "New York Knicks",
-   "date": "Fr/Sa 27./28.11.",
-   "iso": "2026-11-28T00:00:00Z",
-   "time": "01:00"
-  },
-  {
-   "away": "Los Angeles Lakers",
+   "away": "Boston Celtics",
    "home": "San Antonio Spurs",
-   "date": "Fr/Sa 27./28.11.",
-   "iso": "2026-11-28T02:30:00Z",
-   "time": "03:30"
+   "date": "So 29.11.",
+   "iso": "2026-11-29T21:00:00Z",
+   "time": "22:00"
   }
  ],
  "east": [
   [
    "Philadelphia 76ers",
-   15,
+   16,
    4
   ],
   [
-   "Boston Celtics",
-   12,
-   6
-  ],
-  [
-   "New York Knicks",
-   12,
-   6
-  ],
-  [
    "Atlanta Hawks",
-   11,
+   12,
    6
   ],
   [
    "Detroit Pistons",
-   11,
+   12,
    6
   ],
   [
+   "Boston Celtics",
+   12,
+   7
+  ],
+  [
+   "New York Knicks",
+   12,
+   7
+  ],
+  [
    "Miami Heat",
-   10,
+   11,
    7
   ],
   [
@@ -564,14 +504,14 @@
    10
   ],
   [
+   "Toronto Raptors",
+   7,
+   11
+  ],
+  [
    "Washington Wizards",
    7,
    12
-  ],
-  [
-   "Toronto Raptors",
-   6,
-   11
   ],
   [
    "Chicago Bulls",
@@ -581,7 +521,7 @@
   [
    "Indiana Pacers",
    6,
-   12
+   13
   ],
   [
    "Charlotte Hornets",
@@ -591,28 +531,28 @@
   [
    "Brooklyn Nets",
    4,
-   13
+   14
   ],
   [
    "Milwaukee Bucks",
    2,
-   17
+   18
   ]
  ],
  "west": [
   [
-   "Los Angeles Lakers",
-   15,
-   3
+   "San Antonio Spurs",
+   16,
+   4
   ],
   [
-   "San Antonio Spurs",
+   "Los Angeles Lakers",
    15,
    4
   ],
   [
-   "Minnesota Timberwolves",
-   14,
+   "Memphis Grizzlies",
+   15,
    5
   ],
   [
@@ -621,34 +561,29 @@
    5
   ],
   [
-   "Memphis Grizzlies",
+   "Minnesota Timberwolves",
    14,
-   5
+   6
   ],
   [
    "Portland Trail Blazers",
-   12,
+   13,
    6
   ],
   [
    "Denver Nuggets",
-   10,
+   11,
    6
   ],
   [
    "Dallas Mavericks",
-   11,
+   12,
    7
   ],
   [
    "Golden State Warriors",
    10,
-   8
-  ],
-  [
-   "Phoenix Suns",
-   9,
-   8
+   9
   ],
   [
    "Oklahoma City Thunder",
@@ -656,19 +591,24 @@
    9
   ],
   [
+   "Phoenix Suns",
+   9,
+   9
+  ],
+  [
    "New Orleans Pelicans",
-   5,
+   6,
    14
   ],
   [
    "LA Clippers",
    4,
-   13
+   14
   ],
   [
    "Utah Jazz",
    3,
-   16
+   17
   ],
   [
    "Sacramento Kings",
@@ -1638,7 +1578,7 @@
     -124
    ]
   ],
-  "updated": "2026-11-27T18:02:00+01:00",
+  "updated": "2026-11-28T06:18:29+01:00",
   "rosters": {
    "Gladiators Trier": [
     {
@@ -4193,22 +4133,6 @@
    {
     "games": [
      {
-      "away": "Deutschland",
-      "home": "Lettland",
-      "iso": "2026-11-27T17:30:00Z",
-      "stream": "https://www.magentasport.de/event/lettland-deutschland/11653739",
-      "tag": "WM-Quali Gruppe K · Riga",
-      "time": "18:30",
-      "tv": [
-       "mag"
-      ]
-     }
-    ],
-    "label": "Fr 27.11. – WM-Quali, 3. Spieltag Runde 2"
-   },
-   {
-    "games": [
-     {
       "away": "Polen",
       "home": "Deutschland",
       "iso": "2026-11-30T18:30:00Z",
@@ -4296,39 +4220,42 @@
    ]
   ],
   "kaderLabel": "5. Fenster · 13 Spieler im Aufgebot",
-  "kaderNote": "Quelle: basketball-bund.de (Stand 26.11.). Ursprünglich 16 nominiert; Simas Lukosius nachnominiert. Nicht dabei: Justus Hollatz (Knie), Louis Olinde (Blessuren), Kostja Mushidi (familiäres Ereignis); Nicholas Tischler aus dem Kader gestrichen. Die Siege/Niederlagen der Tabelle ergeben sich aus den Punkten (Sieg 2, Niederlage 1).",
+  "kaderNote": "Quelle: basketball-bund.de (Stand 27.11.). Ursprünglich 16 nominiert; Simas Lukosius nachnominiert. Nicht dabei: Justus Hollatz (Knie), Louis Olinde (Blessuren), Kostja Mushidi (familiäres Ereignis); Nicholas Tischler aus dem Kader gestrichen. Die Siege/Niederlagen der Tabelle ergeben sich aus den Punkten (Sieg 2, Niederlage 1).",
   "later": "Weiterer Termin: Do 25.02.2027 Niederlande – Deutschland (Ort und Uhrzeit noch offen).",
   "news": [
    {
-    "tag": "Heute",
-    "text": "Freitag, 18:30 Uhr in Riga: Mit einem Sieg in Lettland macht Deutschland einen großen Schritt Richtung WM 2027"
+    "tag": "WM-Ticket",
+    "text": "Deutschland gewinnt in Riga 78:76 gegen Lettland und hat das Ticket für die WM 2027 sicher"
    },
    {
-    "tag": "Kader",
-    "text": "Simas Lukosius von Unicaja Málaga wurde nachnominiert, Nicholas Tischler ist aus dem Aufgebot gestrichen"
-   },
-   {
-    "tag": "Ausfälle",
-    "text": "Justus Hollatz (Knie), Louis Olinde und Kostja Mushidi fehlen im November-Fenster"
-   },
-   {
-    "tag": "Termin",
-    "text": "Das letzte Quali-Spiel gegen Lettland steigt am Sonntag, 28.2.2027, um 18 Uhr in der EWE Arena in Oldenburg"
-   },
-   {
-    "tag": "Tickets",
-    "text": "Für das letzte Quali-Spiel gegen Lettland am 28.2. in Oldenburg startet heute der Ticketverkauf"
+    "tag": "Matchwinner",
+    "text": "Andreas Obst führt das Team mit 25 Punkten an, Kay Bruhnke steuert 14 und Oscar da Silva 12 bei"
    },
    {
     "tag": "Tabelle",
-    "text": "Deutschland, Kroatien und Polen liegen mit 7-1 gleichauf vorn, Lettland ist mit 4-4 Vierter"
+    "text": "Kroatien (8-1) liegt dank des direkten Vergleichs vor Deutschland (8-1), Polen folgt mit 7-2"
+   },
+   {
+    "tag": "Montag",
+    "text": "Zum Abschluss des Fensters empfängt Deutschland am Montag um 19:30 Uhr Polen in Frankfurt"
    },
    {
     "tag": "TV",
-    "text": "Beide Spiele live und kostenlos bei MagentaSport und MagentaTV, Übertragung aus Riga ab 18:15 Uhr"
+    "text": "Das Polen-Spiel läuft live und kostenlos bei MagentaSport und MagentaTV, Vorberichte ab 19 Uhr"
+   },
+   {
+    "tag": "WM 2027",
+    "text": "Neben Deutschland lösten am Freitag auch Frankreich, Kroatien, Polen und Australien ihr WM-Ticket"
    }
   ],
   "results": [
+   {
+    "away": "Deutschland",
+    "home": "Lettland",
+    "as": 78,
+    "hs": 76,
+    "note": "2. Runde, 3. Spieltag · Fr 27.11."
+   },
    {
     "as": 96,
     "away": "Deutschland",
@@ -4389,47 +4316,68 @@
   "resultsLabel": "WM-Quali Gruppe K · bisherige Spiele",
   "table": [
    [
-    "Deutschland",
-    7,
+    "Kroatien",
+    8,
     1,
-    92
+    206
    ],
    [
-    "Kroatien",
-    7,
+    "Deutschland",
+    8,
     1,
-    195
+    94
    ],
    [
     "Polen",
     7,
-    1,
-    108
+    2,
+    97
    ],
    [
     "Lettland",
     4,
-    4,
-    17
+    5,
+    15
+   ],
+   [
+    "Israel",
+    3,
+    6,
+    -28
    ],
    [
     "Niederlande",
     2,
-    6,
-    -14
-   ],
-   [
-    "Israel",
-    2,
-    6,
-    -34
+    7,
+    -20
    ]
   ],
-  "updated": "2026-11-27T19:50:54+01:00",
+  "updated": "2026-11-28T06:18:29+01:00",
   "groups": [
    {
     "name": "Gruppe K",
     "results": [
+     {
+      "away": "Kroatien",
+      "home": "Polen",
+      "as": 80,
+      "hs": 69,
+      "note": "3. Spieltag · Fr 27.11."
+     },
+     {
+      "away": "Israel",
+      "home": "Niederlande",
+      "as": 90,
+      "hs": 84,
+      "note": "3. Spieltag · Fr 27.11."
+     },
+     {
+      "away": "Deutschland",
+      "home": "Lettland",
+      "as": 78,
+      "hs": 76,
+      "note": "3. Spieltag · Fr 27.11."
+     },
      {
       "away": "Israel",
       "home": "Lettland",
@@ -4474,24 +4422,6 @@
      }
     ],
     "games": [
-     {
-      "away": "Deutschland",
-      "home": "Lettland",
-      "note": "3. Spieltag",
-      "iso": "2026-11-27T17:30:00Z"
-     },
-     {
-      "away": "Israel",
-      "home": "Niederlande",
-      "note": "3. Spieltag",
-      "iso": "2026-11-27T19:00:00Z"
-     },
-     {
-      "away": "Kroatien",
-      "home": "Polen",
-      "note": "3. Spieltag",
-      "iso": "2026-11-27T19:45:00Z"
-     },
      {
       "away": "Lettland",
       "home": "Israel",
@@ -4882,6 +4812,27 @@
     "name": "Gruppe L",
     "results": [
      {
+      "away": "Finnland",
+      "home": "Slowenien",
+      "as": 107,
+      "hs": 92,
+      "note": "3. Spieltag · Fr 27.11."
+     },
+     {
+      "away": "Ungarn",
+      "home": "Schweden",
+      "as": 81,
+      "hs": 88,
+      "note": "3. Spieltag · Fr 27.11."
+     },
+     {
+      "away": "Frankreich",
+      "home": "Estland",
+      "as": 81,
+      "hs": 73,
+      "note": "3. Spieltag · Fr 27.11."
+     },
+     {
       "away": "Ungarn",
       "home": "Slowenien",
       "as": 77,
@@ -4925,24 +4876,6 @@
      }
     ],
     "games": [
-     {
-      "away": "Frankreich",
-      "home": "Estland",
-      "note": "3. Spieltag",
-      "iso": "2026-11-27T17:00:00Z"
-     },
-     {
-      "away": "Ungarn",
-      "home": "Schweden",
-      "note": "3. Spieltag",
-      "iso": "2026-11-27T18:00:00Z"
-     },
-     {
-      "away": "Finnland",
-      "home": "Slowenien",
-      "note": "3. Spieltag",
-      "iso": "2026-11-27T19:00:00Z"
-     },
      {
       "away": "Estland",
       "home": "Finnland",
@@ -5001,39 +4934,39 @@
     "table": [
      [
       "Frankreich",
-      7,
+      8,
       1,
-      108
+      116
      ],
      [
       "Finnland",
-      5,
+      6,
       3,
-      11
+      26
+     ],
+     [
+      "Schweden",
+      5,
+      4,
+      -12
      ],
      [
       "Slowenien",
       4,
-      4,
-      2
-     ],
-     [
-      "Schweden",
-      4,
-      4,
-      -19
+      5,
+      -13
      ],
      [
       "Ungarn",
       4,
-      4,
-      -3
+      5,
+      -10
      ],
      [
       "Estland",
       3,
-      5,
-      -21
+      6,
+      -29
      ]
     ],
     "region": "Europa",
@@ -5045,43 +4978,64 @@
     "q": 3,
     "table": [
      [
-      "USA",
+      "Dominikanische Republik",
       7,
-      1,
-      136
+      2,
+      142
      ],
      [
-      "Dominikanische Republik",
-      6,
+      "USA",
+      7,
       2,
-      100
+      132
      ],
      [
       "Brasilien",
-      6,
+      7,
       2,
-      101
+      105
      ],
      [
       "Mexiko",
       5,
-      3,
-      35
+      4,
+      33
      ],
      [
       "Kolumbien",
       3,
-      5,
-      -79
+      6,
+      -121
      ],
      [
       "Chile",
-      2,
+      3,
       6,
-      -83
+      -81
      ]
     ],
     "results": [
+     {
+      "away": "Dominikanische Republik",
+      "home": "Kolumbien",
+      "as": 110,
+      "hs": 68,
+      "note": "Fr 27.11."
+     },
+     {
+      "away": "USA",
+      "home": "Brasilien",
+      "as": 88,
+      "hs": 92,
+      "note": "Fr 27.11."
+     },
+     {
+      "away": "Mexiko",
+      "home": "Chile",
+      "as": 64,
+      "hs": 66,
+      "note": "Fr 27.11."
+     },
      {
       "away": "Kolumbien",
       "home": "USA",
@@ -5126,21 +5080,6 @@
      }
     ],
     "games": [
-     {
-      "away": "Mexiko",
-      "home": "Chile",
-      "iso": "2026-11-27T22:40:00Z"
-     },
-     {
-      "away": "USA",
-      "home": "Brasilien",
-      "iso": "2026-11-27T23:10:00Z"
-     },
-     {
-      "away": "Dominikanische Republik",
-      "home": "Kolumbien",
-      "iso": "2026-11-28T01:10:00Z"
-     },
      {
       "away": "Dominikanische Republik",
       "home": "Chile",
@@ -5964,7 +5903,7 @@
     ]
    }
   ],
-  "groupsNote": "Tabellen inkl. der Ergebnisse aus der 1. Runde. Europa: Gruppen K und L Stand vor den Spielen vom 27.11. Quellen: sportschau.de, fiba.basketball, olympics.com."
+  "groupsNote": "Stand nach den Spielen vom 27.11.2026, Tabellen inkl. der Ergebnisse aus der 1. Runde. Quellen: sportschau.de, fiba.basketball, olympics.com."
  },
  "rosters": {
   "Atlanta Hawks": [
